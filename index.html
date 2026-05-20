@@ -326,6 +326,42 @@
   footer.site .links a { color: var(--label-2); margin-left: 14px; }
   /* Sheet for language full picker (optional) */
   .skip { position:absolute; left:-9999px; }
+  /* ===== A2HS Banner ===== */
+  .a2hs {
+    position: fixed; left: 50%; bottom: 20px;
+    transform: translateX(-50%) translateY(140%);
+    width: min(440px, calc(100vw - 32px));
+    background: var(--surface);
+    border-radius: var(--r-section);
+    box-shadow: 0 18px 48px rgba(56,87,133,0.22);
+    padding: 14px 16px 14px 14px;
+    display: flex; align-items: center; gap: 12px;
+    z-index: 80;
+    transition: transform .4s cubic-bezier(.22,.61,.36,1), opacity .25s ease;
+    opacity: 0;
+    border: 0.5px solid var(--separator);
+  }
+  .a2hs.open { transform: translateX(-50%) translateY(0); opacity: 1; }
+  .a2hs .a-ic {
+    width: 44px; height: 44px; border-radius: 12px; overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+  .a2hs .a-text { flex: 1; min-width: 0; }
+  .a2hs .a-title { font-size: 14px; font-weight: 600; color: var(--label); margin: 0 0 2px; }
+  .a2hs .a-sub   { font-size: 12px; color: var(--label-2); margin: 0; line-height: 1.4; }
+  .a2hs .a-sub .share-ico {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; border-radius: 4px;
+    background: var(--fill-1); color: var(--accent-primary);
+    vertical-align: -3px; margin: 0 2px;
+  }
+  .a2hs .a-close {
+    appearance: none; border: 0; background: var(--fill-1); color: var(--label-2);
+    width: 28px; height: 28px; border-radius: 50%;
+    font-size: 16px; cursor: pointer; flex-shrink: 0;
+    display: grid; place-items: center;
+  }
 </style>
 </head>
 <body>
@@ -577,11 +613,21 @@
     <div class="links">
       <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener" data-i18n="appStore">App Store</a>
       <a href="mailto:todaklife@gmail.com" data-i18n="contact">문의</a>
-      <a href="#privacy" data-i18n="privacy">개인정보</a>
+      <a href="privacy.html" data-i18n="privacy">개인정보</a>
+      <a href="terms.html" data-i18n="terms">이용약관</a>
       <a href="#faq" data-i18n="faqShort">FAQ</a>
     </div>
   </div>
 </footer>
+<!-- A2HS Banner (iOS Safari only) -->
+<div class="a2hs" id="a2hsBanner" role="dialog" aria-live="polite">
+  <div class="a-ic"><svg width="44" height="44"><use href="#todak-icon"/></svg></div>
+  <div class="a-text">
+    <p class="a-title" data-i18n="a2hsTitle">홈 화면에 추가</p>
+    <p class="a-sub" data-i18n="a2hsSub">Safari 공유 <span class="share-ico">↑</span> 버튼을 누른 뒤, '홈 화면에 추가'를 선택하세요.</p>
+  </div>
+  <button class="a-close" id="a2hsClose" aria-label="Close">×</button>
+</div>
 <script>
 const LANGUAGES = [
   { code:"ar", name:"Arabic", native:"العربية", flag:"🇸🇦", dir:"rtl" },
@@ -658,7 +704,9 @@ const I18N = {
     contactTitle:"문의 · 피드백",
     contactLead:"앱에 대한 의견, 버그 제보, 기능 제안 등 무엇이든 환영해요. 정성껏 답해 드릴게요.",
     footerNote:"물고기와 당신의 마음을 위해 만들었습니다.",
-    contact:"문의", privacy:"개인정보", faqShort:"FAQ"
+    contact:"문의", privacy:"개인정보", faqShort:"FAQ", terms:"이용약관",
+    a2hsTitle:"홈 화면에 추가",
+    a2hsSub:"Safari 공유 <span class=\"share-ico\">↑</span> 버튼을 누른 뒤, '홈 화면에 추가'를 선택하세요."
   }
 };
 I18N.en = {
@@ -697,7 +745,9 @@ I18N.en = {
   contactTitle:"Contact · Feedback",
   contactLead:"Thoughts, bug reports, feature ideas — all welcome. We'll reply with care.",
   footerNote:"Made with care for your fish and feelings.",
-  contact:"Contact", privacy:"Privacy", faqShort:"FAQ"
+  contact:"Contact", privacy:"Privacy", faqShort:"FAQ", terms:"Terms",
+  a2hsTitle:"Add to Home Screen",
+  a2hsSub:"Tap the Safari share <span class=\"share-ico\">↑</span> button, then choose 'Add to Home Screen'."
 };
 I18N.ja = {
   appTitle:"トダック水槽日記", downloadCTA:"ダウンロード", downloadOn:"App Store で",
@@ -735,7 +785,9 @@ I18N.ja = {
   contactTitle:"お問い合わせ · フィードバック",
   contactLead:"ご意見・不具合・機能のご提案、なんでも歓迎です。",
   footerNote:"魚とあなたの気持ちのために作りました。",
-  contact:"お問い合わせ", privacy:"プライバシー", faqShort:"FAQ"
+  contact:"お問い合わせ", privacy:"プライバシー", faqShort:"FAQ", terms:"利用規約",
+  a2hsTitle:"ホーム画面に追加",
+  a2hsSub:"Safari の共有 <span class=\"share-ico\">↑</span> ボタンから「ホーム画面に追加」を選択してください。"
 };
 const LANG_KEY = "todak.site.lang";
 function getLang(){
@@ -768,10 +820,30 @@ function buildLangSelect(){
   sel.innerHTML = LANGUAGES.map(l => `<option value="${l.code}" ${l.code===cur?"selected":""}>${l.flag} ${l.native}</option>`).join("");
   sel.addEventListener("change", e => setLang(e.target.value));
 }
+function isIOSSafari(){
+  const ua = navigator.userAgent || "";
+  const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const isStandalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone;
+  const isSafari = /Safari/i.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua);
+  return isIOS && isSafari && !isStandalone;
+}
+function maybeShowA2HS(){
+  const banner = document.getElementById("a2hsBanner");
+  if (!banner) return;
+  const dismissed = localStorage.getItem("todak.a2hs.dismissed") === "1";
+  if (dismissed) return;
+  if (!isIOSSafari()) return;
+  setTimeout(() => banner.classList.add("open"), 1200);
+  document.getElementById("a2hsClose").addEventListener("click", () => {
+    banner.classList.remove("open");
+    localStorage.setItem("todak.a2hs.dismissed", "1");
+  });
+}
 document.addEventListener("DOMContentLoaded", () => {
   buildLangSelect();
   applyLang(getLang());
   document.getElementById("year").textContent = new Date().getFullYear();
+  maybeShowA2HS();
 });
 </script>
 </body>
