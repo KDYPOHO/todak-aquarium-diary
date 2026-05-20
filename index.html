@@ -4,19 +4,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>토닥 어항 일기 · Todak Aquarium Diary</title>
-<meta name="description" content="Apple-style aquarium emotion diary with the Todak palette and sleepy fishbowl mascot." />
+<meta name="description" content="당신만의 작은 어항에 하루의 감정을 기록하세요. 토닥 어항 일기는 Apple 디자인 가이드를 따른 따뜻한 감정 일기 앱입니다." />
 <meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)" />
 <meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<meta name="apple-mobile-web-app-title" content="토닥" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23B5BCEB'/%3E%3Cstop offset='1' stop-color='%23BFE6D9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1024' height='1024' rx='220' fill='url(%23g)'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB' stroke='%23B7D6E6' stroke-width='10'/%3E%3Cpath d='M260 600 q252 80 504 0 v200 q-252 60 -504 0z' fill='%23B7DCF0'/%3E%3Cpath d='M320 760 q60 -40 130 -10 q70 30 140 -10 q70 -40 130 0 v40 h-400z' fill='%23F0E5D0'/%3E%3Cpath d='M512 540 q40 -30 70 0 q-10 30 -40 30 q-30 0 -30 -30z' fill='%238E91D8'/%3E%3Ccircle cx='560' cy='535' r='3' fill='%23333'/%3E%3C/svg%3E" />
+<!-- Open Graph / Twitter -->
+<meta property="og:title" content="토닥 어항 일기 · Todak Aquarium Diary" />
+<meta property="og:description" content="작은 어항에 하루의 감정을 토닥토닥 기록해요." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23B5BCEB'/%3E%3Cstop offset='1' stop-color='%23BFE6D9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1024' height='1024' rx='220' fill='url(%23g)'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB' stroke='%23B7D6E6' stroke-width='10'/%3E%3Cellipse cx='560' cy='600' rx='95' ry='62' fill='%238E91D8'/%3E%3C/svg%3E" />
 <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='220' fill='%23B5BCEB'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB'/%3E%3C/svg%3E" />
-<link rel="manifest" href='data:application/manifest+json,{"name":"Todak Aquarium Diary","short_name":"Todak","start_url":"./","display":"standalone","background_color":"%23EEF2F8","theme_color":"%236B8AC7","icons":[{"src":"data:image/svg%2Bxml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1024 1024%27%3E%3Crect width=%271024%27 height=%271024%27 rx=%27220%27 fill=%27%236B8AC7%27/%3E%3C/svg%3E","sizes":"512x512","type":"image/svg+xml"}]}' />
 <style>
-  /* =========================================================
-     TODAK PALETTE
-     ========================================================= */
   :root, [data-theme="light"] {
     color-scheme: light;
     --accent-primary: #6B8AC7;
@@ -27,27 +26,16 @@
     --status-delete: #FF3B3B;
     --aqua: #C7E3F0;
     --sand: #E8DBC9;
-    --mood-okay:    #00C7BE;
-    --mood-sad:     #007AFF;
-    --mood-angry:   #FF3B30;
-    --mood-tired:   #5856D6;
-    --mood-anxious: #FF9500;
-    --mood-other:   #30B0C7;
     --bg: #F4F6FB;
-    --bg-grouped: #EEF2F8;
-    --surface: rgba(255,255,255,0.86);
-    --surface-solid: #FFFFFF;
+    --surface: #FFFFFF;
     --surface-2: #F7F9FD;
     --label: #1B1F2A;
-    --label-secondary: rgba(27,31,42,0.70);
-    --label-tertiary: rgba(27,31,42,0.46);
-    --label-quaternary: rgba(27,31,42,0.26);
-    --separator: rgba(27,31,42,0.12);
-    --separator-opaque: #D7DCE6;
+    --label-2: rgba(27,31,42,0.70);
+    --label-3: rgba(27,31,42,0.46);
+    --separator: rgba(27,31,42,0.10);
     --fill-1: rgba(107,138,199,0.10);
-    --fill-2: rgba(107,138,199,0.16);
     --shadow-card: 0 10px 28px rgba(56,87,133,0.10), 0 2px 6px rgba(56,87,133,0.06);
-    --shadow-sheet: 0 24px 64px rgba(36,56,92,0.22);
+    --shadow-nav: 0 1px 0 rgba(27,31,42,0.06);
     --icon-bg-top: #B5BCEB;
     --icon-bg-bot: #BFE6D9;
     --icon-bowl: #E8F4FB;
@@ -57,7 +45,6 @@
     --icon-fish-b: #C8B3E5;
     --icon-leaf: #A8D9A2;
     --r-shell:30px; --r-hero:26px; --r-section:20px; --r-control:16px; --r-compact:12px;
-    --tap-min: 44px;
   }
   [data-theme="dark"] {
     color-scheme: dark;
@@ -65,248 +52,284 @@
     --accent-light:   #B3D6F5;
     --gradient-top:    #385785;
     --gradient-bottom: #24385C;
-    --status-live:   #59E073;
-    --status-delete: #FF6B6B;
     --aqua: #24385C;
     --sand: #574D45;
-    --mood-okay:    #5EE8E0;
-    --mood-sad:     #4DA3FF;
-    --mood-angry:   #FF6B6B;
-    --mood-tired:   #8C8AE8;
-    --mood-anxious: #FFB04D;
-    --mood-other:   #6FCBE5;
     --bg: #0E1320;
-    --bg-grouped: #131A2A;
-    --surface: rgba(28,34,52,0.78);
-    --surface-solid: #1C2234;
+    --surface: #1C2234;
     --surface-2: #232B40;
     --label: #F5F7FB;
-    --label-secondary: rgba(245,247,251,0.72);
-    --label-tertiary: rgba(245,247,251,0.48);
-    --label-quaternary: rgba(245,247,251,0.28);
+    --label-2: rgba(245,247,251,0.72);
+    --label-3: rgba(245,247,251,0.48);
     --separator: rgba(245,247,251,0.10);
-    --separator-opaque: #2B3450;
     --fill-1: rgba(133,173,230,0.14);
-    --fill-2: rgba(133,173,230,0.22);
     --shadow-card: 0 14px 32px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.35);
-    --shadow-sheet: 0 26px 64px rgba(0,0,0,0.55);
-    --icon-bg-top: #4B5A95;
-    --icon-bg-bot: #2D5C58;
-    --icon-bowl: #2B3B5F;
-    --icon-bowl-line: #4A6FA6;
-    --icon-water: #355083;
-    --icon-fish-a: #8E91D8;
-    --icon-fish-b: #B3A4DE;
-    --icon-leaf: #6FAE71;
+    --shadow-nav: 0 1px 0 rgba(0,0,0,0.4);
+    --icon-bg-top: #4B5A95; --icon-bg-bot: #2D5C58;
+    --icon-bowl: #2B3B5F; --icon-bowl-line: #4A6FA6; --icon-water: #355083;
+    --icon-fish-a: #8E91D8; --icon-fish-b: #B3A4DE; --icon-leaf: #6FAE71;
   }
   @media (prefers-color-scheme: dark) {
-    [data-theme="auto"] { color-scheme: dark; }
     [data-theme="auto"] {
-      --accent-primary: #85ADE6; --accent-light: #B3D6F5;
-      --gradient-top: #385785; --gradient-bottom: #24385C;
-      --status-live: #59E073; --status-delete: #FF6B6B;
-      --aqua: #24385C; --sand: #574D45;
-      --mood-okay:#5EE8E0; --mood-sad:#4DA3FF; --mood-angry:#FF6B6B;
-      --mood-tired:#8C8AE8; --mood-anxious:#FFB04D; --mood-other:#6FCBE5;
-      --bg: #0E1320; --bg-grouped: #131A2A;
-      --surface: rgba(28,34,52,0.78); --surface-solid: #1C2234; --surface-2: #232B40;
-      --label: #F5F7FB;
-      --label-secondary: rgba(245,247,251,0.72);
-      --label-tertiary: rgba(245,247,251,0.48);
-      --label-quaternary: rgba(245,247,251,0.28);
-      --separator: rgba(245,247,251,0.10);
-      --separator-opaque: #2B3450;
-      --fill-1: rgba(133,173,230,0.14); --fill-2: rgba(133,173,230,0.22);
-      --shadow-card: 0 14px 32px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.35);
-      --shadow-sheet: 0 26px 64px rgba(0,0,0,0.55);
+      color-scheme: dark;
+      --accent-primary:#85ADE6; --accent-light:#B3D6F5;
+      --gradient-top:#385785; --gradient-bottom:#24385C;
+      --aqua:#24385C; --sand:#574D45;
+      --bg:#0E1320; --surface:#1C2234; --surface-2:#232B40;
+      --label:#F5F7FB; --label-2:rgba(245,247,251,0.72);
+      --label-3:rgba(245,247,251,0.48);
+      --separator:rgba(245,247,251,0.10);
+      --fill-1:rgba(133,173,230,0.14);
+      --shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);
+      --shadow-nav:0 1px 0 rgba(0,0,0,0.4);
       --icon-bg-top:#4B5A95; --icon-bg-bot:#2D5C58;
       --icon-bowl:#2B3B5F; --icon-bowl-line:#4A6FA6; --icon-water:#355083;
       --icon-fish-a:#8E91D8; --icon-fish-b:#B3A4DE; --icon-leaf:#6FAE71;
     }
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  html, body { margin: 0; padding: 0; height: 100%; }
+  html, body { margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", system-ui, sans-serif;
-    background:
-      radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--accent-primary) 18%, transparent), transparent 60%),
-      radial-gradient(900px 500px at 110% 0%, color-mix(in srgb, var(--aqua) 35%, transparent), transparent 60%),
-      var(--bg);
+    background: var(--bg);
     color: var(--label);
     -webkit-font-smoothing: antialiased;
-    letter-spacing: -0.01em; line-height: 1.4;
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-    transition: background 0.35s ease, color 0.25s ease;
+    letter-spacing: -0.01em; line-height: 1.55;
+    transition: background .35s ease, color .25s ease;
   }
-  .app { max-width: 480px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; position: relative; }
-  /* nav */
-  .navbar {
-    position: sticky; top: 0; z-index: 20;
+  a { color: var(--accent-primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  /* ===== Header ===== */
+  header.site {
+    position: sticky; top: 0; z-index: 30;
     backdrop-filter: saturate(180%) blur(22px);
     -webkit-backdrop-filter: saturate(180%) blur(22px);
-    background: var(--surface);
-    border-bottom: 0.5px solid var(--separator);
+    background: color-mix(in srgb, var(--surface) 78%, transparent);
+    box-shadow: var(--shadow-nav);
   }
-  .navbar-row { height: 44px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 0 12px; }
-  .nav-btn { appearance: none; background: transparent; border: 0; color: var(--accent-primary); font: inherit; font-size: 17px; padding: 8px 10px; border-radius: var(--r-compact); cursor: pointer; min-height: 36px; }
-  .nav-btn:active { opacity: .55; }
-  .nav-title-wrap { display:flex; align-items:center; gap: 8px; }
-  .nav-title { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; }
-  .nav-icon { width: 26px; height: 26px; border-radius: 7px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
-  .nav-right { justify-self: end; }
-  .nav-left { justify-self: start; }
-  .large-title { font-size: 34px; font-weight: 700; letter-spacing: -0.022em; padding: 4px 20px 14px; }
-  main { flex: 1; padding: 0 16px 100px; }
-  .view { display: none; }
-  .view.active { display: block; animation: fade .25s ease; }
-  @keyframes fade { from {opacity:0; transform: translateY(4px);} to {opacity:1; transform:none;} }
-  /* hero (icon + brand) */
-  .brand-hero {
-    margin: 6px 4px 18px;
-    padding: 20px;
-    border-radius: var(--r-hero);
-    background: linear-gradient(135deg, var(--gradient-top) 0%, var(--gradient-bottom) 100%);
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand .logo { width: 30px; height: 30px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.12); }
+  .brand .name { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+  .lang-select {
+    appearance: none; -webkit-appearance: none;
+    background: var(--fill-1); color: var(--label);
+    border: 0; border-radius: 999px;
+    padding: 8px 32px 8px 14px;
+    font: inherit; font-size: 14px; cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B8AC7' stroke-width='2.2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 10px center; background-size: 12px;
+  }
+  .cta-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 16px; border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+    color: #fff; font-size: 14px; font-weight: 600;
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--accent-primary) 30%, transparent);
+    cursor: pointer; border: 0;
+  }
+  .cta-pill:hover { text-decoration: none; opacity: 0.95; }
+  .cta-pill svg { width: 16px; height: 16px; }
+  /* ===== Hero ===== */
+  .hero {
+    padding: 80px 20px 90px;
+    background:
+      radial-gradient(1000px 500px at 80% -10%, color-mix(in srgb, var(--accent-light) 40%, transparent), transparent 60%),
+      radial-gradient(800px 500px at -10% 30%, color-mix(in srgb, var(--aqua) 60%, transparent), transparent 60%),
+      transparent;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; } }
+  .hero h1 {
+    font-size: clamp(38px, 5.6vw, 64px);
+    line-height: 1.05; letter-spacing: -0.03em; margin: 0 0 18px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero .sub { font-size: 18px; color: var(--label-2); margin: 0 0 28px; max-width: 540px; }
+  @media (max-width: 820px) { .hero .sub { margin-left: auto; margin-right: auto; } }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  @media (max-width: 820px) { .badge-row { justify-content: center; } }
+  .appstore-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 12px 22px; border-radius: 14px;
+    background: #000; color: #fff;
+    font-weight: 600; font-size: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+  }
+  .appstore-badge:hover { text-decoration: none; transform: translateY(-1px); transition: transform .2s ease; }
+  .appstore-badge .ico { width: 28px; height: 28px; }
+  .appstore-badge .lbl { display: flex; flex-direction: column; line-height: 1.1; }
+  .appstore-badge .lbl small { font-size: 10px; font-weight: 500; opacity: 0.85; letter-spacing: 0.04em; }
+  .appstore-badge .lbl strong { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .ghost-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 18px; border-radius: 14px;
+    background: var(--fill-1); color: var(--label);
+    font-weight: 500; font-size: 15px;
+  }
+  .ghost-btn:hover { text-decoration: none; }
+  /* Hero icon mock */
+  .hero-art {
+    position: relative; aspect-ratio: 1 / 1;
+    max-width: 380px; margin: 0 auto;
+  }
+  .hero-art .app-icon {
+    position: relative; width: 100%; height: 100%;
+    border-radius: 28%;
+    overflow: hidden;
+    box-shadow:
+      0 28px 60px rgba(56,87,133,0.32),
+      0 8px 20px rgba(56,87,133,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.45);
+    background: linear-gradient(180deg, var(--icon-bg-top), var(--icon-bg-bot));
+    transform: rotate(-4deg);
+    transition: transform .6s cubic-bezier(.22,.61,.36,1);
+  }
+  .hero-art .app-icon:hover { transform: rotate(0deg) scale(1.02); }
+  .hero-art svg { width: 100%; height: 100%; }
+  .floating { position: absolute; }
+  .floating.fish-a { left: -30px; top: 12%; font-size: 38px; animation: floaty 7s ease-in-out infinite alternate; }
+  .floating.fish-b { right: -20px; bottom: 18%; font-size: 30px; animation: floaty 8s ease-in-out 1s infinite alternate-reverse; }
+  .floating.bubble  { right: 40%; top: -10px; font-size: 18px; opacity: 0.7; animation: floaty 5s ease-in-out infinite alternate-reverse; }
+  @keyframes floaty {
+    from { transform: translateY(0) rotate(-3deg); }
+    to   { transform: translateY(-16px) rotate(3deg); }
+  }
+  /* ===== Section base ===== */
+  section.block { padding: 72px 0; }
+  section.block.alt { background: var(--surface-2); }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 10px; }
+  .section-title { font-size: clamp(28px, 3.4vw, 40px); font-weight: 700; letter-spacing: -0.025em; margin: 0 0 16px; }
+  .section-lead { font-size: 17px; color: var(--label-2); max-width: 620px; margin: 0 0 36px; }
+  /* Feature grid */
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  @media (max-width: 820px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .feature-grid { grid-template-columns: 1fr; } }
+  .feature {
+    background: var(--surface);
+    border-radius: var(--r-section);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .feature:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(56,87,133,0.14); }
+  .feature .ic {
+    width: 44px; height: 44px; border-radius: 14px;
+    display: grid; place-items: center; color: #fff;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+  }
+  .feature .ic svg { width: 22px; height: 22px; }
+  .feature h3 { font-size: 18px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .feature p { font-size: 15px; color: var(--label-2); margin: 0; }
+  /* Two-column showcase */
+  .showcase {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  @media (max-width: 820px) { .showcase { grid-template-columns: 1fr; gap: 32px; } }
+  .showcase.reverse > :first-child { order: 2; }
+  @media (max-width: 820px) { .showcase.reverse > :first-child { order: 0; } }
+  .phone-mock {
+    background: linear-gradient(160deg, var(--accent-primary), var(--gradient-bottom));
+    border-radius: var(--r-shell);
+    padding: 28px;
+    aspect-ratio: 4 / 5;
+    box-shadow: var(--shadow-card);
     color: #fff;
+    display: flex; flex-direction: column; gap: 16px;
+    position: relative; overflow: hidden;
+  }
+  .phone-mock::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 0%, rgba(255,255,255,0.25), transparent 55%); pointer-events: none; }
+  .phone-mock .mh { display: flex; align-items: center; gap: 10px; }
+  .phone-mock .mh .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); }
+  .phone-mock .mt { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+  .phone-mock .ms { font-size: 14px; opacity: 0.9; }
+  .phone-mock .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .phone-mock .chip {
+    background: rgba(255,255,255,0.16);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 13px;
+    backdrop-filter: blur(8px);
+  }
+  .phone-mock .mood-row {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-top: auto;
+  }
+  .phone-mock .mood-row .m {
+    background: rgba(255,255,255,0.18);
+    border-radius: 14px;
+    aspect-ratio: 1/1;
+    display: grid; place-items: center;
+    font-size: 22px;
+  }
+  /* FAQ */
+  .faq { background: var(--surface); border-radius: var(--r-section); box-shadow: var(--shadow-card); overflow: hidden; }
+  .faq details { border-top: 0.5px solid var(--separator); }
+  .faq details:first-child { border-top: 0; }
+  .faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    font-size: 16px; font-weight: 600;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; font-size: 22px; color: var(--label-3); transition: transform .25s ease;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq .ans { padding: 0 22px 18px; color: var(--label-2); font-size: 15px; }
+  /* Contact card */
+  .contact-card {
+    background: linear-gradient(135deg, var(--gradient-top), var(--gradient-bottom));
+    border-radius: var(--r-shell);
+    padding: 44px 36px;
+    color: #fff;
+    text-align: center;
     box-shadow: var(--shadow-card);
     position: relative; overflow: hidden;
-    display: flex; align-items: center; gap: 16px;
   }
-  .brand-hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 0%, rgba(255,255,255,0.30), transparent 50%); pointer-events: none; }
-  .brand-hero .app-icon {
-    width: 84px; height: 84px;
-    border-radius: 22px;
-    background: linear-gradient(180deg, var(--icon-bg-top), var(--icon-bg-bot));
-    box-shadow: 0 10px 22px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.4);
-    flex-shrink: 0;
-    display: grid; place-items: center;
-    position: relative;
+  .contact-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.25), transparent 55%); pointer-events: none; }
+  .contact-card h3 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 10px; }
+  .contact-card p { font-size: 16px; opacity: 0.95; margin: 0 0 22px; }
+  .contact-card .mail-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 13px 22px; border-radius: 14px;
+    background: #fff; color: var(--accent-primary);
+    font-weight: 700; font-size: 16px;
   }
-  .brand-hero .meta { display:flex; flex-direction: column; gap: 4px; }
-  .brand-hero .date { font-size: 13px; opacity: 0.92; }
-  .brand-hero h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
-  .brand-hero p { margin: 0; opacity: 0.95; font-size: 14px; }
-  /* Section / list */
-  .section-title { text-transform: uppercase; font-size: 13px; font-weight: 600; color: var(--label-secondary); letter-spacing: 0.02em; padding: 18px 20px 8px; display:flex; align-items:center; justify-content:space-between; }
-  .list { background: var(--surface-solid); border-radius: var(--r-section); overflow: hidden; box-shadow: var(--shadow-card); }
-  .row { display: flex; align-items: center; gap: 12px; padding: 12px 16px; min-height: var(--tap-min); background: var(--surface-solid); border: 0; width: 100%; text-align: left; color: var(--label); font: inherit; cursor: pointer; }
-  .row + .row { border-top: 0.5px solid var(--separator); }
-  .row:active { background: var(--fill-1); }
-  .row .icon { width: 30px; height: 30px; border-radius: 8px; display:grid; place-items:center; color:#fff; flex-shrink:0; font-size: 16px; }
-  .row .label { flex: 1; font-size: 17px; }
-  .row .value { color: var(--label-secondary); font-size: 15px; }
-  .row .chev { color: var(--label-tertiary); font-size: 17px; margin-left: 4px; }
-  /* Mood */
-  .mood-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; padding: 14px; background: var(--surface-solid); border-radius: var(--r-section); box-shadow: var(--shadow-card); }
-  .mood { appearance:none; border:0; background: var(--fill-1); border-radius: var(--r-control); aspect-ratio: 1/1; font-size: 22px; cursor:pointer; color: var(--label); transition: transform .12s ease, background .2s ease, color .2s ease, box-shadow .25s ease; position: relative; }
-  .mood span.tag { position:absolute; left:0; right:0; bottom:4px; font-size:10px; font-weight:600; color: var(--label-secondary); }
-  .mood:active { transform: scale(0.92); }
-  .mood.selected { color:#fff; }
-  .mood.selected span.tag { color: rgba(255,255,255,0.92); }
-  .mood[data-key="okay"].selected    { background: var(--mood-okay); }
-  .mood[data-key="sad"].selected     { background: var(--mood-sad); }
-  .mood[data-key="angry"].selected   { background: var(--mood-angry); }
-  .mood[data-key="tired"].selected   { background: var(--mood-tired); }
-  .mood[data-key="anxious"].selected { background: var(--mood-anxious); }
-  .mood[data-key="other"].selected   { background: var(--mood-other); }
-  /* Field, buttons */
-  .field { background: var(--surface-solid); border-radius: var(--r-section); box-shadow: var(--shadow-card); padding: 14px 16px; }
-  .field textarea { width:100%; border:0; resize:none; background:transparent; color: var(--label); font: inherit; font-size: 16px; min-height: 120px; outline:none; }
-  .field textarea::placeholder { color: var(--label-tertiary); }
-  .btn-primary { appearance:none; border:0; width:100%; padding: 14px 18px; border-radius: var(--r-control); background: linear-gradient(135deg, var(--accent-primary), var(--accent-light)); color:#fff; font: inherit; font-size: 17px; font-weight: 600; box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-primary) 35%, transparent); cursor:pointer; margin-top: 14px; }
-  .btn-primary:active { transform: scale(0.985); opacity:.92; }
-  .btn-ghost { appearance:none; border:0; width:100%; padding:12px 18px; border-radius: var(--r-control); background: var(--fill-1); color: var(--label); font: inherit; font-size: 16px; font-weight: 500; cursor:pointer; margin-top: 8px; }
-  /* Segmented */
-  .segmented { display:flex; gap:4px; background: var(--fill-1); padding: 4px; border-radius: var(--r-control); }
-  .segmented button { flex:1; appearance:none; border:0; background:transparent; padding: 8px 10px; border-radius: 12px; font: inherit; font-size: 14px; font-weight: 500; color: var(--label-secondary); cursor:pointer; transition: background .2s ease, color .2s ease, box-shadow .2s ease; }
-  .segmented button.active { background: var(--surface-solid); color: var(--label); box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
-  /* Care checklist */
-  .care-list { display: grid; gap: 0; }
-  .care-row { display:flex; align-items:center; gap: 12px; padding: 12px 16px; min-height: var(--tap-min); background: var(--surface-solid); cursor:pointer; }
-  .care-row + .care-row { border-top: 0.5px solid var(--separator); }
-  .care-row .name { flex: 1; font-size: 16px; }
-  .check {
-    width: 24px; height: 24px; border-radius: 50%;
-    border: 1.5px solid var(--separator-opaque);
-    display:grid; place-items:center; transition: all .2s ease;
-    color: transparent; font-size: 14px;
+  .contact-card .mail-btn:hover { text-decoration: none; transform: translateY(-1px); transition: transform .2s ease; }
+  /* Privacy summary */
+  .priv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 820px) { .priv-grid { grid-template-columns: 1fr; } }
+  .priv-card { background: var(--surface); border-radius: var(--r-section); padding: 22px; box-shadow: var(--shadow-card); }
+  .priv-card h4 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+  .priv-card p { margin: 0; color: var(--label-2); font-size: 14px; }
+  .priv-card .pc-ic { width: 30px; height: 30px; border-radius: 8px; background: var(--fill-1); color: var(--accent-primary); display:grid; place-items:center; margin-bottom: 10px; }
+  /* Footer */
+  footer.site {
+    padding: 40px 0 60px;
+    border-top: 0.5px solid var(--separator);
+    color: var(--label-3);
+    font-size: 13px;
   }
-  .care-row.done .check {
-    background: var(--status-live);
-    border-color: var(--status-live);
-    color: #fff;
-  }
-  .care-row.done .name { color: var(--label-secondary); text-decoration: line-through; }
-  /* Streak badge */
-  .streak-card {
-    display:flex; align-items:center; gap: 14px;
-    padding: 16px;
-    background: var(--surface-solid);
-    border-radius: var(--r-section);
-    box-shadow: var(--shadow-card);
-  }
-  .streak-flame {
-    width: 48px; height: 48px; border-radius: 16px;
-    background: linear-gradient(135deg, #FF9500, #FF3B30);
-    color: #fff; display:grid; place-items:center; font-size: 24px;
-    box-shadow: 0 6px 18px rgba(255,75,48,0.30);
-  }
-  .streak-text { display:flex; flex-direction:column; }
-  .streak-text .n { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
-  .streak-text .lbl { font-size: 13px; color: var(--label-secondary); }
-  /* Weekly chart */
-  .chart {
-    background: var(--surface-solid);
-    border-radius: var(--r-section);
-    box-shadow: var(--shadow-card);
-    padding: 16px 14px 10px;
-  }
-  .chart .bars { display:grid; grid-template-columns: repeat(7, 1fr); align-items: end; gap: 6px; height: 100px; }
-  .chart .bar { background: linear-gradient(180deg, var(--accent-light), var(--accent-primary)); border-radius: 6px; min-height: 4px; transition: height .35s ease; }
-  .chart .bar.empty { background: var(--fill-1); }
-  .chart .labels { display:grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 6px; }
-  .chart .labels span { text-align:center; font-size: 11px; color: var(--label-tertiary); }
-  /* Entries */
-  .entries .row .label { display: flex; flex-direction: column; gap: 2px; }
-  .entries .row .ttl { font-size: 16px; font-weight: 500; }
-  .entries .row .sub { font-size: 13px; color: var(--label-secondary); }
-  .entry-mood { width: 36px; height: 36px; border-radius: 12px; display:grid; place-items:center; font-size: 20px; color:#fff; flex-shrink:0; }
-  .empty { text-align: center; padding: 40px 20px; color: var(--label-tertiary); font-size: 15px; }
-  .delete-btn { appearance:none; border:0; background:transparent; color: var(--status-delete); font: inherit; font-size: 18px; padding: 6px 10px; cursor:pointer; border-radius: 10px; }
-  /* Tabbar / sheet / toast */
-  .tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding-bottom: env(safe-area-inset-bottom); backdrop-filter: saturate(180%) blur(28px); -webkit-backdrop-filter: saturate(180%) blur(28px); background: var(--surface); border-top: 0.5px solid var(--separator); }
-  .tabbar-inner { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
-  .tab { appearance:none; border:0; background:transparent; color: var(--label-tertiary); font: inherit; font-size: 10px; font-weight: 500; padding: 8px 4px 6px; display:flex; flex-direction:column; align-items:center; gap: 3px; cursor:pointer; }
-  .tab svg { width: 26px; height: 26px; }
-  .tab.active { color: var(--accent-primary); }
-  .sheet-mask { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(2px); z-index: 40; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
-  .sheet-mask.open { opacity: 1; pointer-events: auto; }
-  .sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 41; background: var(--bg-grouped); border-radius: var(--r-shell) var(--r-shell) 0 0; max-height: 86dvh; transform: translateY(100%); transition: transform .35s cubic-bezier(.22,.61,.36,1); box-shadow: var(--shadow-sheet); display:flex; flex-direction:column; }
-  .sheet.open { transform: none; }
-  .sheet-handle { width: 36px; height: 5px; background: var(--separator-opaque); border-radius: 3px; margin: 8px auto 4px; }
-  .sheet-header { display:flex; align-items:center; justify-content: space-between; padding: 6px 16px 10px; }
-  .sheet-header h3 { margin: 0; font-size: 17px; font-weight: 600; }
-  .sheet-search { margin: 4px 16px 10px; background: var(--fill-1); border-radius: var(--r-control); display:flex; align-items:center; gap: 8px; padding: 8px 10px; color: var(--label-secondary); }
-  .sheet-search input { border:0; background:transparent; outline:none; font: inherit; font-size: 16px; flex: 1; color: var(--label); }
-  .sheet-body { overflow-y: auto; padding: 0 16px 24px; }
-  .lang-list { background: var(--surface-solid); border-radius: var(--r-section); overflow: hidden; box-shadow: var(--shadow-card); }
-  .lang { display:flex; align-items:center; gap: 12px; padding: 12px 16px; min-height: var(--tap-min); cursor:pointer; background: var(--surface-solid); }
-  .lang + .lang { border-top: 0.5px solid var(--separator); }
-  .lang:active { background: var(--fill-1); }
-  .lang .flag { font-size: 22px; }
-  .lang .name { flex: 1; font-size: 16px; }
-  .lang .native { font-size: 13px; color: var(--label-secondary); }
-  .lang .check-mark { color: var(--accent-primary); font-weight: 700; opacity: 0; }
-  .lang.selected .check-mark { opacity: 1; }
-  .toast { position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%) translateY(20px); background: rgba(0,0,0,0.82); color:#fff; padding: 10px 18px; border-radius: 999px; font-size: 14px; z-index: 60; opacity: 0; transition: all .25s ease; pointer-events:none; }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  html[dir="rtl"] body { letter-spacing: 0; }
-  html[dir="rtl"] .row .chev { transform: scaleX(-1); }
-  /* Hidden file input */
-  .visually-hidden { position:absolute; left:-9999px; }
+  footer.site .row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  footer.site .links a { color: var(--label-2); margin-left: 14px; }
+  /* Sheet for language full picker (optional) */
+  .skip { position:absolute; left:-9999px; }
 </style>
 </head>
 <body>
-<!-- Reusable SVG icon (todak fishbowl) -->
+<!-- Reusable SVG icon -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <linearGradient id="todak-bg" x1="0" y1="0" x2="0" y2="1">
@@ -323,211 +346,243 @@
     </radialGradient>
     <symbol id="todak-icon" viewBox="0 0 1024 1024">
       <rect width="1024" height="1024" rx="230" fill="url(#todak-bg)"/>
-      <!-- bowl base shadow -->
       <ellipse cx="512" cy="830" rx="300" ry="22" fill="rgba(0,0,0,0.10)"/>
-      <!-- bowl -->
-      <path d="M 220 470 Q 220 350 360 320 Q 512 305 664 320 Q 804 350 804 470 Q 804 720 612 800 Q 512 820 412 800 Q 220 720 220 470 Z"
-            fill="var(--icon-bowl)" stroke="var(--icon-bowl-line)" stroke-width="10"/>
-      <!-- water surface ellipse -->
+      <path d="M 220 470 Q 220 350 360 320 Q 512 305 664 320 Q 804 350 804 470 Q 804 720 612 800 Q 512 820 412 800 Q 220 720 220 470 Z" fill="var(--icon-bowl)" stroke="var(--icon-bowl-line)" stroke-width="10"/>
       <ellipse cx="512" cy="470" rx="260" ry="38" fill="rgba(255,255,255,0.55)"/>
-      <!-- water body -->
       <path d="M 252 470 Q 252 700 612 770 Q 252 720 252 470 Z" fill="url(#todak-water)"/>
-      <!-- sand -->
       <path d="M 290 760 Q 380 720 470 750 Q 560 780 660 740 Q 720 760 760 770 Q 612 810 412 800 Q 320 790 290 760 Z" fill="var(--sand)"/>
-      <!-- seaweed -->
       <path d="M 340 750 Q 320 700 340 660 Q 360 700 350 740 Z" fill="var(--icon-leaf)"/>
       <path d="M 380 760 Q 360 680 380 620 Q 410 680 395 750 Z" fill="var(--icon-leaf)"/>
       <path d="M 410 770 Q 400 720 415 680 Q 430 720 425 760 Z" fill="var(--icon-leaf)"/>
-      <!-- sleeping fish body -->
       <ellipse cx="560" cy="600" rx="95" ry="62" fill="url(#todak-fish)"/>
-      <!-- tail -->
       <path d="M 650 600 L 730 555 L 720 600 L 730 645 Z" fill="url(#todak-fish)"/>
-      <!-- closed eye -->
       <path d="M 520 590 Q 540 600 560 590" stroke="rgba(0,0,0,0.55)" stroke-width="6" fill="none" stroke-linecap="round"/>
-      <!-- cheek blush -->
       <circle cx="500" cy="615" r="10" fill="#FFB3C1" opacity="0.55"/>
-      <!-- bubbles -->
       <circle cx="690" cy="500" r="12" fill="rgba(255,255,255,0.9)"/>
       <circle cx="720" cy="470" r="7" fill="rgba(255,255,255,0.85)"/>
       <circle cx="700" cy="455" r="4" fill="rgba(255,255,255,0.75)"/>
-      <!-- bowl highlight -->
       <path d="M 295 430 Q 305 530 330 620" stroke="rgba(255,255,255,0.85)" stroke-width="14" stroke-linecap="round" fill="none"/>
       <path d="M 330 360 Q 305 380 295 410" stroke="rgba(255,255,255,0.85)" stroke-width="10" stroke-linecap="round" fill="none"/>
     </symbol>
   </defs>
 </svg>
-<div class="app">
-  <header class="navbar">
-    <div class="navbar-row">
-      <div class="nav-left"></div>
-      <div class="nav-title-wrap">
-        <span class="nav-icon"><svg width="26" height="26"><use href="#todak-icon"/></svg></span>
-        <span class="nav-title" data-i18n="appTitle">Todak Diary</span>
-      </div>
-      <div class="nav-right">
-        <button class="nav-btn" id="quickSettings" aria-label="Settings">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06A2 2 0 1 1 7.04 4.96l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </button>
+<!-- ===== Header ===== -->
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <span class="logo"><svg width="30" height="30"><use href="#todak-icon"/></svg></span>
+      <span class="name" data-i18n="appTitle">토닥 어항 일기</span>
+    </a>
+    <div class="nav-actions">
+      <select class="lang-select" id="langSelect" aria-label="Language"></select>
+      <a class="cta-pill" href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.1-1.7-1.3-.1-2.6.8-3.2.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2 .8-1.2 1.2-2.4 1.2-2.5 0-.1-2.5-1-2.5-3.9zM14.5 6.2c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1 1.6-.9 2.6 1 .1 2-.5 2.5-1.2z"/></svg>
+        <span data-i18n="downloadCTA">App Store</span>
+      </a>
+    </div>
+  </div>
+</header>
+<a id="top"></a>
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="heroEyebrow">감정 일기 · 어항 컨셉</div>
+      <h1 data-i18n="heroTitle">매일의 마음을<br/>작은 어항에 토닥토닥.</h1>
+      <p class="sub" data-i18n="heroSub">기분을 선택하고 짧은 메모를 남기면, 당신만의 어항 속 물고기가 함께 자라요. Apple 디자인을 따른 부드럽고 따뜻한 감정 일기 앱.</p>
+      <div class="badge-row">
+        <a class="appstore-badge" href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.1-1.7-1.3-.1-2.6.8-3.2.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.7.8-3.5 2.1-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2 .8-1.2 1.2-2.4 1.2-2.5 0-.1-2.5-1-2.5-3.9zM14.5 6.2c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1 1.6-.9 2.6 1 .1 2-.5 2.5-1.2z"/></svg>
+          <span class="lbl"><small data-i18n="downloadOn">Download on the</small><strong data-i18n="appStore">App Store</strong></span>
+        </a>
+        <a class="ghost-btn" href="#features" data-i18n="learnMore">기능 살펴보기 →</a>
       </div>
     </div>
-  </header>
-  <main>
-    <!-- ===== HOME ===== -->
-    <section class="view active" id="view-home">
-      <h1 class="large-title" data-i18n="home">Today</h1>
-      <div class="brand-hero">
-        <div class="app-icon"><svg width="84" height="84"><use href="#todak-icon"/></svg></div>
-        <div class="meta">
-          <div class="date" id="todayDate">—</div>
-          <h2 data-i18n="appTitle">Todak Diary</h2>
-          <p data-i18n="heroSub">Capture a small moment with your fish.</p>
-        </div>
-      </div>
-      <!-- Streak + chart -->
-      <div class="section-title">
-        <span data-i18n="streakTitle">Streak</span>
-      </div>
-      <div class="streak-card">
-        <div class="streak-flame">🔥</div>
-        <div class="streak-text">
-          <span class="n"><span id="streakNum">0</span> <span data-i18n="days">days</span></span>
-          <span class="lbl" data-i18n="streakSub">Keep your daily diary alive.</span>
-        </div>
-      </div>
-      <div class="section-title">
-        <span data-i18n="weekTitle">This week</span>
-      </div>
-      <div class="chart">
-        <div class="bars" id="weekBars"></div>
-        <div class="labels" id="weekLabels"></div>
-      </div>
-      <!-- Mood -->
-      <div class="section-title" data-i18n="moodTitle">Mood</div>
-      <div class="mood-grid" id="moodGrid" role="group" aria-label="Mood">
-        <button class="mood" data-key="okay"    data-mood="🙂" aria-label="Okay">🙂<span class="tag" data-i18n="moodOkay">Okay</span></button>
-        <button class="mood" data-key="sad"     data-mood="😢" aria-label="Sad">😢<span class="tag" data-i18n="moodSad">Sad</span></button>
-        <button class="mood" data-key="angry"   data-mood="😡" aria-label="Angry">😡<span class="tag" data-i18n="moodAngry">Angry</span></button>
-        <button class="mood" data-key="tired"   data-mood="😴" aria-label="Tired">😴<span class="tag" data-i18n="moodTired">Tired</span></button>
-        <button class="mood" data-key="anxious" data-mood="😟" aria-label="Anxious">😟<span class="tag" data-i18n="moodAnxious">Anxious</span></button>
-        <button class="mood" data-key="other"   data-mood="🐟" aria-label="Other">🐟<span class="tag" data-i18n="moodOther">Other</span></button>
-      </div>
-      <!-- Note -->
-      <div class="section-title" data-i18n="noteTitle">Note</div>
-      <div class="field">
-        <textarea id="noteInput" data-i18n-placeholder="notePlaceholder" placeholder="A short note about your fish, water, or mood..."></textarea>
-      </div>
-      <button class="btn-primary" id="saveEntryBtn" data-i18n="save">Save</button>
-      <!-- Care checklist -->
-      <div class="section-title">
-        <span data-i18n="careTitle">Daily care</span>
-        <button class="nav-btn" id="careResetBtn" style="font-size:13px" data-i18n="reset">Reset</button>
-      </div>
-      <div class="list care-list" id="careList"></div>
-    </section>
-    <!-- ===== ENTRIES ===== -->
-    <section class="view" id="view-entries">
-      <h1 class="large-title" data-i18n="entries">Entries</h1>
-      <div id="entryList"></div>
-    </section>
-    <!-- ===== SETTINGS ===== -->
-    <section class="view" id="view-settings">
-      <h1 class="large-title" data-i18n="settings">Settings</h1>
-      <div class="section-title" data-i18n="general">General</div>
-      <div class="list">
-        <button class="row" id="openLangBtn">
-          <span class="icon" style="background:var(--accent-primary)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          </span>
-          <span class="label" data-i18n="language">Language</span>
-          <span class="value" id="currentLangLabel">English</span>
-          <span class="chev">›</span>
-        </button>
-      </div>
-      <div class="section-title" data-i18n="appearance">Appearance</div>
-      <div class="list" style="padding: 12px 14px;">
-        <div class="segmented" id="themeSeg" role="tablist" aria-label="Appearance">
-          <button data-theme-val="auto"  class="active" data-i18n="auto">Automatic</button>
-          <button data-theme-val="light" data-i18n="light">Light</button>
-          <button data-theme-val="dark"  data-i18n="dark">Dark</button>
-        </div>
-      </div>
-      <div class="section-title" data-i18n="dataSection">Data</div>
-      <div class="list">
-        <button class="row" id="exportBtn">
-          <span class="icon" style="background:var(--status-live)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          </span>
-          <span class="label" data-i18n="exportData">Export entries (JSON)</span>
-          <span class="chev">›</span>
-        </button>
-        <button class="row" id="importBtn">
-          <span class="icon" style="background:var(--accent-primary)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          </span>
-          <span class="label" data-i18n="importData">Import entries (JSON)</span>
-          <span class="chev">›</span>
-        </button>
-        <button class="row" id="clearDataBtn">
-          <span class="icon" style="background:var(--status-delete)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
-          </span>
-          <span class="label" data-i18n="clearAll">Erase all entries</span>
-          <span class="chev">›</span>
-        </button>
-      </div>
-      <input type="file" id="importFile" accept="application/json,.json" class="visually-hidden" />
-      <div class="section-title" data-i18n="aboutSection">About</div>
-      <div class="list">
-        <div class="row" style="cursor:default">
-          <span class="icon" style="overflow:hidden;background:transparent;padding:0">
-            <svg width="30" height="30"><use href="#todak-icon"/></svg>
-          </span>
-          <span class="label" data-i18n="appTitle">Todak Diary</span>
-          <span class="value">v3.0.0</span>
-        </div>
-        <div class="row" style="cursor:default">
-          <span class="icon" style="background:var(--mood-other)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l9 2-2-9 2-9-9 2-9-2 2 9-2 9z"/></svg>
-          </span>
-          <span class="label" data-i18n="installHint">Add to Home Screen via Safari Share menu</span>
-        </div>
-      </div>
-    </section>
-  </main>
-  <nav class="tabbar">
-    <div class="tabbar-inner">
-      <button class="tab active" data-view="home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-        <span data-i18n="home">Today</span>
-      </button>
-      <button class="tab" data-view="entries">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
-        <span data-i18n="entries">Entries</span>
-      </button>
-      <button class="tab" data-view="settings">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
-        <span data-i18n="settings">Settings</span>
-      </button>
+    <div class="hero-art">
+      <div class="floating fish-a">🐟</div>
+      <div class="floating fish-b">🐠</div>
+      <div class="floating bubble">💧</div>
+      <div class="app-icon"><svg viewBox="0 0 1024 1024"><use href="#todak-icon"/></svg></div>
     </div>
-  </nav>
-</div>
-<div class="sheet-mask" id="sheetMask"></div>
-<aside class="sheet" id="langSheet" role="dialog" aria-modal="true">
-  <div class="sheet-handle"></div>
-  <div class="sheet-header">
-    <span></span>
-    <h3 data-i18n="language">Language</h3>
-    <button class="nav-btn" id="closeLangBtn" data-i18n="done">Done</button>
   </div>
-  <div class="sheet-search">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input id="langSearch" data-i18n-placeholder="search" placeholder="Search" />
+</section>
+<!-- ===== Features ===== -->
+<section class="block alt" id="features">
+  <div class="container">
+    <div class="eyebrow" data-i18n="featuresEyebrow">FEATURES</div>
+    <h2 class="section-title" data-i18n="featuresTitle">하루의 감정을 가장 부드럽게.</h2>
+    <p class="section-lead" data-i18n="featuresLead">복잡한 입력 없이, 한 번의 탭으로 오늘의 마음을 기록해요. 작은 어항에서 매일의 나를 돌보는 경험.</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+        <h3 data-i18n="f1Title">6가지 감정 무드</h3>
+        <p data-i18n="f1Desc">괜찮음, 슬픔, 분노, 지침, 불안, 기타 — 단순한 무드 선택으로 마음 정리.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3 data-i18n="f2Title">짧은 메모</h3>
+        <p data-i18n="f2Desc">길게 쓰지 않아도 괜찮아요. 한 줄의 토닥이 오늘을 기록합니다.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+        <h3 data-i18n="f3Title">주간 감정 변화</h3>
+        <p data-i18n="f3Desc">최근 일주일의 기분을 한눈에. 패턴을 발견하고 스스로를 이해해요.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5L18.2 22 12 17.5 5.8 22l2.4-8.1L2 9.4h7.6z"/></svg></div>
+        <h3 data-i18n="f4Title">연속 기록 스트릭</h3>
+        <p data-i18n="f4Desc">매일 이어가는 작은 습관. 어항을 가꾸듯 마음을 가꿔요.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z"/></svg></div>
+        <h3 data-i18n="f5Title">기기 내 저장</h3>
+        <p data-i18n="f5Desc">감정 데이터는 기기 안에만. 서버에 전송되지 않아요.</p>
+      </div>
+      <div class="feature">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20"/></svg></div>
+        <h3 data-i18n="f6Title">다국어 지원</h3>
+        <p data-i18n="f6Desc">한국어, 영어, 일본어 등 다양한 언어로 사용 가능.</p>
+      </div>
+    </div>
   </div>
-  <div class="sheet-body"><div class="lang-list" id="langList"></div></div>
-</aside>
-<div class="toast" id="toast">Saved</div>
+</section>
+<!-- ===== Showcase 1 ===== -->
+<section class="block">
+  <div class="container showcase">
+    <div>
+      <div class="eyebrow" data-i18n="show1Eyebrow">감정 기록</div>
+      <h2 class="section-title" data-i18n="show1Title">선택하고, 한 줄 남기고, 끝.</h2>
+      <p class="section-lead" data-i18n="show1Lead">하루를 정리하는 데 1분이면 충분해요. 무드 버튼을 누르고 짧은 메모를 적으면, 어항 속 물고기가 오늘의 당신을 기억해 줍니다.</p>
+      <a class="cta-pill" href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener" data-i18n="getApp">앱에서 시작하기</a>
+    </div>
+    <div class="phone-mock">
+      <div class="mh"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div>
+        <div class="mt" data-i18n="mockToday">오늘의 어항</div>
+        <div class="ms" data-i18n="mockSub">2026년 5월 20일 수요일</div>
+      </div>
+      <div class="chips">
+        <span class="chip">🔥 <span data-i18n="mockStreak">7일째</span></span>
+        <span class="chip">🐟 <span data-i18n="mockMoodOk">괜찮음</span></span>
+      </div>
+      <div class="mood-row">
+        <div class="m">🙂</div><div class="m">😢</div><div class="m">😡</div>
+        <div class="m">😴</div><div class="m">😟</div><div class="m">🐟</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== Showcase 2 ===== -->
+<section class="block alt">
+  <div class="container showcase reverse">
+    <div class="phone-mock" style="background: linear-gradient(160deg, var(--accent-light), var(--accent-primary));">
+      <div class="mh"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div>
+        <div class="mt" data-i18n="mockWeek">이번 주</div>
+        <div class="ms" data-i18n="mockWeekSub">감정의 흐름</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:end;height:120px;">
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:30%"></div>
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:55%"></div>
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:40%"></div>
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:80%"></div>
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:60%"></div>
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:90%"></div>
+        <div style="background:rgba(255,255,255,0.85);border-radius:6px;height:50%"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;opacity:.9;margin-top:6px;">
+        <span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow" data-i18n="show2Eyebrow">감정 통계</div>
+      <h2 class="section-title" data-i18n="show2Title">나를 더 잘 알게 되는 시간.</h2>
+      <p class="section-lead" data-i18n="show2Lead">주간 차트와 무드 분포로 마음의 흐름을 살펴볼 수 있어요. 어떤 요일에 지치는지, 어떤 시간에 평온한지 — 데이터가 알려주는 나의 패턴.</p>
+    </div>
+  </div>
+</section>
+<!-- ===== Privacy summary ===== -->
+<section class="block" id="privacy">
+  <div class="container">
+    <div class="eyebrow" data-i18n="privEyebrow">PRIVACY</div>
+    <h2 class="section-title" data-i18n="privTitle">당신의 마음, 당신만의 어항에.</h2>
+    <p class="section-lead" data-i18n="privLead">토닥 어항 일기는 사용자의 개인정보를 수집하지 않습니다. 모든 기록은 사용자의 기기 안에서만 안전하게 보관돼요.</p>
+    <div class="priv-grid">
+      <div class="priv-card">
+        <div class="pc-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h4 data-i18n="priv1Title">기기 내 저장</h4>
+        <p data-i18n="priv1Desc">감정·메모 데이터는 기기 외부로 전송되지 않습니다.</p>
+      </div>
+      <div class="priv-card">
+        <div class="pc-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 6M15 9l-6 6"/></svg></div>
+        <h4 data-i18n="priv2Title">수집·추적 없음</h4>
+        <p data-i18n="priv2Desc">계정 가입이 없고, 광고·분석을 위한 추적도 하지 않아요.</p>
+      </div>
+      <div class="priv-card">
+        <div class="pc-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+        <h4 data-i18n="priv3Title">언제든 내보내기</h4>
+        <p data-i18n="priv3Desc">기록은 JSON으로 백업·이전 가능. 삭제도 언제든 한 번에.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FAQ ===== -->
+<section class="block alt" id="faq">
+  <div class="container">
+    <div class="eyebrow" data-i18n="faqEyebrow">FAQ</div>
+    <h2 class="section-title" data-i18n="faqTitle">자주 묻는 질문</h2>
+    <div class="faq">
+      <details open>
+        <summary data-i18n="q1">무료인가요?</summary>
+        <div class="ans" data-i18n="a1">네, 토닥 어항 일기는 무료로 다운로드해 사용하실 수 있습니다. 추후 일부 부가 기능이 유료로 제공될 수 있어요.</div>
+      </details>
+      <details>
+        <summary data-i18n="q2">어떤 기기에서 쓸 수 있나요?</summary>
+        <div class="ans" data-i18n="a2">iOS 16 이상의 iPhone에서 사용할 수 있습니다. 최신 iOS에 맞춰 디자인되어 있어요.</div>
+      </details>
+      <details>
+        <summary data-i18n="q3">데이터가 안전한가요?</summary>
+        <div class="ans" data-i18n="a3">모든 데이터는 사용자의 기기 안에만 저장됩니다. 외부 서버에 전송되거나 제3자와 공유되지 않습니다.</div>
+      </details>
+      <details>
+        <summary data-i18n="q4">기록을 옮기거나 백업할 수 있나요?</summary>
+        <div class="ans" data-i18n="a4">설정에서 JSON 형태로 내보내기·불러오기를 통해 기기 간 이전 또는 백업이 가능합니다.</div>
+      </details>
+      <details>
+        <summary data-i18n="q5">버그를 발견했어요. 어디에 알리면 되나요?</summary>
+        <div class="ans" data-i18n="a5">아래 문의 이메일(todaklife@gmail.com)로 보내주세요. 빠르게 확인하고 답변 드리겠습니다.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- ===== Contact ===== -->
+<section class="block" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <h3 data-i18n="contactTitle">문의 · 피드백</h3>
+      <p data-i18n="contactLead">앱에 대한 의견, 버그 제보, 기능 제안 등 무엇이든 환영해요. 정성껏 답해 드릴게요.</p>
+      <a class="mail-btn" href="mailto:todaklife@gmail.com?subject=%5B%ED%86%A0%EB%8B%A5%20%EC%96%B4%ED%95%AD%20%EC%9D%BC%EA%B8%B0%5D%20%EB%AC%B8%EC%9D%98">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+        todaklife@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="container row">
+    <div>
+      © <span id="year">2026</span> Todak · <span data-i18n="footerNote">Made with care for your fish and feelings.</span>
+    </div>
+    <div class="links">
+      <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener" data-i18n="appStore">App Store</a>
+      <a href="mailto:todaklife@gmail.com" data-i18n="contact">문의</a>
+      <a href="#privacy" data-i18n="privacy">개인정보</a>
+      <a href="#faq" data-i18n="faqShort">FAQ</a>
+    </div>
+  </div>
+</footer>
 <script>
-/* ===== Apple system languages (Chinese excluded) ===== */
 const LANGUAGES = [
   { code:"ar", name:"Arabic", native:"العربية", flag:"🇸🇦", dir:"rtl" },
   { code:"ca", name:"Catalan", native:"Català", flag:"🇪🇸" },
@@ -567,341 +622,156 @@ const LANGUAGES = [
   { code:"vi", name:"Vietnamese", native:"Tiếng Việt", flag:"🇻🇳" }
 ];
 const I18N = {
-  en: { appTitle:"Todak Diary", home:"Today", entries:"Entries", settings:"Settings",
-        heroSub:"Capture a small moment with your fish.",
-        moodTitle:"Mood", noteTitle:"Note", notePlaceholder:"A short note about your fish, water, or mood...",
-        moodOkay:"Okay", moodSad:"Sad", moodAngry:"Angry", moodTired:"Tired", moodAnxious:"Anxious", moodOther:"Other",
-        save:"Save", general:"General", language:"Language", appearance:"Appearance",
-        auto:"Automatic", light:"Light", dark:"Dark",
-        dataSection:"Data", clearAll:"Erase all entries", aboutSection:"About", version:"Version",
-        done:"Done", search:"Search", saved:"Saved",
-        confirmClear:"Erase all entries? This cannot be undone.",
-        empty:"No entries yet. Save your first moment.",
-        streakTitle:"Streak", days:"days", streakSub:"Keep your daily diary alive.",
-        weekTitle:"This week",
-        careTitle:"Daily care", reset:"Reset",
-        careFeed:"Fed the fish", careWater:"Checked water quality", careLight:"Turned on the light",
-        careClean:"Cleaned debris", careGreet:"Said hi to the fish",
-        exportData:"Export entries (JSON)", importData:"Import entries (JSON)",
-        importOk:"Imported", importFail:"Could not read that file",
-        installHint:"Add to Home Screen via Safari Share menu" },
-  ko: { appTitle:"토닥 어항 일기", home:"오늘", entries:"기록", settings:"설정",
-        heroSub:"물고기와의 작은 순간을 남겨보세요.",
-        moodTitle:"기분", noteTitle:"메모", notePlaceholder:"물고기·수질·기분에 대한 짧은 메모…",
-        moodOkay:"괜찮음", moodSad:"슬픔", moodAngry:"분노", moodTired:"지침", moodAnxious:"불안", moodOther:"기타",
-        save:"저장", general:"일반", language:"언어", appearance:"화면 모드",
-        auto:"자동", light:"라이트", dark:"다크",
-        dataSection:"데이터", clearAll:"모든 기록 삭제", aboutSection:"정보", version:"버전",
-        done:"완료", search:"검색", saved:"저장됨",
-        confirmClear:"모든 기록을 삭제할까요? 되돌릴 수 없습니다.",
-        empty:"아직 기록이 없어요. 첫 순간을 저장해 보세요.",
-        streakTitle:"연속 기록", days:"일째", streakSub:"매일의 일기를 이어가 보세요.",
-        weekTitle:"이번 주",
-        careTitle:"오늘의 어항 케어", reset:"초기화",
-        careFeed:"먹이 주기", careWater:"수질 확인", careLight:"조명 켜기",
-        careClean:"이물질 청소", careGreet:"물고기에게 인사하기",
-        exportData:"기록 내보내기 (JSON)", importData:"기록 불러오기 (JSON)",
-        importOk:"불러왔어요", importFail:"파일을 읽을 수 없어요",
-        installHint:"Safari 공유 메뉴에서 홈 화면에 추가" },
-  ja: { appTitle:"トダック日記", home:"今日", entries:"記録", settings:"設定",
-        heroSub:"魚との小さな瞬間を残しましょう。",
-        moodTitle:"気分", noteTitle:"メモ", notePlaceholder:"魚・水質・気分の短いメモ…",
-        moodOkay:"穏やか", moodSad:"悲しい", moodAngry:"怒り", moodTired:"疲れ", moodAnxious:"不安", moodOther:"その他",
-        save:"保存", general:"一般", language:"言語", appearance:"外観",
-        auto:"自動", light:"ライト", dark:"ダーク",
-        dataSection:"データ", clearAll:"すべての記録を消去", aboutSection:"情報", version:"バージョン",
-        done:"完了", search:"検索", saved:"保存しました",
-        confirmClear:"すべての記録を消去しますか？取り消せません。",
-        empty:"まだ記録がありません。最初の瞬間を保存しましょう。",
-        streakTitle:"連続記録", days:"日", streakSub:"毎日の日記を続けましょう。",
-        weekTitle:"今週",
-        careTitle:"今日のケア", reset:"リセット",
-        careFeed:"えさやり", careWater:"水質チェック", careLight:"ライトオン",
-        careClean:"汚れ掃除", careGreet:"魚にあいさつ",
-        exportData:"記録を書き出す (JSON)", importData:"記録を読み込む (JSON)",
-        importOk:"読み込みました", importFail:"ファイルを読めませんでした",
-        installHint:"Safari の共有メニューからホーム画面に追加" }
+  ko: {
+    appTitle:"토닥 어항 일기", downloadCTA:"앱 다운로드", downloadOn:"App Store에서",
+    appStore:"다운로드", learnMore:"기능 살펴보기 →",
+    heroEyebrow:"감정 일기 · 어항 컨셉",
+    heroTitle:"매일의 마음을<br/>작은 어항에 토닥토닥.",
+    heroSub:"기분을 선택하고 짧은 메모를 남기면, 당신만의 어항 속 물고기가 함께 자라요. Apple 디자인을 따른 부드럽고 따뜻한 감정 일기 앱.",
+    featuresEyebrow:"기능", featuresTitle:"하루의 감정을 가장 부드럽게.",
+    featuresLead:"복잡한 입력 없이, 한 번의 탭으로 오늘의 마음을 기록해요. 작은 어항에서 매일의 나를 돌보는 경험.",
+    f1Title:"6가지 감정 무드", f1Desc:"괜찮음·슬픔·분노·지침·불안·기타 — 단순한 무드 선택으로 마음 정리.",
+    f2Title:"짧은 메모", f2Desc:"길게 쓰지 않아도 괜찮아요. 한 줄의 토닥이 오늘을 기록합니다.",
+    f3Title:"주간 감정 변화", f3Desc:"최근 일주일의 기분을 한눈에. 패턴을 발견하고 스스로를 이해해요.",
+    f4Title:"연속 기록 스트릭", f4Desc:"매일 이어가는 작은 습관. 어항을 가꾸듯 마음을 가꿔요.",
+    f5Title:"기기 내 저장", f5Desc:"감정 데이터는 기기 안에만. 서버로 전송되지 않아요.",
+    f6Title:"다국어 지원", f6Desc:"한국어·영어·일본어 등 다양한 언어로 사용 가능.",
+    show1Eyebrow:"감정 기록", show1Title:"선택하고, 한 줄 남기고, 끝.",
+    show1Lead:"하루를 정리하는 데 1분이면 충분해요. 무드 버튼을 누르고 짧은 메모를 적으면, 어항 속 물고기가 오늘의 당신을 기억해 줍니다.",
+    getApp:"앱에서 시작하기",
+    mockToday:"오늘의 어항", mockSub:"2026년 5월 20일 수요일",
+    mockStreak:"7일째", mockMoodOk:"괜찮음",
+    show2Eyebrow:"감정 통계", show2Title:"나를 더 잘 알게 되는 시간.",
+    show2Lead:"주간 차트와 무드 분포로 마음의 흐름을 살펴볼 수 있어요. 어떤 요일에 지치는지, 어떤 시간에 평온한지 — 데이터가 알려주는 나의 패턴.",
+    mockWeek:"이번 주", mockWeekSub:"감정의 흐름",
+    privEyebrow:"개인정보", privTitle:"당신의 마음, 당신만의 어항에.",
+    privLead:"토닥 어항 일기는 사용자의 개인정보를 수집하지 않습니다. 모든 기록은 사용자의 기기 안에서만 안전하게 보관돼요.",
+    priv1Title:"기기 내 저장", priv1Desc:"감정·메모 데이터는 기기 외부로 전송되지 않습니다.",
+    priv2Title:"수집·추적 없음", priv2Desc:"계정 가입이 없고, 광고·분석을 위한 추적도 하지 않아요.",
+    priv3Title:"언제든 내보내기", priv3Desc:"기록은 JSON으로 백업·이전 가능. 삭제도 언제든 한 번에.",
+    faqEyebrow:"FAQ", faqTitle:"자주 묻는 질문",
+    q1:"무료인가요?", a1:"네, 토닥 어항 일기는 무료로 다운로드해 사용하실 수 있습니다. 추후 일부 부가 기능이 유료로 제공될 수 있어요.",
+    q2:"어떤 기기에서 쓸 수 있나요?", a2:"iOS 16 이상의 iPhone에서 사용할 수 있습니다. 최신 iOS에 맞춰 디자인되어 있어요.",
+    q3:"데이터가 안전한가요?", a3:"모든 데이터는 사용자의 기기 안에만 저장됩니다. 외부 서버에 전송되거나 제3자와 공유되지 않습니다.",
+    q4:"기록을 옮기거나 백업할 수 있나요?", a4:"설정에서 JSON 형태로 내보내기·불러오기를 통해 기기 간 이전 또는 백업이 가능합니다.",
+    q5:"버그를 발견했어요. 어디에 알리면 되나요?", a5:"아래 문의 이메일(todaklife@gmail.com)로 보내주세요. 빠르게 확인하고 답변 드리겠습니다.",
+    contactTitle:"문의 · 피드백",
+    contactLead:"앱에 대한 의견, 버그 제보, 기능 제안 등 무엇이든 환영해요. 정성껏 답해 드릴게요.",
+    footerNote:"물고기와 당신의 마음을 위해 만들었습니다.",
+    contact:"문의", privacy:"개인정보", faqShort:"FAQ"
+  }
 };
-
-/* ===== Stores ===== */
-const ENTRY_KEY = "todak.entries.v4";
-const LANG_KEY  = "todak.lang.v4";
-const THEME_KEY = "todak.theme.v4";
-const CARE_KEY  = "todak.care.v4";
-const MOOD_COLORS = { okay:"var(--mood-okay)", sad:"var(--mood-sad)", angry:"var(--mood-angry)", tired:"var(--mood-tired)", anxious:"var(--mood-anxious)", other:"var(--mood-other)" };
-const MOOD_EMOJI  = { okay:"🙂", sad:"😢", angry:"😡", tired:"😴", anxious:"😟", other:"🐟" };
-const CARE_ITEMS = ["careFeed","careWater","careLight","careClean","careGreet"];
-function loadEntries(){ try { return JSON.parse(localStorage.getItem(ENTRY_KEY) || "[]"); } catch(e){ return []; } }
-function saveEntries(list){ localStorage.setItem(ENTRY_KEY, JSON.stringify(list)); }
-function todayStr(){ const d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
-function loadCare(){
-  try { const all = JSON.parse(localStorage.getItem(CARE_KEY) || "{}"); return all[todayStr()] || {}; }
-  catch(e){ return {}; }
-}
-function saveCare(state){
-  let all = {};
-  try { all = JSON.parse(localStorage.getItem(CARE_KEY) || "{}"); } catch(e){}
-  all[todayStr()] = state;
-  localStorage.setItem(CARE_KEY, JSON.stringify(all));
-}
-/* ===== Theme ===== */
-function getTheme(){ return localStorage.getItem(THEME_KEY) || "auto"; }
-function setTheme(t){
-  localStorage.setItem(THEME_KEY, t);
-  document.documentElement.setAttribute("data-theme", t);
-  document.querySelectorAll("#themeSeg button").forEach(b => b.classList.toggle("active", b.dataset.themeVal === t));
-}
-/* ===== Language ===== */
+I18N.en = {
+  appTitle:"Todak Aquarium Diary", downloadCTA:"Download", downloadOn:"Download on the",
+  appStore:"App Store", learnMore:"See features →",
+  heroEyebrow:"Emotion diary · Aquarium concept",
+  heroTitle:"Pat your day,<br/>into a tiny aquarium.",
+  heroSub:"Pick a mood and leave a short note — and the fish in your aquarium grows with you. A soft, warm emotion diary in Apple's design language.",
+  featuresEyebrow:"FEATURES", featuresTitle:"The softest way to log your day.",
+  featuresLead:"No complex inputs. One tap to record today's feeling. A tiny aquarium that helps you care for yourself, daily.",
+  f1Title:"6 mood presets", f1Desc:"Okay, Sad, Angry, Tired, Anxious, Other — sort your heart with one tap.",
+  f2Title:"Short notes", f2Desc:"You don't have to write a lot. One line of comfort captures the day.",
+  f3Title:"Weekly trends", f3Desc:"See last week's moods at a glance. Find patterns, understand yourself.",
+  f4Title:"Streak", f4Desc:"A small daily habit. Tend your heart like your aquarium.",
+  f5Title:"On-device", f5Desc:"Your data stays on your device. Nothing is sent to a server.",
+  f6Title:"Multilingual", f6Desc:"Use in many languages, including Korean, English, and Japanese.",
+  show1Eyebrow:"Logging", show1Title:"Pick, write a line, done.",
+  show1Lead:"It takes about a minute. Tap a mood, write a short note, and the fish in the bowl remembers your day.",
+  getApp:"Start in the app",
+  mockToday:"Today's bowl", mockSub:"Wed, May 20, 2026",
+  mockStreak:"7 day streak", mockMoodOk:"Okay",
+  show2Eyebrow:"Insights", show2Title:"Time to know yourself better.",
+  show2Lead:"Look back at your week with charts and mood distribution. Which days drain you, when you're calm — patterns from your own data.",
+  mockWeek:"This week", mockWeekSub:"Flow of feelings",
+  privEyebrow:"PRIVACY", privTitle:"Your feelings stay in your aquarium.",
+  privLead:"Todak Aquarium Diary does not collect personal data. All entries are kept safely on your own device.",
+  priv1Title:"On-device", priv1Desc:"Mood and notes never leave your device.",
+  priv2Title:"No tracking", priv2Desc:"No account, no analytics, no ad trackers.",
+  priv3Title:"Always exportable", priv3Desc:"Back up or migrate as JSON anytime. Delete in one tap.",
+  faqEyebrow:"FAQ", faqTitle:"Frequently asked",
+  q1:"Is it free?", a1:"Yes, Todak Aquarium Diary is free to download. Some optional features may be paid in the future.",
+  q2:"Which devices?", a2:"iPhone on iOS 16 or later. Designed for the latest iOS.",
+  q3:"Is my data safe?", a3:"All data is stored only on your device. Nothing is sent to external servers or shared with third parties.",
+  q4:"Can I back up or move my entries?", a4:"Yes — export and import as JSON from Settings to move or back up across devices.",
+  q5:"I found a bug. How do I report it?", a5:"Please email todaklife@gmail.com. We'll check and respond quickly.",
+  contactTitle:"Contact · Feedback",
+  contactLead:"Thoughts, bug reports, feature ideas — all welcome. We'll reply with care.",
+  footerNote:"Made with care for your fish and feelings.",
+  contact:"Contact", privacy:"Privacy", faqShort:"FAQ"
+};
+I18N.ja = {
+  appTitle:"トダック水槽日記", downloadCTA:"ダウンロード", downloadOn:"App Store で",
+  appStore:"ダウンロード", learnMore:"機能を見る →",
+  heroEyebrow:"感情日記 · 水槽コンセプト",
+  heroTitle:"毎日の気持ちを、<br/>小さな水槽にそっと。",
+  heroSub:"気分を選んで短いメモを残すだけで、あなただけの水槽の魚が一緒に育ちます。Apple のデザインに沿った、やさしい感情日記アプリ。",
+  featuresEyebrow:"機能", featuresTitle:"いちばんやわらかい記録の方法。",
+  featuresLead:"複雑な入力はいりません。ひとタップで今日の気持ちを残せます。",
+  f1Title:"6つのムード", f1Desc:"穏やか・悲しい・怒り・疲れ・不安・その他。",
+  f2Title:"短いメモ", f2Desc:"一行で十分。今日を残しましょう。",
+  f3Title:"週間トレンド", f3Desc:"今週の気分が一目で。自分のパターンを発見。",
+  f4Title:"連続記録", f4Desc:"小さな毎日の習慣。水槽を育てるように心も。",
+  f5Title:"端末内保存", f5Desc:"サーバーには送信されません。",
+  f6Title:"多言語対応", f6Desc:"日本語・韓国語・英語など多数。",
+  show1Eyebrow:"記録", show1Title:"選んで、一行、終わり。",
+  show1Lead:"1分で今日を整理。",
+  getApp:"アプリで始める",
+  mockToday:"今日の水槽", mockSub:"2026年5月20日 水曜日",
+  mockStreak:"7日連続", mockMoodOk:"穏やか",
+  show2Eyebrow:"統計", show2Title:"自分をもっと知る時間。",
+  show2Lead:"週間チャートで気分の流れを確認。",
+  mockWeek:"今週", mockWeekSub:"気持ちの流れ",
+  privEyebrow:"プライバシー", privTitle:"あなたの気持ちは、あなたの水槽の中に。",
+  privLead:"個人情報は収集しません。すべて端末内に安全に保存されます。",
+  priv1Title:"端末内保存", priv1Desc:"気分・メモは外部に送信されません。",
+  priv2Title:"追跡なし", priv2Desc:"アカウント・分析・広告トラッキングなし。",
+  priv3Title:"いつでも書き出し", priv3Desc:"JSON でバックアップ・移行可能。",
+  faqEyebrow:"FAQ", faqTitle:"よくある質問",
+  q1:"無料ですか？", a1:"はい、無料でダウンロードできます。一部の機能は今後有料になる場合があります。",
+  q2:"対応機種は？", a2:"iOS 16 以降の iPhone です。",
+  q3:"データは安全ですか？", a3:"すべてのデータは端末内にのみ保存されます。",
+  q4:"バックアップできますか？", a4:"設定から JSON で書き出し・読み込みが可能です。",
+  q5:"バグを見つけました。", a5:"todaklife@gmail.com までご連絡ください。",
+  contactTitle:"お問い合わせ · フィードバック",
+  contactLead:"ご意見・不具合・機能のご提案、なんでも歓迎です。",
+  footerNote:"魚とあなたの気持ちのために作りました。",
+  contact:"お問い合わせ", privacy:"プライバシー", faqShort:"FAQ"
+};
+const LANG_KEY = "todak.site.lang";
 function getLang(){
   const saved = localStorage.getItem(LANG_KEY);
   if (saved) return saved;
-  const nav = (navigator.language || "en");
+  const nav = (navigator.language || "ko");
   if (nav.toLowerCase().startsWith("zh")) return "en";
   const exact = LANGUAGES.find(l => l.code.toLowerCase() === nav.toLowerCase());
   if (exact) return exact.code;
   const base = LANGUAGES.find(l => l.code.toLowerCase() === nav.toLowerCase().split("-")[0]);
-  return base ? base.code : "en";
+  return base ? base.code : "ko";
 }
-function dict(code){ return I18N[code] || I18N[(code||"en").split("-")[0]] || I18N.en; }
-function setLang(code){ localStorage.setItem(LANG_KEY, code); applyLang(code); }
+function dict(code){ return I18N[code] || I18N[(code||"ko").split("-")[0]] || I18N.en; }
 function applyLang(code){
-  const meta = LANGUAGES.find(l => l.code === code) || LANGUAGES.find(l => l.code === "en");
+  const meta = LANGUAGES.find(l => l.code === code) || { code:"ko", dir:"ltr" };
   document.documentElement.setAttribute("lang", code);
   document.documentElement.setAttribute("dir", meta.dir || "ltr");
   const d = dict(code);
-  document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.getAttribute("data-i18n"); if (d[k]) el.textContent = d[k]; });
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => { const k = el.getAttribute("data-i18n-placeholder"); if (d[k]) el.setAttribute("placeholder", d[k]); });
-  document.title = d.appTitle;
-  const cl = document.getElementById("currentLangLabel"); if (cl) cl.textContent = meta.native;
-  renderEntries();
-  renderTodayDate();
-  renderCare();
-  renderStreak();
-  renderWeekChart();
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const k = el.getAttribute("data-i18n");
+    if (d[k] !== undefined) el.innerHTML = d[k];
+  });
+  document.title = (d.appTitle || "Todak Aquarium Diary") + " · App";
 }
-function renderTodayDate(){
-  const code = getLang();
-  try { document.getElementById("todayDate").textContent = new Intl.DateTimeFormat(code, { weekday:"long", month:"long", day:"numeric" }).format(new Date()); }
-  catch(e){ document.getElementById("todayDate").textContent = new Date().toDateString(); }
-}
-function toast(msg){
-  const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show");
-  clearTimeout(window.__tm); window.__tm = setTimeout(()=> t.classList.remove("show"), 1600);
-}
-
-/* ===== Views & sheet ===== */
-function switchView(name){
-  document.querySelectorAll(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + name));
-  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t.dataset.view === name));
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  if (name === "home") { renderStreak(); renderWeekChart(); renderCare(); }
-}
-function openLangSheet(){ buildLangList(); document.getElementById("sheetMask").classList.add("open"); document.getElementById("langSheet").classList.add("open"); }
-function closeLangSheet(){ document.getElementById("sheetMask").classList.remove("open"); document.getElementById("langSheet").classList.remove("open"); }
-function buildLangList(filter){
-  const list = document.getElementById("langList");
+function setLang(code){ localStorage.setItem(LANG_KEY, code); applyLang(code); }
+function buildLangSelect(){
+  const sel = document.getElementById("langSelect");
+  if (!sel) return;
   const cur = getLang();
-  const f = (filter || "").trim().toLowerCase();
-  const items = LANGUAGES.filter(l => !f || l.name.toLowerCase().includes(f) || l.native.toLowerCase().includes(f) || l.code.toLowerCase().includes(f));
-  list.innerHTML = items.map(l => `
-    <div class="lang ${l.code === cur ? "selected" : ""}" data-code="${l.code}">
-      <div class="flag">${l.flag}</div>
-      <div><div class="name">${l.name}</div><div class="native">${l.native}</div></div>
-      <div style="flex:1"></div>
-      <div class="check-mark">✓</div>
-    </div>`).join("");
-  list.querySelectorAll(".lang").forEach(el => {
-    el.addEventListener("click", () => {
-      const code = el.dataset.code;
-      setLang(code);
-      buildLangList(document.getElementById("langSearch").value);
-      toast(dict(code).saved || "Saved");
-      setTimeout(closeLangSheet, 250);
-    });
-  });
+  sel.innerHTML = LANGUAGES.map(l => `<option value="${l.code}" ${l.code===cur?"selected":""}>${l.flag} ${l.native}</option>`).join("");
+  sel.addEventListener("change", e => setLang(e.target.value));
 }
-/* ===== Care checklist ===== */
-function renderCare(){
-  const el = document.getElementById("careList");
-  if (!el) return;
-  const state = loadCare();
-  const d = dict(getLang());
-  el.innerHTML = CARE_ITEMS.map(k => `
-    <div class="care-row ${state[k] ? "done" : ""}" data-care="${k}">
-      <div class="check">✓</div>
-      <div class="name">${d[k] || k}</div>
-    </div>`).join("");
-  el.querySelectorAll(".care-row").forEach(row => {
-    row.addEventListener("click", () => {
-      const k = row.dataset.care;
-      const s = loadCare();
-      s[k] = !s[k];
-      saveCare(s);
-      row.classList.toggle("done", s[k]);
-    });
-  });
-}
-/* ===== Streak ===== */
-function renderStreak(){
-  const list = loadEntries();
-  if (list.length === 0){ document.getElementById("streakNum").textContent = "0"; return; }
-  const days = new Set(list.map(e => {
-    const d = new Date(e.ts);
-    return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-  }));
-  let streak = 0;
-  const cur = new Date();
-  while (true){
-    const key = cur.getFullYear()+"-"+(cur.getMonth()+1)+"-"+cur.getDate();
-    if (days.has(key)) { streak++; cur.setDate(cur.getDate() - 1); }
-    else break;
-  }
-  document.getElementById("streakNum").textContent = streak;
-}
-/* ===== Weekly chart ===== */
-function renderWeekChart(){
-  const list = loadEntries();
-  const bars = document.getElementById("weekBars");
-  const labels = document.getElementById("weekLabels");
-  if (!bars || !labels) return;
-  const code = getLang();
-  const dayNames = [];
-  const counts = [];
-  const today = new Date(); today.setHours(0,0,0,0);
-  for (let i = 6; i >= 0; i--){
-    const d = new Date(today); d.setDate(today.getDate() - i);
-    const key = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
-    let c = 0;
-    list.forEach(e => {
-      const ed = new Date(e.ts);
-      if (ed.getFullYear()+"-"+(ed.getMonth()+1)+"-"+ed.getDate() === key) c++;
-    });
-    counts.push(c);
-    try { dayNames.push(new Intl.DateTimeFormat(code, { weekday:"short" }).format(d)); }
-    catch(e){ dayNames.push(d.toDateString().slice(0,3)); }
-  }
-  const max = Math.max(1, ...counts);
-  bars.innerHTML = counts.map(c => {
-    const h = c === 0 ? 6 : Math.max(8, Math.round((c / max) * 100));
-    return `<div class="bar ${c===0?"empty":""}" style="height:${h}px"></div>`;
-  }).join("");
-  labels.innerHTML = dayNames.map(n => `<span>${n}</span>`).join("");
-}
-
-/* ===== Entries ===== */
-let selectedMoodKey = null;
-function renderEntries(){
-  const list = loadEntries();
-  const el = document.getElementById("entryList"); if (!el) return;
-  const d = dict(getLang());
-  if (list.length === 0){ el.innerHTML = `<div class="empty">${d.empty}</div>`; return; }
-  const code = getLang();
-  const fmt = new Intl.DateTimeFormat(code, { month:"short", day:"numeric", hour:"numeric", minute:"2-digit" });
-  el.innerHTML = `<div class="list entries">` + list.map((e, i) => {
-    const key = e.key || "okay";
-    const color = MOOD_COLORS[key] || "var(--mood-other)";
-    const emoji = e.mood || MOOD_EMOJI[key] || "🙂";
-    const safe = (e.note || "").replace(/</g,"&lt;").slice(0,80) || "—";
-    return `<div class="row">
-      <div class="entry-mood" style="background:${color}">${emoji}</div>
-      <div class="label"><div class="ttl">${safe}</div><div class="sub">${fmt.format(new Date(e.ts))}</div></div>
-      <button class="delete-btn" data-del="${i}" aria-label="Delete">✕</button>
-    </div>`;
-  }).join("") + `</div>`;
-  el.querySelectorAll("[data-del]").forEach(b => {
-    b.addEventListener("click", () => {
-      const idx = parseInt(b.dataset.del, 10);
-      const arr = loadEntries(); arr.splice(idx, 1); saveEntries(arr);
-      renderEntries(); renderStreak(); renderWeekChart();
-    });
-  });
-}
-function bindHome(){
-  document.querySelectorAll(".mood").forEach(m => {
-    m.addEventListener("click", () => {
-      document.querySelectorAll(".mood").forEach(x => x.classList.remove("selected"));
-      m.classList.add("selected");
-      selectedMoodKey = m.dataset.key;
-    });
-  });
-  document.getElementById("saveEntryBtn").addEventListener("click", () => {
-    const note = document.getElementById("noteInput").value.trim();
-    if (!selectedMoodKey && !note) return;
-    const key = selectedMoodKey || "okay";
-    const arr = loadEntries();
-    arr.unshift({ key, mood: MOOD_EMOJI[key], note, ts: Date.now() });
-    saveEntries(arr);
-    document.getElementById("noteInput").value = "";
-    document.querySelectorAll(".mood").forEach(x => x.classList.remove("selected"));
-    selectedMoodKey = null;
-    toast(dict(getLang()).saved);
-    renderEntries(); renderStreak(); renderWeekChart();
-  });
-  document.getElementById("careResetBtn").addEventListener("click", () => {
-    saveCare({}); renderCare(); toast(dict(getLang()).saved);
-  });
-}
-/* ===== Export / Import ===== */
-function exportEntries(){
-  const data = { version: 1, exportedAt: new Date().toISOString(), entries: loadEntries() };
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url; a.download = "todak-aquarium-diary-" + todayStr() + ".json";
-  document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(()=>URL.revokeObjectURL(url), 1000);
-  toast(dict(getLang()).saved);
-}
-function importEntries(file){
-  const d = dict(getLang());
-  const reader = new FileReader();
-  reader.onload = (ev) => {
-    try {
-      const obj = JSON.parse(ev.target.result);
-      const arr = Array.isArray(obj) ? obj : (Array.isArray(obj.entries) ? obj.entries : null);
-      if (!arr) throw new Error("bad");
-      const cleaned = arr.filter(x => x && typeof x === "object" && x.ts).map(x => ({
-        key: x.key || "okay",
-        mood: x.mood || MOOD_EMOJI[x.key] || "🙂",
-        note: typeof x.note === "string" ? x.note : "",
-        ts: Number(x.ts) || Date.now()
-      }));
-      const merged = [...cleaned, ...loadEntries()];
-      // de-duplicate by ts+note
-      const seen = new Set();
-      const final = merged.filter(e => { const k = e.ts + "|" + e.note; if (seen.has(k)) return false; seen.add(k); return true; })
-        .sort((a,b) => b.ts - a.ts);
-      saveEntries(final); renderEntries(); renderStreak(); renderWeekChart();
-      toast(d.importOk);
-    } catch(err){ toast(d.importFail); }
-  };
-  reader.onerror = () => toast(d.importFail);
-  reader.readAsText(file);
-}
-
-/* ===== Init ===== */
 document.addEventListener("DOMContentLoaded", () => {
-  setTheme(getTheme());
-  document.querySelectorAll("#themeSeg button").forEach(b => {
-    b.addEventListener("click", () => { setTheme(b.dataset.themeVal); toast(dict(getLang()).saved); });
-  });
-  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => switchView(t.dataset.view)));
-  document.getElementById("quickSettings").addEventListener("click", () => switchView("settings"));
-  document.getElementById("openLangBtn").addEventListener("click", openLangSheet);
-  document.getElementById("closeLangBtn").addEventListener("click", closeLangSheet);
-  document.getElementById("sheetMask").addEventListener("click", closeLangSheet);
-  document.getElementById("langSearch").addEventListener("input", (e) => buildLangList(e.target.value));
-  document.getElementById("clearDataBtn").addEventListener("click", () => {
-    const d = dict(getLang());
-    if (confirm(d.confirmClear)) { saveEntries([]); renderEntries(); renderStreak(); renderWeekChart(); toast(d.saved); }
-  });
-  document.getElementById("exportBtn").addEventListener("click", exportEntries);
-  document.getElementById("importBtn").addEventListener("click", () => document.getElementById("importFile").click());
-  document.getElementById("importFile").addEventListener("change", (e) => {
-    const f = e.target.files && e.target.files[0]; if (f) importEntries(f); e.target.value = "";
-  });
-  bindHome();
+  buildLangSelect();
   applyLang(getLang());
+  document.getElementById("year").textContent = new Date().getFullYear();
 });
 </script>
 </body>
