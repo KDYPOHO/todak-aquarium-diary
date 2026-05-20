@@ -62,8 +62,12 @@
   @media (prefers-color-scheme: dark) {
     .logo { color: var(--primary-light); }
   }
-  .nav a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-size: 14px; }
-  .nav a:hover { color: var(--primary); }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 16px; font-size: 14px; }
+  .nav-links a:hover { color: var(--primary); }
+  .ig-icon { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; margin-left: 12px; background: var(--card-bg); border: 1px solid var(--card-border); transition: transform .15s ease; }
+  .ig-icon:hover { transform: translateY(-1px); }
+  .ig-icon svg { width: 18px; height: 18px; fill: var(--primary); }
 
   .hero { padding: 80px 0 60px; text-align: center; }
   .hero h1 {
@@ -183,6 +187,27 @@
   .security-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
   .security-item p { font-size: 13px; color: var(--text-muted); }
 
+  .support-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .support-grid a {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .support-grid a:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .support-grid .em { font-size: 24px; }
+  .support-grid .label { font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 2px; }
+  .support-grid .title { font-size: 15px; font-weight: 600; }
+
   footer {
     padding: 40px 0 30px;
     border-top: 1px solid var(--card-border);
@@ -194,12 +219,13 @@
   footer a { color: var(--primary); text-decoration: none; margin: 0 8px; }
   footer a:hover { text-decoration: underline; }
   .footer-links { margin-bottom: 12px; }
+  .footer-social { margin: 10px 0 14px; }
 
   @media (max-width: 600px) {
     .hero { padding: 50px 0 40px; }
     section { padding: 50px 0; }
     .security { padding: 32px 20px; margin: 0 12px; }
-    .nav a { display: none; }
+    .nav-links a:not(.ig-icon) { display: none; }
   }
 </style>
 </head>
@@ -207,11 +233,15 @@
   <header>
     <div class="container nav">
       <div class="logo"><span class="logo-icon"></span> 토닥 어항 일기</div>
-      <nav>
+      <div class="nav-links">
         <a href="#features">기능</a>
         <a href="#security">보안</a>
-        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899">다운로드</a>
-      </nav>
+        <a href="#support">고객 센터</a>
+        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener">다운로드</a>
+        <a class="ig-icon" href="https://www.instagram.com/todaklife" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.311-3.608.975-.975 2.242-1.249 3.608-1.311C8.416 2.212 8.8 2.2 12 2.2zm0 1.8c-3.148 0-3.516.012-4.756.068-1.018.046-1.572.215-1.94.358-.487.19-.835.416-1.2.78-.364.366-.59.714-.78 1.2-.143.368-.312.922-.358 1.94C2.912 8.484 2.9 8.852 2.9 12s.012 3.516.068 4.756c.046 1.018.215 1.572.358 1.94.19.487.416.835.78 1.2.366.364.714.59 1.2.78.368.143.922.312 1.94.358 1.24.056 1.608.068 4.756.068s3.516-.012 4.756-.068c1.018-.046 1.572-.215 1.94-.358.487-.19.835-.416 1.2-.78.364-.366.59-.714.78-1.2.143-.368.312-.922.358-1.94.056-1.24.068-1.608.068-4.756s-.012-3.516-.068-4.756c-.046-1.018-.215-1.572-.358-1.94a3.231 3.231 0 0 0-.78-1.2 3.231 3.231 0 0 0-1.2-.78c-.368-.143-.922-.312-1.94-.358C15.516 4.012 15.148 4 12 4zm0 3.06A4.94 4.94 0 1 1 12 16.94 4.94 4.94 0 0 1 12 7.06zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28zm5.14-2.46a1.18 1.18 0 1 1 0 2.36 1.18 1.18 0 0 1 0-2.36z"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -221,7 +251,7 @@
       <h1>오늘의 감정,<br/>어항 속에서 자라나다</h1>
       <p class="tagline">하루의 감정을 짧고 꾸준히 기록하면, 어항 속 물고기가 함께 자라납니다.<br/>감정 선택과 한 줄 메모만으로 1분 안에 기록을 완성하세요.</p>
       <div class="cta-group">
-        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" class="btn btn-primary">App Store에서 다운로드</a>
+        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener" class="btn btn-primary">App Store에서 다운로드</a>
         <a href="#features" class="btn btn-secondary">기능 살펴보기</a>
       </div>
       <div class="aquarium-visual" aria-hidden="true">
@@ -274,13 +304,43 @@
     </div>
   </section>
 
+  <section id="support">
+    <div class="container">
+      <div class="section-title">
+        <h2>고객 센터 & 약관</h2>
+        <p>문의와 정책 안내는 아래에서 확인해 주세요</p>
+      </div>
+      <div class="support-grid">
+        <a href="https://eager-meter-1f3.notion.site/354fc1e2fd52802da186eb4fb5bb9fd0" target="_blank" rel="noopener">
+          <span class="em">💬</span>
+          <span><span class="label">Customer Support</span><span class="title">고객 센터</span></span>
+        </a>
+        <a href="https://eager-meter-1f3.notion.site/353fc1e2fd52808ab5e7e3c25c00bcc6" target="_blank" rel="noopener">
+          <span class="em">🛡️</span>
+          <span><span class="label">Privacy Policy</span><span class="title">개인정보 처리방침</span></span>
+        </a>
+        <a href="https://eager-meter-1f3.notion.site/362fc1e2fd5280abba3ee816f511e3bc" target="_blank" rel="noopener">
+          <span class="em">📜</span>
+          <span><span class="label">Terms of Service</span><span class="title">이용약관</span></span>
+        </a>
+        <a href="https://www.instagram.com/todaklife" target="_blank" rel="noopener">
+          <span class="em">📷</span>
+          <span><span class="label">Instagram</span><span class="title">@todaklife</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
       <div class="footer-links">
-        <a href="#">개인정보처리방침</a> ·
-        <a href="#">이용약관</a> ·
-        <a href="#">고객 센터</a> ·
-        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899">App Store</a>
+        <a href="https://eager-meter-1f3.notion.site/353fc1e2fd52808ab5e7e3c25c00bcc6" target="_blank" rel="noopener">개인정보처리방침</a> ·
+        <a href="https://eager-meter-1f3.notion.site/362fc1e2fd5280abba3ee816f511e3bc" target="_blank" rel="noopener">이용약관</a> ·
+        <a href="https://eager-meter-1f3.notion.site/354fc1e2fd52802da186eb4fb5bb9fd0" target="_blank" rel="noopener">고객 센터</a> ·
+        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" target="_blank" rel="noopener">App Store</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/todaklife" target="_blank" rel="noopener">📷 Instagram @todaklife</a>
       </div>
       <div>© 2026 토닥 어항 일기 · Todak Aquarium Diary</div>
       <div style="margin-top:6px; font-size:12px;">iPhone / iPad 지원</div>
