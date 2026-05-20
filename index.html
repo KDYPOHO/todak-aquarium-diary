@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>토닥 어항 일기 (Todak Aquarium Diary)</title>
+<meta name="description" content="하루의 감정을 짧고 꾸준히 기록하면 어항 속 물고기가 자라나는 감정 일기 앱" />
+<style>
+  :root {
+    --bg-1: #e6f2ff;
+    --bg-2: #cfe4ff;
+    --primary: #2b6cb0;
+    --primary-light: #4299e1;
+    --primary-dark: #1a4a80;
+    --accent: #63b3ed;
+    --text: #1a202c;
+    --text-muted: #4a5568;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(66, 153, 225, 0.18);
+    --shadow: 0 10px 30px rgba(43, 108, 176, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-1: #0a1929;
+      --bg-2: #102a43;
+      --primary: #63b3ed;
+      --primary-light: #90cdf4;
+      --primary-dark: #2b6cb0;
+      --accent: #4299e1;
+      --text: #e2e8f0;
+      --text-muted: #a0aec0;
+      --card-bg: rgba(26, 41, 64, 0.7);
+      --card-border: rgba(99, 179, 237, 0.22);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Pretendard', Roboto, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  header {
+    padding: 20px 0;
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.5);
+    border-bottom: 1px solid var(--card-border);
+  }
+  @media (prefers-color-scheme: dark) {
+    header { background: rgba(10, 25, 41, 0.6); }
+  }
+  .nav { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-weight: 700; font-size: 18px; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; }
+  .logo-icon { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-light), var(--primary)); display: inline-block; }
+  @media (prefers-color-scheme: dark) {
+    .logo { color: var(--primary-light); }
+  }
+  .nav a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-size: 14px; }
+  .nav a:hover { color: var(--primary); }
+
+  .hero { padding: 80px 0 60px; text-align: center; }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .hero .sub-title { font-size: 16px; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 0.04em; }
+  .hero .tagline { font-size: clamp(16px, 2vw, 19px); color: var(--text); max-width: 680px; margin: 0 auto 36px; }
+  .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 26px; border-radius: 999px;
+    font-weight: 600; font-size: 15px;
+    text-decoration: none; transition: transform .15s ease, box-shadow .15s ease;
+    border: none; cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(43,108,176,0.25); }
+  .btn-secondary {
+    background: var(--card-bg);
+    color: var(--primary-dark);
+    border: 1px solid var(--card-border);
+  }
+  @media (prefers-color-scheme: dark) {
+    .btn-secondary { color: var(--primary-light); }
+  }
+
+  .aquarium-visual {
+    margin: 50px auto 0;
+    max-width: 360px;
+    aspect-ratio: 16 / 10;
+    background: linear-gradient(180deg, #bee3f8 0%, #4299e1 100%);
+    border-radius: 24px;
+    position: relative;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  @media (prefers-color-scheme: dark) {
+    .aquarium-visual { background: linear-gradient(180deg, #2b6cb0 0%, #1a365d 100%); }
+  }
+  .fish { position: absolute; font-size: 32px; animation: swim 8s ease-in-out infinite; }
+  .fish.f1 { top: 40%; left: 10%; }
+  .fish.f2 { top: 55%; left: 50%; animation-delay: -3s; font-size: 26px; }
+  .fish.f3 { top: 30%; left: 70%; animation-delay: -5s; font-size: 22px; }
+  @keyframes swim {
+    0%, 100% { transform: translateX(0) scaleX(1); }
+    45% { transform: translateX(120px) scaleX(1); }
+    50% { transform: translateX(120px) scaleX(-1); }
+    95% { transform: translateX(0) scaleX(-1); }
+  }
+  .bubble { position: absolute; bottom: -10px; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.6); animation: rise 5s linear infinite; }
+  .bubble.b1 { left: 20%; animation-delay: 0s; }
+  .bubble.b2 { left: 60%; animation-delay: -2s; width: 6px; height: 6px; }
+  .bubble.b3 { left: 80%; animation-delay: -3.5s; width: 10px; height: 10px; }
+  @keyframes rise {
+    0% { bottom: -10px; opacity: 0; }
+    20% { opacity: 1; }
+    100% { bottom: 110%; opacity: 0; }
+  }
+
+  section { padding: 70px 0; }
+  .section-title { text-align: center; margin-bottom: 48px; }
+  .section-title h2 { font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; color: var(--text); margin-bottom: 10px; letter-spacing: -0.01em; }
+  .section-title p { color: var(--text-muted); font-size: 16px; }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 26px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .feature-icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 22px; margin-bottom: 16px;
+  }
+  .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+  .security {
+    background: linear-gradient(135deg, rgba(66,153,225,0.08), rgba(43,108,176,0.08));
+    border-radius: 24px;
+    padding: 48px;
+    margin: 0 24px;
+  }
+  .security-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .security-item { display: flex; gap: 14px; align-items: flex-start; }
+  .security-item .dot {
+    flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--primary); margin-top: 8px;
+  }
+  .security-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+  .security-item p { font-size: 13px; color: var(--text-muted); }
+
+  footer {
+    padding: 40px 0 30px;
+    border-top: 1px solid var(--card-border);
+    margin-top: 60px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--primary); text-decoration: none; margin: 0 8px; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { margin-bottom: 12px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 50px 0 40px; }
+    section { padding: 50px 0; }
+    .security { padding: 32px 20px; margin: 0 12px; }
+    .nav a { display: none; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><span class="logo-icon"></span> 토닥 어항 일기</div>
+      <nav>
+        <a href="#features">기능</a>
+        <a href="#security">보안</a>
+        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899">다운로드</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <p class="sub-title">TODAK AQUARIUM DIARY</p>
+      <h1>오늘의 감정,<br/>어항 속에서 자라나다</h1>
+      <p class="tagline">하루의 감정을 짧고 꾸준히 기록하면, 어항 속 물고기가 함께 자라납니다.<br/>감정 선택과 한 줄 메모만으로 1분 안에 기록을 완성하세요.</p>
+      <div class="cta-group">
+        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899" class="btn btn-primary">App Store에서 다운로드</a>
+        <a href="#features" class="btn btn-secondary">기능 살펴보기</a>
+      </div>
+      <div class="aquarium-visual" aria-hidden="true">
+        <span class="fish f1">🐠</span>
+        <span class="fish f2">🐟</span>
+        <span class="fish f3">🐡</span>
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>주요 기능</h2>
+        <p>차분하고 꾸준한 감정 기록을 위한 모든 것</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">💙</div><h3>6가지 감정 기록</h3><p>괜찮음, 슬픔, 분노, 지침, 불안, 기타. 가볍게 선택하고 한 줄로 남기세요.</p></div>
+        <div class="feature-card"><div class="feature-icon">🐠</div><h3>어항 성장 시스템</h3><p>연속 기록 스트릭에 따라 알 → 치어 → 풍성한 어항으로 성장합니다.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔍</div><h3>히스토리 검색</h3><p>날짜, 태그, 감정별로 손쉽게 찾고, 다시 보고 싶은 기록은 핀 고정.</p></div>
+        <div class="feature-card"><div class="feature-icon">📊</div><h3>회복 인사이트</h3><p>이번 주 회복 리포트와 감정 변화 흐름을 차분하게 보여드립니다.</p></div>
+        <div class="feature-card"><div class="feature-icon">☁️</div><h3>iCloud 자동 동기화</h3><p>기기 간 자동 동기화 + 수동 백업으로 소중한 기록을 안전하게.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔒</div><h3>Face ID 잠금</h3><p>앱 전체 또는 민감 화면만 생체 인증으로 보호합니다.</p></div>
+        <div class="feature-card"><div class="feature-icon">🌐</div><h3>40개 언어 지원</h3><p>한국어, 영어, 일본어를 포함한 40개 언어로 즉시 전환됩니다.</p></div>
+        <div class="feature-card"><div class="feature-icon">🔔</div><h3>하루 한 번 리마인더</h3><p>편한 시간에 부드럽게 알려주고, 문구 스타일도 선택할 수 있어요.</p></div>
+        <div class="feature-card"><div class="feature-icon">📱</div><h3>위젯 & Siri 단축어</h3><p>홈/잠금화면 위젯과 Siri로 더 빠르게 기록을 시작하세요.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="security">
+    <div class="container">
+      <div class="security">
+        <div class="section-title" style="margin-bottom: 16px;">
+          <h2>보안 및 개인정보</h2>
+          <p>당신의 기록은 오직 당신만의 것입니다</p>
+        </div>
+        <div class="security-grid">
+          <div class="security-item"><span class="dot"></span><div><h4>로컬 우선 저장</h4><p>모든 기록은 기기 내 로컬에 안전하게 저장됩니다.</p></div></div>
+          <div class="security-item"><span class="dot"></span><div><h4>iCloud CloudKit</h4><p>Apple iCloud를 통해서만 동기화되며, 외부 서버 전송 없음.</p></div></div>
+          <div class="security-item"><span class="dot"></span><div><h4>Face ID / Touch ID</h4><p>생체 인증으로 앱 전체 또는 특정 화면을 잠글 수 있습니다.</p></div></div>
+          <div class="security-item"><span class="dot"></span><div><h4>수동 백업 지원</h4><p>JSON 백업 파일로 직접 내보내고 복원할 수 있습니다.</p></div></div>
+          <div class="security-item"><span class="dot"></span><div><h4>Apple 로그인</h4><p>최초 1회 Apple 로그인으로 안전하게 시작합니다.</p></div></div>
+          <div class="security-item"><span class="dot"></span><div><h4>개인 정보 비전송</h4><p>개인 기록은 서버로 전송되지 않습니다.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="#">개인정보처리방침</a> ·
+        <a href="#">이용약관</a> ·
+        <a href="#">고객 센터</a> ·
+        <a href="https://apps.apple.com/kr/app/%ED%86%A0%EB%8B%A5-%EC%96%B4%ED%95%AD-%EC%9D%BC%EA%B8%B0/id6765705899">App Store</a>
+      </div>
+      <div>© 2026 토닥 어항 일기 · Todak Aquarium Diary</div>
+      <div style="margin-top:6px; font-size:12px;">iPhone / iPad 지원</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          const el = document.querySelector(id);
+          if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
