@@ -1,69 +1,135 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="auto">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Todak Aquarium Diary</title>
-<meta name="description" content="An Apple-style aquarium emotion diary app." />
+<meta name="description" content="Apple-style aquarium emotion diary with Todak palette." />
+<meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)" />
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #f2f2f7;
-    --bg-grouped: #f2f2f7;
+  /* =========================================================
+     TODAK PALETTE — Light defaults
+     ========================================================= */
+  :root, [data-theme="light"] {
+    color-scheme: light;
+    /* Brand */
+    --accent-primary: #6B8AC7;
+    --accent-light:   #99BDDE;
+    --gradient-top:    #8FADE0;
+    --gradient-bottom: #6180BF;
+    /* Status */
+    --status-live:   #34B030;
+    --status-delete: #FF3B3B;
+    /* Aquarium */
+    --aqua: #C7E3F0;
+    --sand: #E8DBC9;
+    /* Mood (SwiftUI system colors, light) */
+    --mood-okay:    #00C7BE;
+    --mood-sad:     #007AFF;
+    --mood-angry:   #FF3B30;
+    --mood-tired:   #5856D6;
+    --mood-anxious: #FF9500;
+    --mood-other:   #30B0C7;
+    /* Surfaces */
+    --bg: #F4F6FB;
+    --bg-grouped: #EEF2F8;
     --surface: rgba(255,255,255,0.86);
-    --surface-solid: #ffffff;
-    --surface-2: #f9f9fb;
-    --label: #1c1c1e;
-    --label-secondary: rgba(60,60,67,0.78);
-    --label-tertiary: rgba(60,60,67,0.50);
-    --label-quaternary: rgba(60,60,67,0.30);
-    --separator: rgba(60,60,67,0.16);
-    --separator-opaque: #c6c6c8;
-    --fill-1: rgba(120,120,128,0.12);
-    --fill-2: rgba(120,120,128,0.16);
-    --blue: #007aff;
-    --teal: #30b0c7;
-    --indigo: #5856d6;
-    --purple: #af52de;
-    --pink: #ff2d55;
-    --orange: #ff9500;
-    --green: #34c759;
-    --yellow: #ffcc00;
-    --red: #ff3b30;
-    --mint: #00c7be;
-    --cyan: #32ade6;
-    --shadow-card: 0 10px 30px rgba(0,0,0,0.06), 0 2px 6px rgba(0,0,0,0.04);
-    --shadow-sheet: 0 24px 64px rgba(0,0,0,0.18);
-    --radius-xl: 28px;
-    --radius-lg: 22px;
-    --radius-md: 14px;
-    --radius-sm: 10px;
+    --surface-solid: #FFFFFF;
+    --surface-2: #F7F9FD;
+    --label: #1B1F2A;
+    --label-secondary: rgba(27,31,42,0.70);
+    --label-tertiary: rgba(27,31,42,0.46);
+    --label-quaternary: rgba(27,31,42,0.26);
+    --separator: rgba(27,31,42,0.12);
+    --separator-opaque: #D7DCE6;
+    --fill-1: rgba(107,138,199,0.10);
+    --fill-2: rgba(107,138,199,0.16);
+    --shadow-card: 0 10px 28px rgba(56,87,133,0.10), 0 2px 6px rgba(56,87,133,0.06);
+    --shadow-sheet: 0 24px 64px rgba(36,56,92,0.22);
+    /* Radii */
+    --r-shell:   30px;
+    --r-hero:    26px;
+    --r-section: 20px;
+    --r-control: 16px;
+    --r-compact: 12px;
     --tap-min: 44px;
   }
+  /* ===== Dark theme ===== */
+  [data-theme="dark"] {
+    color-scheme: dark;
+    --accent-primary: #85ADE6;
+    --accent-light:   #B3D6F5;
+    --gradient-top:    #385785;
+    --gradient-bottom: #24385C;
+    --status-live:   #59E073;
+    --status-delete: #FF6B6B;
+    --aqua: #24385C;
+    --sand: #574D45;
+    --mood-okay:    #5EE8E0;
+    --mood-sad:     #4DA3FF;
+    --mood-angry:   #FF6B6B;
+    --mood-tired:   #8C8AE8;
+    --mood-anxious: #FFB04D;
+    --mood-other:   #6FCBE5;
+    --bg: #0E1320;
+    --bg-grouped: #131A2A;
+    --surface: rgba(28,34,52,0.78);
+    --surface-solid: #1C2234;
+    --surface-2: #232B40;
+    --label: #F5F7FB;
+    --label-secondary: rgba(245,247,251,0.72);
+    --label-tertiary: rgba(245,247,251,0.48);
+    --label-quaternary: rgba(245,247,251,0.28);
+    --separator: rgba(245,247,251,0.10);
+    --separator-opaque: #2B3450;
+    --fill-1: rgba(133,173,230,0.14);
+    --fill-2: rgba(133,173,230,0.22);
+    --shadow-card: 0 14px 32px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.35);
+    --shadow-sheet: 0 26px 64px rgba(0,0,0,0.55);
+  }
+  /* Auto follows system */
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #000000;
-      --bg-grouped: #1c1c1e;
-      --surface: rgba(28,28,30,0.78);
-      --surface-solid: #1c1c1e;
-      --surface-2: #2c2c2e;
-      --label: #ffffff;
-      --label-secondary: rgba(235,235,245,0.74);
-      --label-tertiary: rgba(235,235,245,0.50);
-      --label-quaternary: rgba(235,235,245,0.30);
-      --separator: rgba(84,84,88,0.65);
-      --separator-opaque: #38383a;
-      --fill-1: rgba(120,120,128,0.36);
-      --fill-2: rgba(120,120,128,0.32);
+    [data-theme="auto"] {
+      color-scheme: dark;
+      --accent-primary: #85ADE6;
+      --accent-light:   #B3D6F5;
+      --gradient-top:    #385785;
+      --gradient-bottom: #24385C;
+      --status-live:   #59E073;
+      --status-delete: #FF6B6B;
+      --aqua: #24385C;
+      --sand: #574D45;
+      --mood-okay:    #5EE8E0;
+      --mood-sad:     #4DA3FF;
+      --mood-angry:   #FF6B6B;
+      --mood-tired:   #8C8AE8;
+      --mood-anxious: #FFB04D;
+      --mood-other:   #6FCBE5;
+      --bg: #0E1320;
+      --bg-grouped: #131A2A;
+      --surface: rgba(28,34,52,0.78);
+      --surface-solid: #1C2234;
+      --surface-2: #232B40;
+      --label: #F5F7FB;
+      --label-secondary: rgba(245,247,251,0.72);
+      --label-tertiary: rgba(245,247,251,0.48);
+      --label-quaternary: rgba(245,247,251,0.28);
+      --separator: rgba(245,247,251,0.10);
+      --separator-opaque: #2B3450;
+      --fill-1: rgba(133,173,230,0.14);
+      --fill-2: rgba(133,173,230,0.22);
+      --shadow-card: 0 14px 32px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.35);
+      --shadow-sheet: 0 26px 64px rgba(0,0,0,0.55);
     }
   }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin: 0; padding: 0; height: 100%; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Pretendard", "Apple SD Gothic Neo", system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Pretendard", "Apple SD Gothic Neo", system-ui, sans-serif;
     background:
-      radial-gradient(1200px 600px at 10% -10%, rgba(0,122,255,0.10), transparent 60%),
-      radial-gradient(900px 500px at 110% 0%, rgba(48,176,199,0.10), transparent 60%),
+      radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--accent-primary) 18%, transparent), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, color-mix(in srgb, var(--aqua) 35%, transparent), transparent 60%),
       var(--bg);
     color: var(--label);
     -webkit-font-smoothing: antialiased;
@@ -71,6 +137,7 @@
     letter-spacing: -0.01em;
     line-height: 1.4;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    transition: background 0.35s ease, color 0.25s ease;
   }
   .app {
     max-width: 480px;
@@ -80,7 +147,7 @@
     flex-direction: column;
     position: relative;
   }
-  /* ===== Top Nav Bar (iOS large title style) ===== */
+  /* ===== Top Nav Bar ===== */
   .navbar {
     position: sticky;
     top: 0;
@@ -101,44 +168,29 @@
     appearance: none;
     background: transparent;
     border: 0;
-    color: var(--blue);
+    color: var(--accent-primary);
     font: inherit;
     font-size: 17px;
     padding: 8px 10px;
-    border-radius: 10px;
+    border-radius: var(--r-compact);
     cursor: pointer;
     min-height: 36px;
   }
   .nav-btn:active { opacity: 0.55; }
-  .nav-title {
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    text-align: center;
-  }
-  .nav-left { justify-self: start; }
+  .nav-title { font-size: 17px; font-weight: 600; letter-spacing: -0.02em; text-align: center; }
   .nav-right { justify-self: end; }
-  .large-title {
-    font-size: 34px;
-    font-weight: 700;
-    letter-spacing: -0.022em;
-    padding: 4px 20px 14px;
-  }
-  /* ===== Content ===== */
-  main {
-    flex: 1;
-    padding: 0 16px 100px;
-  }
+  .nav-left  { justify-self: start; }
+  .large-title { font-size: 34px; font-weight: 700; letter-spacing: -0.022em; padding: 4px 20px 14px; }
+  main { flex: 1; padding: 0 16px 100px; }
   .view { display: none; }
   .view.active { display: block; animation: fade .25s ease; }
   @keyframes fade { from { opacity: 0; transform: translateY(4px);} to { opacity: 1; transform: none;} }
-
-  /* ===== Hero / Today card ===== */
+  /* ===== Hero (uses Todak gradient) ===== */
   .hero {
     margin: 6px 4px 18px;
     padding: 22px;
-    border-radius: var(--radius-xl);
-    background: linear-gradient(135deg, #4facfe 0%, #00c6fb 50%, #30b0c7 100%);
+    border-radius: var(--r-hero);
+    background: linear-gradient(135deg, var(--gradient-top) 0%, var(--gradient-bottom) 100%);
     color: #fff;
     box-shadow: var(--shadow-card);
     position: relative;
@@ -147,13 +199,40 @@
   .hero::after {
     content: "";
     position: absolute; inset: 0;
-    background: radial-gradient(circle at 80% 0%, rgba(255,255,255,0.35), transparent 50%);
+    background: radial-gradient(circle at 80% 0%, rgba(255,255,255,0.30), transparent 50%);
     pointer-events: none;
   }
   .hero .date { font-size: 13px; opacity: 0.9; font-weight: 500; }
   .hero h2 { margin: 6px 0 4px; font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
   .hero p { margin: 0; opacity: 0.95; font-size: 15px; }
-
+  /* ===== Aquarium decorative band ===== */
+  .aquarium-band {
+    border-radius: var(--r-section);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    margin: 0 4px 18px;
+    background: linear-gradient(180deg, var(--aqua) 0%, var(--aqua) 78%, var(--sand) 78%, var(--sand) 100%);
+    height: 88px;
+    position: relative;
+  }
+  .aquarium-band::before {
+    content: "🐟";
+    position: absolute;
+    left: 18px; top: 24px;
+    font-size: 26px;
+    animation: swim 6s ease-in-out infinite alternate;
+  }
+  .aquarium-band::after {
+    content: "🐠";
+    position: absolute;
+    right: 24px; top: 32px;
+    font-size: 22px;
+    animation: swim 7s ease-in-out 1s infinite alternate-reverse;
+  }
+  @keyframes swim {
+    from { transform: translateX(0); }
+    to   { transform: translateX(80px); }
+  }
   /* ===== Section ===== */
   .section-title {
     text-transform: uppercase;
@@ -163,134 +242,130 @@
     letter-spacing: 0.02em;
     padding: 18px 20px 8px;
   }
-  /* ===== Inset grouped list (iOS Settings) ===== */
   .list {
     background: var(--surface-solid);
-    border-radius: var(--radius-md);
+    border-radius: var(--r-section);
     overflow: hidden;
     box-shadow: var(--shadow-card);
   }
   .row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    min-height: var(--tap-min);
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; min-height: var(--tap-min);
     background: var(--surface-solid);
-    border: 0;
-    width: 100%;
-    text-align: left;
-    color: var(--label);
-    font: inherit;
-    cursor: pointer;
+    border: 0; width: 100%;
+    text-align: left; color: var(--label);
+    font: inherit; cursor: pointer;
   }
   .row + .row { border-top: 0.5px solid var(--separator); }
   .row:active { background: var(--fill-1); }
-  .row .icon {
-    width: 30px; height: 30px;
-    border-radius: 7px;
-    display: grid; place-items: center;
-    color: #fff;
-    flex-shrink: 0;
-    font-size: 16px;
-  }
+  .row .icon { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; color: #fff; flex-shrink: 0; font-size: 16px; }
   .row .label { flex: 1; font-size: 17px; }
   .row .value { color: var(--label-secondary); font-size: 15px; }
-  .row .chev {
-    color: var(--label-tertiary);
-    font-size: 17px;
-    margin-left: 4px;
-  }
-  /* ===== Mood picker ===== */
+  .row .chev { color: var(--label-tertiary); font-size: 17px; margin-left: 4px; }
+  /* ===== Mood picker (uses Todak mood palette) ===== */
   .mood-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
     padding: 14px;
     background: var(--surface-solid);
-    border-radius: var(--radius-md);
+    border-radius: var(--r-section);
     box-shadow: var(--shadow-card);
   }
   .mood {
-    appearance: none;
-    border: 0;
+    appearance: none; border: 0;
     background: var(--fill-1);
-    border-radius: 14px;
+    border-radius: var(--r-control);
     aspect-ratio: 1 / 1;
-    font-size: 28px;
+    font-size: 22px;
     cursor: pointer;
-    transition: transform .12s ease, background .2s ease;
+    color: var(--label);
+    transition: transform .12s ease, background .2s ease, color .2s ease, box-shadow .25s ease;
+    position: relative;
+  }
+  .mood span.tag {
+    position: absolute; left: 0; right: 0; bottom: 4px;
+    font-size: 10px; font-weight: 600; letter-spacing: -0.01em;
+    color: var(--label-secondary);
   }
   .mood:active { transform: scale(0.92); }
-  .mood.selected {
-    background: linear-gradient(135deg, #007aff, #5856d6);
-    box-shadow: 0 8px 18px rgba(0,122,255,0.35);
-  }
-  /* ===== Textarea ===== */
+  .mood.selected { color: #fff; }
+  .mood.selected span.tag { color: rgba(255,255,255,0.92); }
+  .mood[data-key="okay"].selected    { background: var(--mood-okay);    box-shadow: 0 8px 18px color-mix(in srgb, var(--mood-okay) 40%, transparent); }
+  .mood[data-key="sad"].selected     { background: var(--mood-sad);     box-shadow: 0 8px 18px color-mix(in srgb, var(--mood-sad) 40%, transparent); }
+  .mood[data-key="angry"].selected   { background: var(--mood-angry);   box-shadow: 0 8px 18px color-mix(in srgb, var(--mood-angry) 40%, transparent); }
+  .mood[data-key="tired"].selected   { background: var(--mood-tired);   box-shadow: 0 8px 18px color-mix(in srgb, var(--mood-tired) 40%, transparent); }
+  .mood[data-key="anxious"].selected { background: var(--mood-anxious); box-shadow: 0 8px 18px color-mix(in srgb, var(--mood-anxious) 40%, transparent); }
+  .mood[data-key="other"].selected   { background: var(--mood-other);   box-shadow: 0 8px 18px color-mix(in srgb, var(--mood-other) 40%, transparent); }
+  /* ===== Field ===== */
   .field {
     background: var(--surface-solid);
-    border-radius: var(--radius-md);
+    border-radius: var(--r-section);
     box-shadow: var(--shadow-card);
     padding: 14px 16px;
   }
   .field textarea {
-    width: 100%;
-    border: 0;
-    resize: none;
-    background: transparent;
-    color: var(--label);
-    font: inherit;
-    font-size: 16px;
-    min-height: 120px;
-    outline: none;
+    width: 100%; border: 0; resize: none;
+    background: transparent; color: var(--label);
+    font: inherit; font-size: 16px;
+    min-height: 120px; outline: none;
   }
   .field textarea::placeholder { color: var(--label-tertiary); }
-  /* ===== Primary button ===== */
+  /* ===== Buttons ===== */
   .btn-primary {
-    appearance: none;
-    border: 0;
-    width: 100%;
-    padding: 14px 18px;
-    border-radius: 14px;
-    background: var(--blue);
-    color: #fff;
-    font: inherit;
-    font-size: 17px;
-    font-weight: 600;
-    box-shadow: 0 10px 24px rgba(0,122,255,0.28);
-    cursor: pointer;
-    margin-top: 14px;
+    appearance: none; border: 0; width: 100%;
+    padding: 14px 18px; border-radius: var(--r-control);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+    color: #fff; font: inherit; font-size: 17px; font-weight: 600;
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--accent-primary) 35%, transparent);
+    cursor: pointer; margin-top: 14px;
   }
-  .btn-primary:active { transform: scale(0.985); opacity: 0.9; }
+  .btn-primary:active { transform: scale(0.985); opacity: 0.92; }
   .btn-ghost {
-    appearance: none;
-    border: 0;
-    width: 100%;
-    padding: 12px 18px;
-    border-radius: 14px;
-    background: var(--fill-1);
-    color: var(--label);
-    font: inherit;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 8px;
+    appearance: none; border: 0; width: 100%;
+    padding: 12px 18px; border-radius: var(--r-control);
+    background: var(--fill-1); color: var(--label);
+    font: inherit; font-size: 16px; font-weight: 500;
+    cursor: pointer; margin-top: 8px;
   }
-  /* ===== Entry list ===== */
+  /* Segmented control (Appearance) */
+  .segmented {
+    display: flex; gap: 4px;
+    background: var(--fill-1);
+    padding: 4px;
+    border-radius: var(--r-control);
+  }
+  .segmented button {
+    flex: 1;
+    appearance: none; border: 0;
+    background: transparent;
+    padding: 8px 10px;
+    border-radius: 12px;
+    font: inherit; font-size: 14px; font-weight: 500;
+    color: var(--label-secondary);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, box-shadow .2s ease;
+  }
+  .segmented button.active {
+    background: var(--surface-solid);
+    color: var(--label);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  /* ===== Entries ===== */
   .entries .row .label { display: flex; flex-direction: column; gap: 2px; }
   .entries .row .ttl { font-size: 16px; font-weight: 500; }
   .entries .row .sub { font-size: 13px; color: var(--label-secondary); }
-  .entry-mood { font-size: 22px; }
-  .empty {
-    text-align: center;
-    padding: 40px 20px;
-    color: var(--label-tertiary);
-    font-size: 15px;
+  .entry-mood { width: 36px; height: 36px; border-radius: 12px; display:grid; place-items:center; font-size: 20px; color:#fff; flex-shrink:0; }
+  .empty { text-align: center; padding: 40px 20px; color: var(--label-tertiary); font-size: 15px; }
+  .delete-btn {
+    appearance: none; border: 0; background: transparent;
+    color: var(--status-delete);
+    font: inherit; font-size: 18px; padding: 6px 10px; cursor: pointer;
+    border-radius: 10px;
   }
-  /* ===== Tab Bar (bottom) ===== */
+  /* ===== Tab Bar ===== */
   .tabbar {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
+    position: fixed; left: 0; right: 0; bottom: 0;
     z-index: 30;
     padding-bottom: env(safe-area-inset-bottom);
     backdrop-filter: saturate(180%) blur(28px);
@@ -298,87 +373,52 @@
     background: var(--surface);
     border-top: 0.5px solid var(--separator);
   }
-  .tabbar-inner {
-    max-width: 480px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .tabbar-inner { max-width: 480px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); }
   .tab {
-    appearance: none;
-    border: 0;
-    background: transparent;
+    appearance: none; border: 0; background: transparent;
     color: var(--label-tertiary);
-    font: inherit;
-    font-size: 10px;
-    font-weight: 500;
+    font: inherit; font-size: 10px; font-weight: 500;
     padding: 8px 4px 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
     cursor: pointer;
   }
   .tab svg { width: 26px; height: 26px; }
-  .tab.active { color: var(--blue); }
-  /* ===== Language modal (iOS sheet) ===== */
+  .tab.active { color: var(--accent-primary); }
+  /* ===== Sheet ===== */
   .sheet-mask {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(2px);
-    z-index: 40;
-    opacity: 0;
-    pointer-events: none;
+    z-index: 40; opacity: 0; pointer-events: none;
     transition: opacity .25s ease;
   }
   .sheet-mask.open { opacity: 1; pointer-events: auto; }
   .sheet {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
+    position: fixed; left: 0; right: 0; bottom: 0;
     z-index: 41;
     background: var(--bg-grouped);
-    border-radius: 18px 18px 0 0;
+    border-radius: var(--r-shell) var(--r-shell) 0 0;
     max-height: 86dvh;
     transform: translateY(100%);
     transition: transform .35s cubic-bezier(.22,.61,.36,1);
     box-shadow: var(--shadow-sheet);
-    display: flex;
-    flex-direction: column;
+    display: flex; flex-direction: column;
   }
   .sheet.open { transform: none; }
-  .sheet-handle {
-    width: 36px; height: 5px;
-    background: var(--separator-opaque);
-    border-radius: 3px;
-    margin: 8px auto 4px;
-  }
-  .sheet-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 6px 16px 10px;
-  }
+  .sheet-handle { width: 36px; height: 5px; background: var(--separator-opaque); border-radius: 3px; margin: 8px auto 4px; }
+  .sheet-header { display: flex; align-items: center; justify-content: space-between; padding: 6px 16px 10px; }
   .sheet-header h3 { margin: 0; font-size: 17px; font-weight: 600; }
   .sheet-search {
     margin: 4px 16px 10px;
     background: var(--fill-1);
-    border-radius: 10px;
+    border-radius: var(--r-control);
     display: flex; align-items: center; gap: 8px;
     padding: 8px 10px;
+    color: var(--label-secondary);
   }
-  .sheet-search input {
-    border: 0; background: transparent; outline: none;
-    font: inherit; font-size: 16px; flex: 1;
-    color: var(--label);
-  }
-  .sheet-body {
-    overflow-y: auto;
-    padding: 0 16px 24px;
-  }
-  .lang-list {
-    background: var(--surface-solid);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    box-shadow: var(--shadow-card);
-  }
+  .sheet-search input { border: 0; background: transparent; outline: none; font: inherit; font-size: 16px; flex: 1; color: var(--label); }
+  .sheet-body { overflow-y: auto; padding: 0 16px 24px; }
+  .lang-list { background: var(--surface-solid); border-radius: var(--r-section); overflow: hidden; box-shadow: var(--shadow-card); }
   .lang {
     display: flex; align-items: center; gap: 12px;
     padding: 12px 16px; min-height: var(--tap-min);
@@ -389,24 +429,18 @@
   .lang .flag { font-size: 22px; }
   .lang .name { flex: 1; font-size: 16px; }
   .lang .native { font-size: 13px; color: var(--label-secondary); }
-  .lang .check { color: var(--blue); font-weight: 700; opacity: 0; }
+  .lang .check { color: var(--accent-primary); font-weight: 700; opacity: 0; }
   .lang.selected .check { opacity: 1; }
-  /* ===== Toast ===== */
+  /* Toast */
   .toast {
     position: fixed; left: 50%; bottom: 100px;
     transform: translateX(-50%) translateY(20px);
-    background: rgba(0,0,0,0.82);
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 999px;
-    font-size: 14px;
-    z-index: 60;
-    opacity: 0;
-    transition: all .25s ease;
-    pointer-events: none;
+    background: rgba(0,0,0,0.82); color: #fff;
+    padding: 10px 18px; border-radius: 999px;
+    font-size: 14px; z-index: 60;
+    opacity: 0; transition: all .25s ease; pointer-events: none;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  /* RTL */
   html[dir="rtl"] body { letter-spacing: 0; }
   html[dir="rtl"] .row .chev { transform: scaleX(-1); }
 </style>
@@ -425,7 +459,7 @@
     </div>
   </header>
   <main>
-    <!-- ===== HOME VIEW ===== -->
+    <!-- ===== HOME ===== -->
     <section class="view active" id="view-home">
       <h1 class="large-title" data-i18n="home">Today</h1>
       <div class="hero">
@@ -433,13 +467,15 @@
         <h2 data-i18n="heroTitle">How is your aquarium feeling today?</h2>
         <p data-i18n="heroSub">Capture a small moment with your fish.</p>
       </div>
+      <div class="aquarium-band" aria-hidden="true"></div>
       <div class="section-title" data-i18n="moodTitle">Mood</div>
       <div class="mood-grid" id="moodGrid" role="group" aria-label="Mood">
-        <button class="mood" data-mood="😄" aria-label="Joy">😄</button>
-        <button class="mood" data-mood="🙂" aria-label="Calm">🙂</button>
-        <button class="mood" data-mood="😐" aria-label="Neutral">😐</button>
-        <button class="mood" data-mood="😢" aria-label="Sad">😢</button>
-        <button class="mood" data-mood="😡" aria-label="Angry">😡</button>
+        <button class="mood" data-key="okay"    data-mood="🙂" aria-label="Okay">🙂<span class="tag" data-i18n="moodOkay">Okay</span></button>
+        <button class="mood" data-key="sad"     data-mood="😢" aria-label="Sad">😢<span class="tag" data-i18n="moodSad">Sad</span></button>
+        <button class="mood" data-key="angry"   data-mood="😡" aria-label="Angry">😡<span class="tag" data-i18n="moodAngry">Angry</span></button>
+        <button class="mood" data-key="tired"   data-mood="😴" aria-label="Tired">😴<span class="tag" data-i18n="moodTired">Tired</span></button>
+        <button class="mood" data-key="anxious" data-mood="😟" aria-label="Anxious">😟<span class="tag" data-i18n="moodAnxious">Anxious</span></button>
+        <button class="mood" data-key="other"   data-mood="🐟" aria-label="Other">🐟<span class="tag" data-i18n="moodOther">Other</span></button>
       </div>
       <div class="section-title" data-i18n="noteTitle">Note</div>
       <div class="field">
@@ -447,36 +483,37 @@
       </div>
       <button class="btn-primary" id="saveEntryBtn" data-i18n="save">Save</button>
     </section>
-    <!-- ===== ENTRIES VIEW ===== -->
+    <!-- ===== ENTRIES ===== -->
     <section class="view" id="view-entries">
       <h1 class="large-title" data-i18n="entries">Entries</h1>
       <div id="entryList"></div>
     </section>
-    <!-- ===== SETTINGS VIEW ===== -->
+    <!-- ===== SETTINGS ===== -->
     <section class="view" id="view-settings">
       <h1 class="large-title" data-i18n="settings">Settings</h1>
       <div class="section-title" data-i18n="general">General</div>
       <div class="list">
         <button class="row" id="openLangBtn">
-          <span class="icon" style="background:var(--blue)">
+          <span class="icon" style="background:var(--accent-primary)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
           </span>
           <span class="label" data-i18n="language">Language</span>
           <span class="value" id="currentLangLabel">English</span>
           <span class="chev">›</span>
         </button>
-        <div class="row" style="cursor:default">
-          <span class="icon" style="background:var(--green)">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </span>
-          <span class="label" data-i18n="appearance">Appearance</span>
-          <span class="value" data-i18n="auto">Automatic</span>
+      </div>
+      <div class="section-title" data-i18n="appearance">Appearance</div>
+      <div class="list" style="padding: 12px 14px;">
+        <div class="segmented" id="themeSeg" role="tablist" aria-label="Appearance">
+          <button data-theme-val="auto"  class="active" data-i18n="auto">Automatic</button>
+          <button data-theme-val="light" data-i18n="light">Light</button>
+          <button data-theme-val="dark"  data-i18n="dark">Dark</button>
         </div>
       </div>
       <div class="section-title" data-i18n="dataSection">Data</div>
       <div class="list">
         <button class="row" id="clearDataBtn">
-          <span class="icon" style="background:var(--red)">
+          <span class="icon" style="background:var(--status-delete)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
           </span>
           <span class="label" data-i18n="clearAll">Erase all entries</span>
@@ -486,16 +523,15 @@
       <div class="section-title" data-i18n="aboutSection">About</div>
       <div class="list">
         <div class="row" style="cursor:default">
-          <span class="icon" style="background:var(--indigo)">
+          <span class="icon" style="background:var(--status-live)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </span>
           <span class="label" data-i18n="version">Version</span>
-          <span class="value">2.0.0</span>
+          <span class="value">2.1.0</span>
         </div>
       </div>
     </section>
   </main>
-  <!-- ===== Bottom Tab Bar ===== -->
   <nav class="tabbar">
     <div class="tabbar-inner">
       <button class="tab active" data-view="home">
@@ -513,7 +549,6 @@
     </div>
   </nav>
 </div>
-<!-- ===== Language Sheet ===== -->
 <div class="sheet-mask" id="sheetMask"></div>
 <aside class="sheet" id="langSheet" role="dialog" aria-modal="true">
   <div class="sheet-handle"></div>
@@ -526,15 +561,12 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input id="langSearch" data-i18n-placeholder="search" placeholder="Search" />
   </div>
-  <div class="sheet-body">
-    <div class="lang-list" id="langList"></div>
-  </div>
+  <div class="sheet-body"><div class="lang-list" id="langList"></div></div>
 </aside>
 <div class="toast" id="toast">Saved</div>
 <script>
 /* ============================================================
    APPLE SYSTEM LANGUAGES — Chinese variants excluded
-   (zh-Hans, zh-Hant, zh-HK intentionally removed)
    ============================================================ */
 const LANGUAGES = [
   { code: "ar",    name: "Arabic",              native: "العربية",          flag: "🇸🇦", dir: "rtl" },
@@ -574,79 +606,111 @@ const LANGUAGES = [
   { code: "uk",    name: "Ukrainian",           native: "Українська",        flag: "🇺🇦" },
   { code: "vi",    name: "Vietnamese",          native: "Tiếng Việt",        flag: "🇻🇳" }
 ];
-
-/* ============================================================
-   i18n dictionaries (key strings translated for major locales,
-   fallback to English for the rest)
-   ============================================================ */
 const I18N = {
   en: { appTitle:"Aquarium Diary", home:"Today", entries:"Entries", settings:"Settings",
         heroTitle:"How is your aquarium feeling today?", heroSub:"Capture a small moment with your fish.",
         moodTitle:"Mood", noteTitle:"Note", notePlaceholder:"A short note about your fish, water, or mood...",
-        save:"Save", general:"General", language:"Language", appearance:"Appearance", auto:"Automatic",
+        moodOkay:"Okay", moodSad:"Sad", moodAngry:"Angry", moodTired:"Tired", moodAnxious:"Anxious", moodOther:"Other",
+        save:"Save", general:"General", language:"Language", appearance:"Appearance",
+        auto:"Automatic", light:"Light", dark:"Dark",
         dataSection:"Data", clearAll:"Erase all entries", aboutSection:"About", version:"Version",
-        done:"Done", search:"Search", saved:"Saved", confirmClear:"Erase all entries? This cannot be undone.",
+        done:"Done", search:"Search", saved:"Saved",
+        confirmClear:"Erase all entries? This cannot be undone.",
         empty:"No entries yet. Save your first moment." },
-  ko: { appTitle:"어항 일기", home:"오늘", entries:"기록", settings:"설정",
+  ko: { appTitle:"토닥 어항 일기", home:"오늘", entries:"기록", settings:"설정",
         heroTitle:"오늘 어항은 어떤 기분인가요?", heroSub:"물고기와의 작은 순간을 남겨보세요.",
         moodTitle:"기분", noteTitle:"메모", notePlaceholder:"물고기·수질·기분에 대한 짧은 메모…",
-        save:"저장", general:"일반", language:"언어", appearance:"화면 모드", auto:"자동",
+        moodOkay:"괜찮음", moodSad:"슬픔", moodAngry:"분노", moodTired:"지침", moodAnxious:"불안", moodOther:"기타",
+        save:"저장", general:"일반", language:"언어", appearance:"화면 모드",
+        auto:"자동", light:"라이트", dark:"다크",
         dataSection:"데이터", clearAll:"모든 기록 삭제", aboutSection:"정보", version:"버전",
-        done:"완료", search:"검색", saved:"저장됨", confirmClear:"모든 기록을 삭제할까요? 되돌릴 수 없습니다.",
+        done:"완료", search:"검색", saved:"저장됨",
+        confirmClear:"모든 기록을 삭제할까요? 되돌릴 수 없습니다.",
         empty:"아직 기록이 없어요. 첫 순간을 저장해 보세요." },
   ja: { appTitle:"アクアリウム日記", home:"今日", entries:"記録", settings:"設定",
         heroTitle:"今日の水槽はどんな気分ですか？", heroSub:"魚との小さな瞬間を残しましょう。",
         moodTitle:"気分", noteTitle:"メモ", notePlaceholder:"魚・水質・気分の短いメモ…",
-        save:"保存", general:"一般", language:"言語", appearance:"外観", auto:"自動",
+        moodOkay:"穏やか", moodSad:"悲しい", moodAngry:"怒り", moodTired:"疲れ", moodAnxious:"不安", moodOther:"その他",
+        save:"保存", general:"一般", language:"言語", appearance:"外観",
+        auto:"自動", light:"ライト", dark:"ダーク",
         dataSection:"データ", clearAll:"すべての記録を消去", aboutSection:"情報", version:"バージョン",
-        done:"完了", search:"検索", saved:"保存しました", confirmClear:"すべての記録を消去しますか？この操作は取り消せません。",
+        done:"完了", search:"検索", saved:"保存しました",
+        confirmClear:"すべての記録を消去しますか？取り消せません。",
         empty:"まだ記録がありません。最初の瞬間を保存しましょう。" },
   fr: { appTitle:"Journal d'Aquarium", home:"Aujourd'hui", entries:"Entrées", settings:"Réglages",
         heroTitle:"Comment se sent votre aquarium aujourd'hui ?", heroSub:"Capturez un petit moment avec vos poissons.",
-        moodTitle:"Humeur", noteTitle:"Note", notePlaceholder:"Petite note sur vos poissons, l'eau ou l'humeur…",
-        save:"Enregistrer", general:"Général", language:"Langue", appearance:"Apparence", auto:"Automatique",
+        moodTitle:"Humeur", noteTitle:"Note", notePlaceholder:"Petite note sur poissons, eau ou humeur…",
+        moodOkay:"Bien", moodSad:"Triste", moodAngry:"Colère", moodTired:"Fatigué", moodAnxious:"Anxieux", moodOther:"Autre",
+        save:"Enregistrer", general:"Général", language:"Langue", appearance:"Apparence",
+        auto:"Automatique", light:"Clair", dark:"Sombre",
         dataSection:"Données", clearAll:"Effacer toutes les entrées", aboutSection:"À propos", version:"Version",
-        done:"OK", search:"Rechercher", saved:"Enregistré", confirmClear:"Effacer toutes les entrées ? Cette action est irréversible.",
+        done:"OK", search:"Rechercher", saved:"Enregistré",
+        confirmClear:"Effacer toutes les entrées ? Cette action est irréversible.",
         empty:"Aucune entrée. Enregistrez votre premier moment." },
   de: { appTitle:"Aquarium-Tagebuch", home:"Heute", entries:"Einträge", settings:"Einstellungen",
         heroTitle:"Wie fühlt sich dein Aquarium heute?", heroSub:"Halte einen kleinen Moment mit deinen Fischen fest.",
-        moodTitle:"Stimmung", noteTitle:"Notiz", notePlaceholder:"Eine kurze Notiz zu Fisch, Wasser oder Stimmung…",
-        save:"Sichern", general:"Allgemein", language:"Sprache", appearance:"Erscheinungsbild", auto:"Automatisch",
+        moodTitle:"Stimmung", noteTitle:"Notiz", notePlaceholder:"Kurze Notiz zu Fisch, Wasser oder Stimmung…",
+        moodOkay:"Okay", moodSad:"Traurig", moodAngry:"Wütend", moodTired:"Müde", moodAnxious:"Ängstlich", moodOther:"Sonstiges",
+        save:"Sichern", general:"Allgemein", language:"Sprache", appearance:"Erscheinungsbild",
+        auto:"Automatisch", light:"Hell", dark:"Dunkel",
         dataSection:"Daten", clearAll:"Alle Einträge löschen", aboutSection:"Info", version:"Version",
-        done:"Fertig", search:"Suchen", saved:"Gesichert", confirmClear:"Alle Einträge löschen? Dies kann nicht rückgängig gemacht werden.",
+        done:"Fertig", search:"Suchen", saved:"Gesichert",
+        confirmClear:"Alle Einträge löschen? Dies kann nicht rückgängig gemacht werden.",
         empty:"Noch keine Einträge. Sichere deinen ersten Moment." },
   es: { appTitle:"Diario del Acuario", home:"Hoy", entries:"Entradas", settings:"Ajustes",
         heroTitle:"¿Cómo se siente tu acuario hoy?", heroSub:"Captura un pequeño momento con tus peces.",
-        moodTitle:"Estado de ánimo", noteTitle:"Nota", notePlaceholder:"Una breve nota sobre peces, agua o ánimo…",
-        save:"Guardar", general:"General", language:"Idioma", appearance:"Apariencia", auto:"Automático",
+        moodTitle:"Estado", noteTitle:"Nota", notePlaceholder:"Breve nota sobre peces, agua o ánimo…",
+        moodOkay:"Bien", moodSad:"Triste", moodAngry:"Enfado", moodTired:"Cansado", moodAnxious:"Ansioso", moodOther:"Otro",
+        save:"Guardar", general:"General", language:"Idioma", appearance:"Apariencia",
+        auto:"Automático", light:"Claro", dark:"Oscuro",
         dataSection:"Datos", clearAll:"Borrar todas las entradas", aboutSection:"Acerca de", version:"Versión",
-        done:"OK", search:"Buscar", saved:"Guardado", confirmClear:"¿Borrar todas las entradas? No se puede deshacer.",
+        done:"OK", search:"Buscar", saved:"Guardado",
+        confirmClear:"¿Borrar todas las entradas? No se puede deshacer.",
         empty:"Aún no hay entradas. Guarda tu primer momento." }
 };
 
 /* ============================================================
-   App state & helpers
+   Store + helpers
    ============================================================ */
-const STORE_KEY = "todak.entries.v2";
-const LANG_KEY  = "todak.lang.v2";
-function loadEntries(){ try { return JSON.parse(localStorage.getItem(STORE_KEY) || "[]"); } catch(e){ return []; } }
-function saveEntries(list){ localStorage.setItem(STORE_KEY, JSON.stringify(list)); }
+const ENTRY_KEY = "todak.entries.v3";
+const LANG_KEY  = "todak.lang.v3";
+const THEME_KEY = "todak.theme.v3";
+const MOOD_COLORS = {
+  okay:    "var(--mood-okay)",
+  sad:     "var(--mood-sad)",
+  angry:   "var(--mood-angry)",
+  tired:   "var(--mood-tired)",
+  anxious: "var(--mood-anxious)",
+  other:   "var(--mood-other)"
+};
+const MOOD_EMOJI = { okay:"🙂", sad:"😢", angry:"😡", tired:"😴", anxious:"😟", other:"🐟" };
+function loadEntries(){ try { return JSON.parse(localStorage.getItem(ENTRY_KEY) || "[]"); } catch(e){ return []; } }
+function saveEntries(list){ localStorage.setItem(ENTRY_KEY, JSON.stringify(list)); }
+/* ----- Theme ----- */
+function getTheme(){ return localStorage.getItem(THEME_KEY) || "auto"; }
+function setTheme(t){
+  localStorage.setItem(THEME_KEY, t);
+  document.documentElement.setAttribute("data-theme", t);
+  document.querySelectorAll("#themeSeg button").forEach(b => {
+    b.classList.toggle("active", b.dataset.themeVal === t);
+  });
+}
+/* ----- Language ----- */
 function getLang(){
   const saved = localStorage.getItem(LANG_KEY);
   if (saved) return saved;
   const nav = (navigator.language || "en");
-  if (nav.toLowerCase().startsWith("zh")) return "en"; // Chinese excluded per requirement
+  if (nav.toLowerCase().startsWith("zh")) return "en";
   const exact = LANGUAGES.find(l => l.code.toLowerCase() === nav.toLowerCase());
   if (exact) return exact.code;
   const base = LANGUAGES.find(l => l.code.toLowerCase() === nav.toLowerCase().split("-")[0]);
   return base ? base.code : "en";
 }
-function setLang(code){ localStorage.setItem(LANG_KEY, code); applyLang(code); }
 function dict(code){
   if (I18N[code]) return I18N[code];
-  const base = code.split("-")[0];
-  return I18N[base] || I18N.en;
+  return I18N[code.split("-")[0]] || I18N.en;
 }
+function setLang(code){ localStorage.setItem(LANG_KEY, code); applyLang(code); }
 function applyLang(code){
   const meta = LANGUAGES.find(l => l.code === code) || LANGUAGES.find(l => l.code === "en");
   document.documentElement.setAttribute("lang", code);
@@ -668,9 +732,8 @@ function applyLang(code){
 }
 function renderTodayDate(){
   const code = getLang();
-  const meta = LANGUAGES.find(l => l.code === code) || { code: "en" };
   try {
-    const fmt = new Intl.DateTimeFormat(meta.code, { weekday:"long", month:"long", day:"numeric" });
+    const fmt = new Intl.DateTimeFormat(code, { weekday:"long", month:"long", day:"numeric" });
     document.getElementById("todayDate").textContent = fmt.format(new Date());
   } catch(e) {
     document.getElementById("todayDate").textContent = new Date().toDateString();
@@ -685,7 +748,7 @@ function toast(msg){
 }
 
 /* ============================================================
-   Navigation: tabs & language sheet
+   Views & sheets
    ============================================================ */
 function switchView(name){
   document.querySelectorAll(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + name));
@@ -728,11 +791,10 @@ function buildLangList(filter){
     });
   });
 }
-
 /* ============================================================
    Entries
    ============================================================ */
-let selectedMood = null;
+let selectedMoodKey = null;
 function renderEntries(){
   const list = loadEntries();
   const el = document.getElementById("entryList");
@@ -744,15 +806,20 @@ function renderEntries(){
   }
   const code = getLang();
   const fmt = new Intl.DateTimeFormat(code, { month:"short", day:"numeric", hour:"numeric", minute:"2-digit" });
-  el.innerHTML = `<div class="list entries">` + list.map((e, i) => `
-    <div class="row">
-      <div class="entry-mood">${e.mood || "🙂"}</div>
+  el.innerHTML = `<div class="list entries">` + list.map((e, i) => {
+    const key = e.key || "okay";
+    const color = MOOD_COLORS[key] || "var(--mood-other)";
+    const emoji = e.mood || MOOD_EMOJI[key] || "🙂";
+    const safe = (e.note || "").replace(/</g,"&lt;").slice(0,80) || "—";
+    return `<div class="row">
+      <div class="entry-mood" style="background:${color}">${emoji}</div>
       <div class="label">
-        <div class="ttl">${(e.note || "").replace(/</g,"&lt;").slice(0,80) || "—"}</div>
+        <div class="ttl">${safe}</div>
         <div class="sub">${fmt.format(new Date(e.ts))}</div>
       </div>
-      <button class="nav-btn" data-del="${i}" style="color:var(--red);">✕</button>
-    </div>`).join("") + `</div>`;
+      <button class="delete-btn" data-del="${i}" aria-label="Delete">✕</button>
+    </div>`;
+  }).join("") + `</div>`;
   el.querySelectorAll("[data-del]").forEach(b => {
     b.addEventListener("click", () => {
       const idx = parseInt(b.dataset.del, 10);
@@ -768,18 +835,19 @@ function bindHome(){
     m.addEventListener("click", () => {
       document.querySelectorAll(".mood").forEach(x => x.classList.remove("selected"));
       m.classList.add("selected");
-      selectedMood = m.dataset.mood;
+      selectedMoodKey = m.dataset.key;
     });
   });
   document.getElementById("saveEntryBtn").addEventListener("click", () => {
     const note = document.getElementById("noteInput").value.trim();
-    if (!selectedMood && !note) return;
+    if (!selectedMoodKey && !note) return;
+    const key = selectedMoodKey || "okay";
     const arr = loadEntries();
-    arr.unshift({ mood: selectedMood || "🙂", note, ts: Date.now() });
+    arr.unshift({ key, mood: MOOD_EMOJI[key], note, ts: Date.now() });
     saveEntries(arr);
     document.getElementById("noteInput").value = "";
     document.querySelectorAll(".mood").forEach(x => x.classList.remove("selected"));
-    selectedMood = null;
+    selectedMoodKey = null;
     toast(dict(getLang()).saved);
     renderEntries();
   });
@@ -789,11 +857,18 @@ function bindHome(){
    Init
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
-  // tab bar
+  // theme
+  setTheme(getTheme());
+  document.querySelectorAll("#themeSeg button").forEach(b => {
+    b.addEventListener("click", () => {
+      setTheme(b.dataset.themeVal);
+      toast(dict(getLang()).saved);
+    });
+  });
+  // tabs
   document.querySelectorAll(".tab").forEach(t => {
     t.addEventListener("click", () => switchView(t.dataset.view));
   });
-  // quick settings button in nav
   document.getElementById("quickSettings").addEventListener("click", () => switchView("settings"));
   // language sheet
   document.getElementById("openLangBtn").addEventListener("click", openLangSheet);
