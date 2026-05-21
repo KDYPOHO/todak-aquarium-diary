@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="auto">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>고객센터 · 토닥 어항 일기</title>
+<meta name="description" content="토닥 어항 일기 고객센터 · Todak Aquarium Diary Support"/>
+<meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='220' fill='%236B8AC7'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB'/%3E%3C/svg%3E"/>
+<style>
+:root,[data-theme="light"]{color-scheme:light;--accent-primary:#6B8AC7;--accent-light:#99BDDE;--bg:#F4F6FB;--surface:#FFFFFF;--surface-2:#F7F9FD;--label:#1B1F2A;--label-2:rgba(27,31,42,0.70);--label-3:rgba(27,31,42,0.46);--separator:rgba(27,31,42,0.10);--fill-1:rgba(107,138,199,0.10);--shadow-card:0 10px 28px rgba(56,87,133,0.10),0 2px 6px rgba(56,87,133,0.06);--shadow-nav:0 1px 0 rgba(27,31,42,0.06);--r-section:20px;--r-control:16px;}
+[data-theme="dark"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}
+@media(prefers-color-scheme:dark){[data-theme="auto"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}html,body{margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;background:var(--bg);color:var(--label);-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;line-height:1.7;transition:background .35s ease,color .25s ease;}
+a{color:var(--accent-primary);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:760px;margin:0 auto;padding:0 20px;}
+header.site{position:sticky;top:0;z-index:30;backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);background:color-mix(in srgb,var(--surface) 78%,transparent);box-shadow:var(--shadow-nav);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand .logo{width:30px;height:30px;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.12);background:linear-gradient(180deg,#B5BCEB,#BFE6D9);display:grid;place-items:center;}
+.brand .name{font-size:16px;font-weight:600;letter-spacing:-0.02em;}
+.back-link{font-size:14px;color:var(--label-2);}
+.doc-hero{padding:60px 0 30px;background:radial-gradient(800px 400px at 80% -10%,color-mix(in srgb,var(--accent-light) 30%,transparent),transparent 60%),radial-gradient(700px 400px at -10% 30%,color-mix(in srgb,var(--accent-primary) 14%,transparent),transparent 60%),transparent;}
+.doc-hero .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:10px;}
+.doc-hero h1{font-size:clamp(32px,4.4vw,44px);font-weight:800;letter-spacing:-0.025em;margin:0 0 10px;}
+.doc-hero p.meta{color:var(--label-3);font-size:13px;margin:0;}
+.lang-bar{background:var(--surface-2);border-bottom:0.5px solid var(--separator);padding:12px 0;overflow-x:auto;}
+.lang-pills{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px;max-width:760px;margin:0 auto;}
+.lang-pill{background:var(--fill-1);color:var(--label-2);border:none;border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+.lang-pill:hover,.lang-pill.active{background:var(--accent-primary);color:#fff;}
+main.doc{padding:24px 0 80px;}
+main.doc h2{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:40px 0 12px;}
+main.doc h3{font-size:17px;font-weight:600;margin:24px 0 8px;}
+main.doc p,main.doc li{font-size:16px;color:var(--label);margin:0 0 10px;}
+main.doc ul{padding-left:20px;margin:0 0 16px;}
+main.doc li{margin-bottom:6px;}
+.callout{background:var(--surface);border-radius:var(--r-section);padding:18px 20px;box-shadow:var(--shadow-card);margin:18px 0;border-left:4px solid var(--accent-primary);}
+.callout strong{color:var(--accent-primary);}
+.lang-section{display:none;}.lang-section.visible{display:block;}
+footer.site{border-top:0.5px solid var(--separator);padding:30px 0 60px;color:var(--label-3);font-size:13px;}
+footer.site .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;}
+footer.site .links a{color:var(--label-2);margin-left:14px;}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="todak-icon" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#B5BCEB"/><ellipse cx="512" cy="560" rx="320" ry="280" fill="#E8F4FB" stroke="#B7D6E6" stroke-width="10"/><ellipse cx="512" cy="470" rx="260" ry="38" fill="rgba(255,255,255,0.55)"/><path d="M 290 760 Q 380 720 470 750 Q 560 780 660 740 Q 720 760 760 770 Q 612 810 412 800 Q 320 790 290 760 Z" fill="#E8DBC9"/><ellipse cx="560" cy="600" rx="95" ry="62" fill="#8E91D8"/><path d="M 650 600 L 730 555 L 720 600 L 730 645 Z" fill="#8E91D8"/>
+</symbol></defs></svg>
+<header class="site"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo"><svg width="24" height="24"><use href="#todak-icon"/></svg></span><span class="name">토닥 어항 일기</span></a>
+<a class="back-link" href="index.html">← Home</a></div></header>
+<section class="doc-hero"><div class="container">
+<div class="eyebrow">Support Center</div>
+<h1>고객센터 · Support</h1>
+<p class="meta">토닥 어항 일기 · Todak Aquarium Diary</p>
+</div></section>
+<div class="lang-bar"><div class="lang-pills">
+<button class="lang-pill active" onclick="showLang('ko')">한국어</button>
+<button class="lang-pill" onclick="showLang('en')">English</button>
+<button class="lang-pill" onclick="showLang('ja')">日本語</button>
+<button class="lang-pill" onclick="showLang('es')">Español</button>
+<button class="lang-pill" onclick="showLang('fr')">Français</button>
+<button class="lang-pill" onclick="showLang('de')">Deutsch</button>
+<button class="lang-pill" onclick="showLang('it')">Italiano</button>
+<button class="lang-pill" onclick="showLang('pt')">Português</button>
+<button class="lang-pill" onclick="showLang('ru')">Русский</button>
+<button class="lang-pill" onclick="showLang('ar')">العربية</button>
+<button class="lang-pill" onclick="showLang('hi')">हिन्दी</button>
+<button class="lang-pill" onclick="showLang('th')">ไทย</button>
+<button class="lang-pill" onclick="showLang('vi')">Tiếng Việt</button>
+<button class="lang-pill" onclick="showLang('id')">Indonesia</button>
+<button class="lang-pill" onclick="showLang('ms')">Melayu</button>
+<button class="lang-pill" onclick="showLang('nl')">Nederlands</button>
+<button class="lang-pill" onclick="showLang('sv')">Svenska</button>
+<button class="lang-pill" onclick="showLang('da')">Dansk</button>
+<button class="lang-pill" onclick="showLang('no')">Norsk</button>
+<button class="lang-pill" onclick="showLang('fi')">Suomi</button>
+<button class="lang-pill" onclick="showLang('pl')">Polski</button>
+<button class="lang-pill" onclick="showLang('tr')">Türkçe</button>
+<button class="lang-pill" onclick="showLang('el')">Ελληνικά</button>
+<button class="lang-pill" onclick="showLang('cs')">Čeština</button>
+<button class="lang-pill" onclick="showLang('hu')">Magyar</button>
+<button class="lang-pill" onclick="showLang('ro')">Română</button>
+<button class="lang-pill" onclick="showLang('uk')">Українська</button>
+<button class="lang-pill" onclick="showLang('he')">עברית</button>
+<button class="lang-pill" onclick="showLang('ca')">Català</button>
+<button class="lang-pill" onclick="showLang('fil')">Filipino</button>
+<button class="lang-pill" onclick="showLang('sk')">Slovenčina</button>
+<button class="lang-pill" onclick="showLang('hr')">Hrvatski</button>
+<button class="lang-pill" onclick="showLang('bg')">Български</button>
+<button class="lang-pill" onclick="showLang('sl')">Slovenščina</button>
+<button class="lang-pill" onclick="showLang('lt')">Lietuvių</button>
+<button class="lang-pill" onclick="showLang('lv')">Latviešu</button>
+<button class="lang-pill" onclick="showLang('et')">Eesti</button>
+<button class="lang-pill" onclick="showLang('is')">Íslenska</button>
+</div></div>
+<main class="doc"><div class="container">
+<div class="lang-section visible" id="lang-ko">
+<h2>📩 문의하기</h2>
+<div class="callout"><strong>이메일:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>수신 후 <strong>30일 이내</strong>에 답변드립니다.</div>
+<h2>❓ 자주 묻는 질문 (FAQ)</h2>
+<h3>Q. 앱을 삭제하면 데이터가 사라지나요?</h3>
+<p>앱을 삭제하면 기기에 저장된 모든 데이터가 삭제됩니다. 삭제 전에 반드시 설정 화면에서 백업을 내보내 주세요.</p>
+<h3>Q. 데이터를 다른 기기로 옮길 수 있나요?</h3>
+<p>설정 화면의 백업/복원 기능을 이용해 파일로 내보낸 후, 새 기기에서 불러올 수 있습니다.</p>
+<h3>Q. 광고가 있나요?</h3>
+<p>토닥 어항 일기에는 광고가 없습니다. 사용자 데이터를 수집하거나 외부 광고 네트워크를 사용하지 않습니다.</p>
+<h3>Q. 구독이나 인앱 결제가 있나요?</h3>
+<p>현재 버전은 무료로 제공되며 인앱 결제가 없습니다.</p>
+<h3>Q. 기록이 클라우드에 저장되나요?</h3>
+<p>기록은 기기 내 로컬에만 저장됩니다. 외부 서버로 전송되지 않습니다.</p>
+<h3>Q. Sign in with Apple이 필수인가요?</h3>
+<p>Apple 로그인을 통해 계정을 사용할 수 있습니다. 기본 기록 기능은 로그인 없이도 이용 가능합니다.</p>
+<h3>Q. 앱 오류나 버그를 발견했습니다.</h3>
+<p>이메일로 오류 내용, 기기 모델, iOS 버전을 함께 보내주시면 신속히 대응하겠습니다.</p>
+<h3>Q. 개인정보 삭제를 요청하고 싶습니다.</h3>
+<p>앱 내 설정에서 계정 삭제 기능을 이용하시거나, <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>으로 요청해 주세요.</p>
+</div>
+<div class="lang-section" id="lang-en">
+<h2>📩 Contact Us</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>We will respond within <strong>30 days</strong> of receiving your message.</div>
+<h2>❓ Frequently Asked Questions (FAQ)</h2>
+<h3>Q. Will my data be lost if I delete the app?</h3>
+<p>Yes, all data stored on your device will be deleted if you uninstall the app. Please export a backup from Settings before deleting.</p>
+<h3>Q. Can I transfer data to another device?</h3>
+<p>Use the Backup/Restore feature in Settings to export your data, then import it on your new device.</p>
+<h3>Q. Are there any ads?</h3>
+<p>Todak Aquarium Diary contains no advertisements. We do not collect user data or use third-party ad networks.</p>
+<h3>Q. Are there subscriptions or in-app purchases?</h3>
+<p>The current version is free with no in-app purchases.</p>
+<h3>Q. Is my data stored in the cloud?</h3>
+<p>All records are stored locally on your device only. They are not transmitted to external servers.</p>
+<h3>Q. Is Sign in with Apple required?</h3>
+<p>You can use the app with an Apple account. Basic recording features are available without signing in.</p>
+<h3>Q. I found a bug or error.</h3>
+<p>Please email us with error details, device model, and iOS version. We will respond promptly.</p>
+<h3>Q. I want to delete my personal data.</h3>
+<p>Use Account Deletion in Settings or contact us at <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ja">
+<h2>📩 お問い合わせ</h2>
+<div class="callout"><strong>メール：</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>受信後 <strong>30日以内</strong> にご返答いたします。</div>
+<h2>❓ よくある質問（FAQ）</h2>
+<h3>Q. アプリを削除するとデータが消えますか？</h3>
+<p>はい、アプリをアンインストールするとデバイスに保存されたすべてのデータが削除されます。削除前に設定画面からバックアップをエクスポートしてください。</p>
+<h3>Q. データを別のデバイスに移せますか？</h3>
+<p>設定画面のバックアップ/復元機能を使ってファイルとしてエクスポートし、新しいデバイスでインポートできます。</p>
+<h3>Q. 広告はありますか？</h3>
+<p>トダック水槽日記には広告はありません。ユーザーデータの収集や外部広告ネットワークの使用はしていません。</p>
+<h3>Q. サブスクリプションやアプリ内課金はありますか？</h3>
+<p>現在のバージョンは無料でアプリ内課金はありません。</p>
+<h3>Q. データはクラウドに保存されますか？</h3>
+<p>すべての記録はデバイス内にローカルで保存されます。外部サーバーには送信されません。</p>
+<h3>Q. バグやエラーを見つけました。</h3>
+<p>エラーの内容、デバイスモデル、iOSバージョンをメールでお送りください。迅速に対応いたします。</p>
+<h3>Q. 個人情報の削除を要求したいです。</h3>
+<p>設定のアカウント削除機能を使用するか、<a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>にご連絡ください。</p>
+</div>
+<div class="lang-section" id="lang-es">
+<h2>📩 Contáctenos</h2>
+<div class="callout"><strong>Correo:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Responderemos en un plazo de <strong>30 días</strong>.</div>
+<h2>❓ Preguntas Frecuentes (FAQ)</h2>
+<h3>P. ¿Perderé mis datos si elimino la app?</h3>
+<p>Sí, todos los datos almacenados en su dispositivo se eliminarán al desinstalar la app. Exporte una copia de seguridad desde Configuración antes de eliminarla.</p>
+<h3>P. ¿Puedo transferir datos a otro dispositivo?</h3>
+<p>Sí. Use la función Copia/Restaurar en Configuración para exportar e importar en el nuevo dispositivo.</p>
+<h3>P. ¿Hay anuncios?</h3>
+<p>Todak Diario Acuario no contiene publicidad. No recopilamos datos de usuario ni usamos redes publicitarias de terceros.</p>
+<h3>P. ¿Hay suscripciones o compras dentro de la app?</h3>
+<p>La versión actual es gratuita sin compras integradas.</p>
+<h3>P. ¿Deseo eliminar mis datos personales?</h3>
+<p>Use la función Eliminar Cuenta en Configuración o contáctenos en <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-fr">
+<h2>📩 Nous contacter</h2>
+<div class="callout"><strong>E-mail :</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Nous répondrons dans un délai de <strong>30 jours</strong>.</div>
+<h2>❓ Questions Fréquentes (FAQ)</h2>
+<h3>Q. Mes données seront-elles perdues si je supprime l'app ?</h3>
+<p>Oui, toutes les données stockées sur votre appareil seront supprimées. Veuillez exporter une sauvegarde depuis les Paramètres avant de désinstaller.</p>
+<h3>Q. Puis-je transférer mes données sur un autre appareil ?</h3>
+<p>Oui, utilisez la fonction Sauvegarde/Restauration dans les Paramètres pour exporter et importer sur votre nouvel appareil.</p>
+<h3>Q. Y a-t-il des publicités ?</h3>
+<p>Todak Aquarium Diary ne contient aucune publicité. Nous ne collectons pas de données utilisateur ni n'utilisons de réseaux publicitaires tiers.</p>
+<h3>Q. Je souhaite supprimer mes données personnelles.</h3>
+<p>Utilisez la fonctionnalité Suppression de compte dans Paramètres ou contactez-nous à <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-de">
+<h2>📩 Kontakt</h2>
+<div class="callout"><strong>E-Mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Wir antworten innerhalb von <strong>30 Tagen</strong>.</div>
+<h2>❓ Häufig gestellte Fragen (FAQ)</h2>
+<h3>F. Gehen meine Daten verloren, wenn ich die App lösche?</h3>
+<p>Ja, alle auf Ihrem Gerät gespeicherten Daten werden beim Deinstallieren gelöscht. Bitte exportieren Sie vorher ein Backup über die Einstellungen.</p>
+<h3>F. Kann ich Daten auf ein anderes Gerät übertragen?</h3>
+<p>Ja, nutzen Sie die Backup/Wiederherstellen-Funktion in den Einstellungen zum Exportieren und Importieren.</p>
+<h3>F. Gibt es Werbung?</h3>
+<p>Todak Aquarium Tagebuch enthält keine Werbung. Wir erheben keine Nutzerdaten und verwenden keine Werbenetzwerke Dritter.</p>
+<h3>F. Ich möchte meine persönlichen Daten löschen lassen.</h3>
+<p>Nutzen Sie Konto löschen in den Einstellungen oder kontaktieren Sie uns unter <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-it">
+<h2>📩 Contattaci</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Risponderemo entro <strong>30 giorni</strong> dalla ricezione.</div>
+<h2>❓ Domande Frequenti (FAQ)</h2>
+<h3>D. Perderò i miei dati se elimino l'app?</h3>
+<p>Sì, tutti i dati salvati sul dispositivo verranno eliminati. Prima di disinstallare, esporta un backup dalla schermata Impostazioni.</p>
+<h3>D. Posso trasferire i dati su un altro dispositivo?</h3>
+<p>Sì. Usa la funzione Backup/Ripristino in Impostazioni per esportare e importare sul nuovo dispositivo.</p>
+<h3>D. Ci sono pubblicità?</h3>
+<p>Todak Diario Acquario non contiene pubblicità. Non raccogliamo dati utente né utilizziamo reti pubblicitarie di terze parti.</p>
+<h3>D. Desidero eliminare i miei dati personali.</h3>
+<p>Usa Eliminazione Account in Impostazioni o contattaci a <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-pt">
+<h2>📩 Fale Conosco</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Responderemos em até <strong>30 dias</strong>.</div>
+<h2>❓ Perguntas Frequentes (FAQ)</h2>
+<h3>P. Meus dados serão perdidos se eu excluir o app?</h3>
+<p>Sim, todos os dados armazenados no dispositivo serão apagados. Exporte um backup nas Configurações antes de desinstalar.</p>
+<h3>P. Posso transferir dados para outro dispositivo?</h3>
+<p>Sim. Use Backup/Restaurar nas Configurações para exportar e importar no novo dispositivo.</p>
+<h3>P. Há anúncios?</h3>
+<p>O Todak Diário Aquário não contém publicidade. Não coletamos dados de usuários nem usamos redes de anúncios de terceiros.</p>
+<h3>P. Desejo excluir meus dados pessoais.</h3>
+<p>Use Excluir Conta nas Configurações ou entre em contato pelo <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ru">
+<h2>📩 Связаться с нами</h2>
+<div class="callout"><strong>Эл. почта:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Мы ответим в течение <strong>30 дней</strong>.</div>
+<h2>❓ Часто задаваемые вопросы (FAQ)</h2>
+<h3>В. Будут ли мои данные потеряны при удалении приложения?</h3>
+<p>Да, все данные, хранящиеся на вашем устройстве, будут удалены при удалении приложения. Пожалуйста, экспортируйте резервную копию в Настройках перед удалением.</p>
+<h3>В. Можно ли перенести данные на другое устройство?</h3>
+<p>Да, используйте функцию Резервная копия/Восстановление в Настройках для экспорта и импорта данных.</p>
+<h3>В. Есть ли реклама?</h3>
+<p>Todak Аквариумный дневник не содержит рекламы. Мы не собираем данные пользователей и не используем сторонние рекламные сети.</p>
+<h3>В. Я хочу удалить мои персональные данные.</h3>
+<p>Используйте функцию Удалить аккаунт в Настройках или свяжитесь с нами по адресу <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ar" dir="rtl">
+<h2>📩 اتصل بنا</h2>
+<div class="callout"><strong>البريد الإلكتروني:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>سنرد خلال <strong>30 يومًا</strong>.</div>
+<h2>❓ الأسئلة الشائعة (FAQ)</h2>
+<h3>س. هل ستُفقد بياناتي إذا حذفت التطبيق؟</h3>
+<p>نعم، سيتم حذف جميع البيانات المخزنة على جهازك عند إلغاء تثبيت التطبيق. يرجى تصدير نسخة احتياطية من الإعدادات قبل الحذف.</p>
+<h3>س. هل يمكنني نقل البيانات إلى جهاز آخر؟</h3>
+<p>نعم، استخدم ميزة النسخ الاحتياطي/الاستعادة في الإعدادات لتصدير البيانات واستيرادها على جهازك الجديد.</p>
+<h3>س. هل توجد إعلانات؟</h3>
+<p>لا تحتوي Todak مذكرات الحوض على أي إعلانات. نحن لا نجمع بيانات المستخدمين ولا نستخدم شبكات إعلانات خارجية.</p>
+<h3>س. أريد حذف بياناتي الشخصية.</h3>
+<p>استخدم ميزة حذف الحساب في الإعدادات أو تواصل معنا على <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-hi">
+<h2>📩 हमसे संपर्क करें</h2>
+<div class="callout"><strong>ईमेल:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>हम आपके संदेश प्राप्त होने के <strong>30 दिनों के भीतर</strong> जवाब देंगे।</div>
+<h2>❓ अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+<h3>प्र. क्या ऐप हटाने पर मेरा डेटा खो जाएगा?</h3>
+<p>हाँ, ऐप अनइंस्टॉल करने पर आपके डिवाइस पर संग्रहित सभी डेटा हटा दिया जाएगा। हटाने से पहले सेटिंग्स से बैकअप एक्सपोर्ट करें।</p>
+<h3>प्र. क्या मैं डेटा को दूसरे डिवाइस में ट्रांसफर कर सकता/सकती हूँ?</h3>
+<p>हाँ। सेटिंग्स में बैकअप/रिस्टोर फीचर का उपयोग करके डेटा एक्सपोर्ट करें और नए डिवाइस पर इम्पोर्ट करें।</p>
+<h3>प्र. क्या कोई विज्ञापन हैं?</h3>
+<p>Todak एक्वेरियम डायरी में कोई विज्ञापन नहीं है। हम उपयोगकर्ता डेटा एकत्र नहीं करते या तृतीय-पक्ष विज्ञापन नेटवर्क का उपयोग नहीं करते।</p>
+<h3>प्र. मैं अपना व्यक्तिगत डेटा हटाना चाहता/चाहती हूँ।</h3>
+<p>सेटिंग्स में खाता हटाएं फीचर का उपयोग करें या <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> पर संपर्क करें।</p>
+</div>
+<div class="lang-section" id="lang-th">
+<h2>📩 ติดต่อเรา</h2>
+<div class="callout"><strong>อีเมล:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>เราจะตอบกลับภายใน <strong>30 วัน</strong></div>
+<h2>❓ คำถามที่พบบ่อย (FAQ)</h2>
+<h3>ถ. ข้อมูลของฉันจะสูญหายหากฉันลบแอปหรือไม่?</h3>
+<p>ใช่ ข้อมูลทั้งหมดที่จัดเก็บในอุปกรณ์ของคุณจะถูกลบหากคุณถอนการติดตั้งแอป โปรดส่งออกข้อมูลสำรองจากการตั้งค่าก่อนลบ</p>
+<h3>ถ. ฉันสามารถโอนข้อมูลไปยังอุปกรณ์อื่นได้หรือไม่?</h3>
+<p>ได้ ใช้คุณสมบัติสำรอง/กู้คืนในการตั้งค่าเพื่อส่งออกข้อมูลและนำเข้าในอุปกรณ์ใหม่</p>
+<h3>ถ. มีโฆษณาหรือไม่?</h3>
+<p>Todak ไดอารี่ตู้ปลาไม่มีโฆษณา เราไม่เก็บรวบรวมข้อมูลผู้ใช้หรือใช้เครือข่ายโฆษณาของบุคคลที่สาม</p>
+<h3>ถ. ฉันต้องการลบข้อมูลส่วนตัวของฉัน</h3>
+<p>ใช้ฟีเจอร์ลบบัญชีในการตั้งค่า หรือติดต่อเราที่ <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a></p>
+</div>
+<div class="lang-section" id="lang-vi">
+<h2>📩 Liên hệ với chúng tôi</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Chúng tôi sẽ phản hồi trong vòng <strong>30 ngày</strong>.</div>
+<h2>❓ Câu hỏi thường gặp (FAQ)</h2>
+<h3>H. Dữ liệu của tôi có bị mất nếu tôi xóa ứng dụng không?</h3>
+<p>Có, tất cả dữ liệu lưu trên thiết bị của bạn sẽ bị xóa khi gỡ cài đặt ứng dụng. Vui lòng xuất bản sao lưu từ Cài đặt trước khi xóa.</p>
+<h3>H. Tôi có thể chuyển dữ liệu sang thiết bị khác không?</h3>
+<p>Có. Sử dụng tính năng Sao lưu/Khôi phục trong Cài đặt để xuất và nhập dữ liệu trên thiết bị mới.</p>
+<h3>H. Có quảng cáo không?</h3>
+<p>Todak Nhật ký Bể cá không chứa quảng cáo. Chúng tôi không thu thập dữ liệu người dùng hoặc sử dụng mạng quảng cáo bên thứ ba.</p>
+<h3>H. Tôi muốn xóa dữ liệu cá nhân của mình.</h3>
+<p>Sử dụng tính năng Xóa tài khoản trong Cài đặt hoặc liên hệ với chúng tôi tại <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-id">
+<h2>📩 Hubungi Kami</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Kami akan merespons dalam <strong>30 hari</strong>.</div>
+<h2>❓ Pertanyaan yang Sering Diajukan (FAQ)</h2>
+<h3>T. Apakah data saya akan hilang jika saya menghapus aplikasinya?</h3>
+<p>Ya, semua data yang tersimpan di perangkat Anda akan terhapus saat menghapus aplikasi. Harap ekspor cadangan dari Pengaturan sebelum menghapus.</p>
+<h3>T. Bisakah saya mentransfer data ke perangkat lain?</h3>
+<p>Ya. Gunakan fitur Cadangan/Pulihkan di Pengaturan untuk mengekspor dan mengimpor di perangkat baru.</p>
+<h3>T. Apakah ada iklan?</h3>
+<p>Todak Diary Akuarium tidak mengandung iklan. Kami tidak mengumpulkan data pengguna atau menggunakan jaringan iklan pihak ketiga.</p>
+<h3>T. Saya ingin menghapus data pribadi saya.</h3>
+<p>Gunakan fitur Hapus Akun di Pengaturan atau hubungi kami di <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ms">
+<h2>📩 Hubungi Kami</h2>
+<div class="callout"><strong>E-mel:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Kami akan membalas dalam masa <strong>30 hari</strong>.</div>
+<h2>❓ Soalan Lazim (FAQ)</h2>
+<h3>S. Adakah data saya akan hilang jika saya memadam apl?</h3>
+<p>Ya, semua data yang disimpan pada peranti anda akan dipadam apabila menyahpasang apl. Sila eksport sandaran dari Tetapan sebelum memadamnya.</p>
+<h3>S. Bolehkah saya memindahkan data ke peranti lain?</h3>
+<p>Ya. Gunakan ciri Sandaran/Pulihkan dalam Tetapan untuk mengeksport dan mengimport pada peranti baharu.</p>
+<h3>S. Adakah ada iklan?</h3>
+<p>Todak Diari Akuarium tidak mengandungi sebarang iklan. Kami tidak mengumpul data pengguna atau menggunakan rangkaian iklan pihak ketiga.</p>
+<h3>S. Saya ingin meminta pemadaman data peribadi saya.</h3>
+<p>Gunakan ciri Padam Akaun dalam Tetapan atau hubungi kami di <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-nl">
+<h2>📩 Neem Contact Op</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>We reageren binnen <strong>30 dagen</strong>.</div>
+<h2>❓ Veelgestelde Vragen (FAQ)</h2>
+<h3>V. Gaan mijn gegevens verloren als ik de app verwijder?</h3>
+<p>Ja, alle gegevens die op uw apparaat zijn opgeslagen, worden verwijderd als u de app deïnstalleert. Exporteer eerst een back-up via Instellingen.</p>
+<h3>V. Kan ik gegevens naar een ander apparaat overbrengen?</h3>
+<p>Ja. Gebruik de functie Back-up/Herstel in Instellingen om uw gegevens te exporteren en op het nieuwe apparaat te importeren.</p>
+<h3>V. Zijn er advertenties?</h3>
+<p>Todak Aquariumdagboek bevat geen advertenties. We verzamelen geen gebruikersgegevens of gebruiken advertentienetwerken van derden.</p>
+<h3>V. Ik wil mijn persoonlijke gegevens laten verwijderen.</h3>
+<p>Gebruik Account Verwijderen in Instellingen of neem contact op via <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-sv">
+<h2>📩 Kontakta oss</h2>
+<div class="callout"><strong>E-post:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vi svarar inom <strong>30 dagar</strong>.</div>
+<h2>❓ Vanliga frågor (FAQ)</h2>
+<h3>F. Förlorar jag mina data om jag tar bort appen?</h3>
+<p>Ja, all data som lagras på din enhet raderas när du avinstallerar appen. Exportera en säkerhetskopia från Inställningar innan du tar bort den.</p>
+<h3>F. Kan jag överföra data till en annan enhet?</h3>
+<p>Ja. Använd funktionen Säkerhetskopiering/Återställning i Inställningar för att exportera och importera på den nya enheten.</p>
+<h3>F. Finns det annonser?</h3>
+<p>Todak Akvariedagbok innehåller inga annonser. Vi samlar inte in användardata eller använder tredjepartsannonsnätverk.</p>
+<h3>F. Jag vill radera mina personuppgifter.</h3>
+<p>Använd Ta bort konto i Inställningar eller kontakta oss på <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-da">
+<h2>📩 Kontakt os</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vi svarer inden for <strong>30 dage</strong>.</div>
+<h2>❓ Ofte stillede spørgsmål (FAQ)</h2>
+<h3>Sp. Mister jeg mine data, hvis jeg sletter appen?</h3>
+<p>Ja, alle data gemt på din enhed slettes, når du afinstallerer appen. Eksporter venligst en sikkerhedskopi fra Indstillinger, inden du sletter.</p>
+<h3>Sp. Kan jeg overføre data til en anden enhed?</h3>
+<p>Ja. Brug funktionen Backup/Gendan i Indstillinger til at eksportere og importere på den nye enhed.</p>
+<h3>Sp. Er der reklamer?</h3>
+<p>Todak Akvariedagbog indeholder ingen reklamer. Vi indsamler ikke brugerdata eller bruger tredjepartsreklamenetværk.</p>
+<h3>Sp. Jeg ønsker at få mine persondata slettet.</h3>
+<p>Brug Slet konto i Indstillinger eller kontakt os på <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-no">
+<h2>📩 Kontakt oss</h2>
+<div class="callout"><strong>E-post:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vi svarer innen <strong>30 dager</strong>.</div>
+<h2>❓ Ofte stilte spørsmål (FAQ)</h2>
+<h3>Sp. Vil dataene mine forsvinne hvis jeg sletter appen?</h3>
+<p>Ja, alle data lagret på enheten din slettes når du avinstallerer appen. Eksporter en sikkerhetskopi fra Innstillinger før du sletter.</p>
+<h3>Sp. Kan jeg overføre data til en annen enhet?</h3>
+<p>Ja. Bruk Sikkerhetskopi/Gjenopprett i Innstillinger for å eksportere og importere på den nye enheten.</p>
+<h3>Sp. Er det annonser?</h3>
+<p>Todak Akvariumdagbok inneholder ingen annonser. Vi samler ikke inn brukerdata eller bruker tredjeparts annonsenettverk.</p>
+<h3>Sp. Jeg ønsker å slette mine personopplysninger.</h3>
+<p>Bruk Slett konto i Innstillinger eller kontakt oss på <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-fi">
+<h2>📩 Ota yhteyttä</h2>
+<div class="callout"><strong>Sähköposti:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vastaamme <strong>30 päivän kuluessa</strong>.</div>
+<h2>❓ Usein kysytyt kysymykset (FAQ)</h2>
+<h3>K. Katoaako tietoni, jos poistan sovelluksen?</h3>
+<p>Kyllä, kaikki laitteellesi tallennetut tiedot poistetaan sovelluksen asennuksen poistamisen yhteydessä. Vie varmuuskopio Asetuksista ennen poistamista.</p>
+<h3>K. Voinko siirtää tietoja toiseen laitteeseen?</h3>
+<p>Kyllä. Käytä Varmuuskopio/Palauta-toimintoa Asetuksissa viedäksesi ja tuodaksesi tiedot uuteen laitteeseen.</p>
+<h3>K. Onko mainoksia?</h3>
+<p>Todak Akvaariopäiväkirja ei sisällä mainoksia. Emme kerää käyttäjätietoja tai käytä kolmannen osapuolen mainosverkostoja.</p>
+<h3>K. Haluan poistaa henkilökohtaiset tietoni.</h3>
+<p>Käytä Poista tili -toimintoa Asetuksissa tai ota yhteyttä osoitteessa <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-pl">
+<h2>📩 Skontaktuj się z nami</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Odpowiemy w ciągu <strong>30 dni</strong>.</div>
+<h2>❓ Często zadawane pytania (FAQ)</h2>
+<h3>P. Czy moje dane zostaną utracone, jeśli usunę aplikację?</h3>
+<p>Tak, wszystkie dane przechowywane na urządzeniu zostaną usunięte po odinstalowaniu aplikacji. Proszę wyeksportować kopię zapasową z Ustawień przed usunięciem.</p>
+<h3>P. Czy mogę przenieść dane na inne urządzenie?</h3>
+<p>Tak. Użyj funkcji Kopia zapasowa/Przywróć w Ustawieniach, aby wyeksportować i zaimportować dane na nowym urządzeniu.</p>
+<h3>P. Czy są reklamy?</h3>
+<p>Todak Dziennik Akwarium nie zawiera reklam. Nie zbieramy danych użytkowników ani nie używamy sieci reklamowych stron trzecich.</p>
+<h3>P. Chcę usunąć moje dane osobowe.</h3>
+<p>Użyj funkcji Usuń konto w Ustawieniach lub skontaktuj się z nami pod adresem <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-tr">
+<h2>📩 Bize Ulaşın</h2>
+<div class="callout"><strong>E-posta:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br><strong>30 gün</strong> içinde yanıt vereceğiz.</div>
+<h2>❓ Sıkça Sorulan Sorular (SSS)</h2>
+<h3>S. Uygulamayı silersem verilerim kaybolur mu?</h3>
+<p>Evet, uygulamayı kaldırdığınızda cihazınızda depolanan tüm veriler silinir. Silmeden önce lütfen Ayarlar'dan bir yedek dışa aktarın.</p>
+<h3>S. Verileri başka bir cihaza aktarabilir miyim?</h3>
+<p>Evet. Ayarlar'daki Yedekle/Geri Yükle özelliğini kullanarak verilerinizi dışa aktarın ve yeni cihaza aktarın.</p>
+<h3>S. Reklam var mı?</h3>
+<p>Todak Akvaryum Günlüğü hiçbir reklam içermez. Kullanıcı verilerini toplamaz veya üçüncü taraf reklam ağlarını kullanmayız.</p>
+<h3>S. Kişisel verilerimin silinmesini talep etmek istiyorum.</h3>
+<p>Ayarlar'daki Hesabı Sil özelliğini kullanın veya <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> adresinden bizimle iletişime geçin.</p>
+<html lang="ko" data-theme="auto">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>고객센터 · 토닥 어항 일기</title>
+<meta name="description" content="토닥 어항 일기 고객센터 · Todak Aquarium Diary Support"/>
+<meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='220' fill='%236B8AC7'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB'/%3E%3C/svg%3E"/>
+<style>
+:root,[data-theme="light"]{color-scheme:light;--accent-primary:#6B8AC7;--accent-light:#99BDDE;--bg:#F4F6FB;--surface:#FFFFFF;--surface-2:#F7F9FD;--label:#1B1F2A;--label-2:rgba(27,31,42,0.70);--label-3:rgba(27,31,42,0.46);--separator:rgba(27,31,42,0.10);--fill-1:rgba(107,138,199,0.10);--shadow-card:0 10px 28px rgba(56,87,133,0.10),0 2px 6px rgba(56,87,133,0.06);--shadow-nav:0 1px 0 rgba(27,31,42,0.06);--r-section:20px;--r-control:16px;}
+[data-theme="dark"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}
+@media(prefers-color-scheme:dark){[data-theme="auto"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}html,body{margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;background:var(--bg);color:var(--label);-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;line-height:1.7;transition:background .35s ease,color .25s ease;}
+a{color:var(--accent-primary);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:760px;margin:0 auto;padding:0 20px;}
+header.site{position:sticky;top:0;z-index:30;backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);background:color-mix(in srgb,var(--surface) 78%,transparent);box-shadow:var(--shadow-nav);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand .logo{width:30px;height:30px;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.12);background:linear-gradient(180deg,#B5BCEB,#BFE6D9);display:grid;place-items:center;}
+.brand .name{font-size:16px;font-weight:600;letter-spacing:-0.02em;}
+.back-link{font-size:14px;color:var(--label-2);}
+.doc-hero{padding:60px 0 30px;background:radial-gradient(800px 400px at 80% -10%,color-mix(in srgb,var(--accent-light) 30%,transparent),transparent 60%),radial-gradient(700px 400px at -10% 30%,color-mix(in srgb,var(--accent-primary) 14%,transparent),transparent 60%),transparent;}
+.doc-hero .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:10px;}
+.doc-hero h1{font-size:clamp(32px,4.4vw,44px);font-weight:800;letter-spacing:-0.025em;margin:0 0 10px;}
+.doc-hero p.meta{color:var(--label-3);font-size:13px;margin:0;}
+.lang-bar{background:var(--surface-2);border-bottom:0.5px solid var(--separator);padding:12px 0;overflow-x:auto;}
+.lang-pills{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px;max-width:760px;margin:0 auto;}
+.lang-pill{background:var(--fill-1);color:var(--label-2);border:none;border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+.lang-pill:hover,.lang-pill.active{background:var(--accent-primary);color:#fff;}
+main.doc{padding:24px 0 80px;}
+main.doc h2{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:40px 0 12px;}
+main.doc h3{font-size:17px;font-weight:600;margin:24px 0 8px;}
+main.doc p,main.doc li{font-size:16px;color:var(--label);margin:0 0 10px;}
+main.doc ul{padding-left:20px;margin:0 0 16px;}
+main.doc li{margin-bottom:6px;}
+.callout{background:var(--surface);border-radius:var(--r-section);padding:18px 20px;box-shadow:var(--shadow-card);margin:18px 0;border-left:4px solid var(--accent-primary);}
+.callout strong{color:var(--accent-primary);}
+.lang-section{display:none;}.lang-section.visible{display:block;}
+footer.site{border-top:0.5px solid var(--separator);padding:30px 0 60px;color:var(--label-3);font-size:13px;}
+footer.site .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;}
+footer.site .links a{color:var(--label-2);margin-left:14px;}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="todak-icon" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#B5BCEB"/><ellipse cx="512" cy="560" rx="320" ry="280" fill="#E8F4FB" stroke="#B7D6E6" stroke-width="10"/><ellipse cx="512" cy="470" rx="260" ry="38" fill="rgba(255,255,255,0.55)"/><path d="M 290 760 Q 380 720 470 750 Q 560 780 660 740 Q 720 760 760 770 Q 612 810 412 800 Q 320 790 290 760 Z" fill="#E8DBC9"/><ellipse cx="560" cy="600" rx="95" ry="62" fill="#8E91D8"/><path d="M 650 600 L 730 555 L 720 600 L 730 645 Z" fill="#8E91D8"/>
+</symbol></defs></svg>
+<header class="site"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo"><svg width="24" height="24"><use href="#todak-icon"/></svg></span><span class="name">토닥 어항 일기</span></a>
+<a class="back-link" href="index.html">← Home</a></div></header>
+<section class="doc-hero"><div class="container">
+<div class="eyebrow">Support Center</div>
+<h1>고객센터 · Support</h1>
+<p class="meta">토닥 어항 일기 · Todak Aquarium Diary</p>
+</div></section>
+<div class="lang-bar"><div class="lang-pills">
+<button class="lang-pill active" onclick="showLang('ko')">한국어</button>
+<button class="lang-pill" onclick="showLang('en')">English</button>
+<button class="lang-pill" onclick="showLang('ja')">日本語</button>
+<button class="lang-pill" onclick="showLang('es')">Español</button>
+<button class="lang-pill" onclick="showLang('fr')">Français</button>
+<button class="lang-pill" onclick="showLang('de')">Deutsch</button>
+<button class="lang-pill" onclick="showLang('it')">Italiano</button>
+<button class="lang-pill" onclick="showLang('pt')">Português</button>
+<button class="lang-pill" onclick="showLang('ru')">Русский</button>
+<button class="lang-pill" onclick="showLang('ar')">العربية</button>
+<button class="lang-pill" onclick="showLang('hi')">हिन्दी</button>
+<button class="lang-pill" onclick="showLang('th')">ไทย</button>
+<button class="lang-pill" onclick="showLang('vi')">Tiếng Việt</button>
+<button class="lang-pill" onclick="showLang('id')">Indonesia</button>
+<button class="lang-pill" onclick="showLang('ms')">Melayu</button>
+<button class="lang-pill" onclick="showLang('nl')">Nederlands</button>
+<button class="lang-pill" onclick="showLang('sv')">Svenska</button>
+<button class="lang-pill" onclick="showLang('da')">Dansk</button>
+<button class="lang-pill" onclick="showLang('no')">Norsk</button>
+<button class="lang-pill" onclick="showLang('fi')">Suomi</button>
+<button class="lang-pill" onclick="showLang('pl')">Polski</button>
+<button class="lang-pill" onclick="showLang('tr')">Türkçe</button>
+<button class="lang-pill" onclick="showLang('el')">Ελληνικά</button>
+<button class="lang-pill" onclick="showLang('cs')">Čeština</button>
+<button class="lang-pill" onclick="showLang('hu')">Magyar</button>
+<button class="lang-pill" onclick="showLang('ro')">Română</button>
+<button class="lang-pill" onclick="showLang('uk')">Українська</button>
+<button class="lang-pill" onclick="showLang('he')">עברית</button>
+<button class="lang-pill" onclick="showLang('ca')">Català</button>
+<button class="lang-pill" onclick="showLang('fil')">Filipino</button>
+<button class="lang-pill" onclick="showLang('sk')">Slovenčina</button>
+<button class="lang-pill" onclick="showLang('hr')">Hrvatski</button>
+<button class="lang-pill" onclick="showLang('bg')">Български</button>
+<button class="lang-pill" onclick="showLang('sl')">Slovenščina</button>
+<button class="lang-pill" onclick="showLang('lt')">Lietuvių</button>
+<button class="lang-pill" onclick="showLang('lv')">Latviešu</button>
+<button class="lang-pill" onclick="showLang('et')">Eesti</button>
+<button class="lang-pill" onclick="showLang('is')">Íslenska</button>
+</div></div>
+<main class="doc"><div class="container">
+<div class="lang-section visible" id="lang-ko">
+<h2>📩 문의하기</h2>
+<div class="callout"><strong>이메일:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>수신 후 <strong>30일 이내</strong>에 답변드립니다.</div>
+<h2>❓ 자주 묻는 질문 (FAQ)</h2>
+<h3>Q. 앱을 삭제하면 데이터가 사라지나요?</h3>
+<p>앱을 삭제하면 기기에 저장된 모든 데이터가 삭제됩니다. 삭제 전에 반드시 설정 화면에서 백업을 내보내 주세요.</p>
+<h3>Q. 데이터를 다른 기기로 옮길 수 있나요?</h3>
+<p>설정 화면의 백업/복원 기능을 이용해 파일로 내보낸 후, 새 기기에서 불러올 수 있습니다.</p>
+<h3>Q. 광고가 있나요?</h3>
+<p>토닥 어항 일기에는 광고가 없습니다. 사용자 데이터를 수집하거나 외부 광고 네트워크를 사용하지 않습니다.</p>
+<h3>Q. 구독이나 인앱 결제가 있나요?</h3>
+<p>현재 버전은 무료로 제공되며 인앱 결제가 없습니다.</p>
+<h3>Q. 기록이 클라우드에 저장되나요?</h3>
+<p>기록은 기기 내 로컬에만 저장됩니다. 외부 서버로 전송되지 않습니다.</p>
+<h3>Q. Sign in with Apple이 필수인가요?</h3>
+<p>Apple 로그인을 통해 계정을 사용할 수 있습니다. 기본 기록 기능은 로그인 없이도 이용 가능합니다.</p>
+<h3>Q. 앱 오류나 버그를 발견했습니다.</h3>
+<p>이메일로 오류 내용, 기기 모델, iOS 버전을 함께 보내주시면 신속히 대응하겠습니다.</p>
+<h3>Q. 개인정보 삭제를 요청하고 싶습니다.</h3>
+<p>앱 내 설정에서 계정 삭제 기능을 이용하시거나, <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>으로 요청해 주세요.</p>
+</div>
+<div class="lang-section" id="lang-en">
+<h2>📩 Contact Us</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>We will respond within <strong>30 days</strong> of receiving your message.</div>
+<h2>❓ Frequently Asked Questions (FAQ)</h2>
+<h3>Q. Will my data be lost if I delete the app?</h3>
+<p>Yes, all data stored on your device will be deleted if you uninstall the app. Please export a backup from Settings before deleting.</p>
+<h3>Q. Can I transfer data to another device?</h3>
+<p>Use the Backup/Restore feature in Settings to export your data, then import it on your new device.</p>
+<h3>Q. Are there any ads?</h3>
+<p>Todak Aquarium Diary contains no advertisements. We do not collect user data or use third-party ad networks.</p>
+<h3>Q. Are there subscriptions or in-app purchases?</h3>
+<p>The current version is free with no in-app purchases.</p>
+<h3>Q. Is my data stored in the cloud?</h3>
+<p>All records are stored locally on your device only. They are not transmitted to external servers.</p>
+<h3>Q. Is Sign in with Apple required?</h3>
+<p>You can use the app with an Apple account. Basic recording features are available without signing in.</p>
+<h3>Q. I found a bug or error.</h3>
+<p>Please email us with error details, device model, and iOS version. We will respond promptly.</p>
+<h3>Q. I want to delete my personal data.</h3>
+<p>Use Account Deletion in Settings or contact us at <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ja">
+<h2>📩 お問い合わせ</h2>
+<div class="callout"><strong>メール：</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>受信後 <strong>30日以内</strong> にご返答いたします。</div>
+<h2>❓ よくある質問（FAQ）</h2>
+<h3>Q. アプリを削除するとデータが消えますか？</h3>
+<p>はい、アプリをアンインストールするとデバイスに保存されたすべてのデータが削除されます。削除前に設定画面からバックアップをエクスポートしてください。</p>
+<h3>Q. データを別のデバイスに移せますか？</h3>
+<p>設定画面のバックアップ/復元機能を使ってファイルとしてエクスポートし、新しいデバイスでインポートできます。</p>
+<h3>Q. 広告はありますか？</h3>
+<p>トダック水槽日記には広告はありません。ユーザーデータの収集や外部広告ネットワークの使用はしていません。</p>
+<h3>Q. サブスクリプションやアプリ内課金はありますか？</h3>
+<p>現在のバージョンは無料でアプリ内課金はありません。</p>
+<h3>Q. データはクラウドに保存されますか？</h3>
+<p>すべての記録はデバイス内にローカルで保存されます。外部サーバーには送信されません。</p>
+<h3>Q. バグやエラーを見つけました。</h3>
+<p>エラーの内容、デバイスモデル、iOSバージョンをメールでお送りください。迅速に対応いたします。</p>
+<h3>Q. 個人情報の削除を要求したいです。</h3>
+<p>設定のアカウント削除機能を使用するか、<a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>にご連絡ください。</p>
+</div>
+<div class="lang-section" id="lang-es">
+<h2>📩 Contáctenos</h2>
+<div class="callout"><strong>Correo:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Responderemos en un plazo de <strong>30 días</strong>.</div>
+<h2>❓ Preguntas Frecuentes (FAQ)</h2>
+<h3>P. ¿Perderé mis datos si elimino la app?</h3>
+<p>Sí, todos los datos almacenados en su dispositivo se eliminarán al desinstalar la app. Exporte una copia de seguridad desde Configuración antes de eliminarla.</p>
+<h3>P. ¿Puedo transferir datos a otro dispositivo?</h3>
+<p>Sí. Use la función Copia/Restaurar en Configuración para exportar e importar en el nuevo dispositivo.</p>
+<h3>P. ¿Hay anuncios?</h3>
+<p>Todak Diario Acuario no contiene publicidad. No recopilamos datos de usuario ni usamos redes publicitarias de terceros.</p>
+<h3>P. ¿Hay suscripciones o compras dentro de la app?</h3>
+<p>La versión actual es gratuita sin compras integradas.</p>
+<h3>P. ¿Deseo eliminar mis datos personales?</h3>
+<p>Use la función Eliminar Cuenta en Configuración o contáctenos en <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-fr">
+<h2>📩 Nous contacter</h2>
+<div class="callout"><strong>E-mail :</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Nous répondrons dans un délai de <strong>30 jours</strong>.</div>
+<h2>❓ Questions Fréquentes (FAQ)</h2>
+<h3>Q. Mes données seront-elles perdues si je supprime l'app ?</h3>
+<p>Oui, toutes les données stockées sur votre appareil seront supprimées. Veuillez exporter une sauvegarde depuis les Paramètres avant de désinstaller.</p>
+<h3>Q. Puis-je transférer mes données sur un autre appareil ?</h3>
+<p>Oui, utilisez la fonction Sauvegarde/Restauration dans les Paramètres pour exporter et importer sur votre nouvel appareil.</p>
+<h3>Q. Y a-t-il des publicités ?</h3>
+<p>Todak Aquarium Diary ne contient aucune publicité. Nous ne collectons pas de données utilisateur ni n'utilisons de réseaux publicitaires tiers.</p>
+<h3>Q. Je souhaite supprimer mes données personnelles.</h3>
+<p>Utilisez la fonctionnalité Suppression de compte dans Paramètres ou contactez-nous à <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-de">
+<h2>📩 Kontakt</h2>
+<div class="callout"><strong>E-Mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Wir antworten innerhalb von <strong>30 Tagen</strong>.</div>
+<h2>❓ Häufig gestellte Fragen (FAQ)</h2>
+<h3>F. Gehen meine Daten verloren, wenn ich die App lösche?</h3>
+<p>Ja, alle auf Ihrem Gerät gespeicherten Daten werden beim Deinstallieren gelöscht. Bitte exportieren Sie vorher ein Backup über die Einstellungen.</p>
+<h3>F. Kann ich Daten auf ein anderes Gerät übertragen?</h3>
+<p>Ja, nutzen Sie die Backup/Wiederherstellen-Funktion in den Einstellungen zum Exportieren und Importieren.</p>
+<h3>F. Gibt es Werbung?</h3>
+<p>Todak Aquarium Tagebuch enthält keine Werbung. Wir erheben keine Nutzerdaten und verwenden keine Werbenetzwerke Dritter.</p>
+<h3>F. Ich möchte meine persönlichen Daten löschen lassen.</h3>
+<p>Nutzen Sie Konto löschen in den Einstellungen oder kontaktieren Sie uns unter <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-it">
+<h2>📩 Contattaci</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Risponderemo entro <strong>30 giorni</strong> dalla ricezione.</div>
+<h2>❓ Domande Frequenti (FAQ)</h2>
+<h3>D. Perderò i miei dati se elimino l'app?</h3>
+<p>Sì, tutti i dati salvati sul dispositivo verranno eliminati. Prima di disinstallare, esporta un backup dalla schermata Impostazioni.</p>
+<h3>D. Posso trasferire i dati su un altro dispositivo?</h3>
+<p>Sì. Usa la funzione Backup/Ripristino in Impostazioni per esportare e importare sul nuovo dispositivo.</p>
+<h3>D. Ci sono pubblicità?</h3>
+<p>Todak Diario Acquario non contiene pubblicità. Non raccogliamo dati utente né utilizziamo reti pubblicitarie di terze parti.</p>
+<h3>D. Desidero eliminare i miei dati personali.</h3>
+<p>Usa Eliminazione Account in Impostazioni o contattaci a <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-pt">
+<h2>📩 Fale Conosco</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Responderemos em até <strong>30 dias</strong>.</div>
+<h2>❓ Perguntas Frequentes (FAQ)</h2>
+<h3>P. Meus dados serão perdidos se eu excluir o app?</h3>
+<p>Sim, todos os dados armazenados no dispositivo serão apagados. Exporte um backup nas Configurações antes de desinstalar.</p>
+<h3>P. Posso transferir dados para outro dispositivo?</h3>
+<p>Sim. Use Backup/Restaurar nas Configurações para exportar e importar no novo dispositivo.</p>
+<h3>P. Há anúncios?</h3>
+<p>O Todak Diário Aquário não contém publicidade. Não coletamos dados de usuários nem usamos redes de anúncios de terceiros.</p>
+<h3>P. Desejo excluir meus dados pessoais.</h3>
+<p>Use Excluir Conta nas Configurações ou entre em contato pelo <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ru">
+<h2>📩 Связаться с нами</h2>
+<div class="callout"><strong>Эл. почта:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Мы ответим в течение <strong>30 дней</strong>.</div>
+<h2>❓ Часто задаваемые вопросы (FAQ)</h2>
+<h3>В. Будут ли мои данные потеряны при удалении приложения?</h3>
+<p>Да, все данные, хранящиеся на вашем устройстве, будут удалены при удалении приложения. Пожалуйста, экспортируйте резервную копию в Настройках перед удалением.</p>
+<h3>В. Можно ли перенести данные на другое устройство?</h3>
+<p>Да, используйте функцию Резервная копия/Восстановление в Настройках для экспорта и импорта данных.</p>
+<h3>В. Есть ли реклама?</h3>
+<p>Todak Аквариумный дневник не содержит рекламы. Мы не собираем данные пользователей и не используем сторонние рекламные сети.</p>
+<h3>В. Я хочу удалить мои персональные данные.</h3>
+<p>Используйте функцию Удалить аккаунт в Настройках или свяжитесь с нами по адресу <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ar" dir="rtl">
+<h2>📩 اتصل بنا</h2>
+<div class="callout"><strong>البريد الإلكتروني:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>سنرد خلال <strong>30 يومًا</strong>.</div>
+<h2>❓ الأسئلة الشائعة (FAQ)</h2>
+<h3>س. هل ستُفقد بياناتي إذا حذفت التطبيق؟</h3>
+<p>نعم، سيتم حذف جميع البيانات المخزنة على جهازك عند إلغاء تثبيت التطبيق. يرجى تصدير نسخة احتياطية من الإعدادات قبل الحذف.</p>
+<h3>س. هل يمكنني نقل البيانات إلى جهاز آخر؟</h3>
+<p>نعم، استخدم ميزة النسخ الاحتياطي/الاستعادة في الإعدادات لتصدير البيانات واستيرادها على جهازك الجديد.</p>
+<h3>س. هل توجد إعلانات؟</h3>
+<p>لا تحتوي Todak مذكرات الحوض على أي إعلانات. نحن لا نجمع بيانات المستخدمين ولا نستخدم شبكات إعلانات خارجية.</p>
+<h3>س. أريد حذف بياناتي الشخصية.</h3>
+<p>استخدم ميزة حذف الحساب في الإعدادات أو تواصل معنا على <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-hi">
+<h2>📩 हमसे संपर्क करें</h2>
+<div class="callout"><strong>ईमेल:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>हम आपके संदेश प्राप्त होने के <strong>30 दिनों के भीतर</strong> जवाब देंगे।</div>
+<h2>❓ अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+<h3>प्र. क्या ऐप हटाने पर मेरा डेटा खो जाएगा?</h3>
+<p>हाँ, ऐप अनइंस्टॉल करने पर आपके डिवाइस पर संग्रहित सभी डेटा हटा दिया जाएगा। हटाने से पहले सेटिंग्स से बैकअप एक्सपोर्ट करें।</p>
+<h3>प्र. क्या मैं डेटा को दूसरे डिवाइस में ट्रांसफर कर सकता/सकती हूँ?</h3>
+<p>हाँ। सेटिंग्स में बैकअप/रिस्टोर फीचर का उपयोग करके डेटा एक्सपोर्ट करें और नए डिवाइस पर इम्पोर्ट करें।</p>
+<h3>प्र. क्या कोई विज्ञापन हैं?</h3>
+<p>Todak एक्वेरियम डायरी में कोई विज्ञापन नहीं है। हम उपयोगकर्ता डेटा एकत्र नहीं करते या तृतीय-पक्ष विज्ञापन नेटवर्क का उपयोग नहीं करते।</p>
+<h3>प्र. मैं अपना व्यक्तिगत डेटा हटाना चाहता/चाहती हूँ।</h3>
+<p>सेटिंग्स में खाता हटाएं फीचर का उपयोग करें या <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> पर संपर्क करें।</p>
+</div>
+<div class="lang-section" id="lang-th">
+<h2>📩 ติดต่อเรา</h2>
+<div class="callout"><strong>อีเมล:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>เราจะตอบกลับภายใน <strong>30 วัน</strong></div>
+<h2>❓ คำถามที่พบบ่อย (FAQ)</h2>
+<h3>ถ. ข้อมูลของฉันจะสูญหายหากฉันลบแอปหรือไม่?</h3>
+<p>ใช่ ข้อมูลทั้งหมดที่จัดเก็บในอุปกรณ์ของคุณจะถูกลบหากคุณถอนการติดตั้งแอป โปรดส่งออกข้อมูลสำรองจากการตั้งค่าก่อนลบ</p>
+<h3>ถ. ฉันสามารถโอนข้อมูลไปยังอุปกรณ์อื่นได้หรือไม่?</h3>
+<p>ได้ ใช้คุณสมบัติสำรอง/กู้คืนในการตั้งค่าเพื่อส่งออกข้อมูลและนำเข้าในอุปกรณ์ใหม่</p>
+<h3>ถ. มีโฆษณาหรือไม่?</h3>
+<p>Todak ไดอารี่ตู้ปลาไม่มีโฆษณา เราไม่เก็บรวบรวมข้อมูลผู้ใช้หรือใช้เครือข่ายโฆษณาของบุคคลที่สาม</p>
+<h3>ถ. ฉันต้องการลบข้อมูลส่วนตัวของฉัน</h3>
+<p>ใช้ฟีเจอร์ลบบัญชีในการตั้งค่า หรือติดต่อเราที่ <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a></p>
+</div>
+<div class="lang-section" id="lang-vi">
+<h2>📩 Liên hệ với chúng tôi</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Chúng tôi sẽ phản hồi trong vòng <strong>30 ngày</strong>.</div>
+<h2>❓ Câu hỏi thường gặp (FAQ)</h2>
+<h3>H. Dữ liệu của tôi có bị mất nếu tôi xóa ứng dụng không?</h3>
+<p>Có, tất cả dữ liệu lưu trên thiết bị của bạn sẽ bị xóa khi gỡ cài đặt ứng dụng. Vui lòng xuất bản sao lưu từ Cài đặt trước khi xóa.</p>
+<h3>H. Tôi có thể chuyển dữ liệu sang thiết bị khác không?</h3>
+<p>Có. Sử dụng tính năng Sao lưu/Khôi phục trong Cài đặt để xuất và nhập dữ liệu trên thiết bị mới.</p>
+<h3>H. Có quảng cáo không?</h3>
+<p>Todak Nhật ký Bể cá không chứa quảng cáo. Chúng tôi không thu thập dữ liệu người dùng hoặc sử dụng mạng quảng cáo bên thứ ba.</p>
+<h3>H. Tôi muốn xóa dữ liệu cá nhân của mình.</h3>
+<p>Sử dụng tính năng Xóa tài khoản trong Cài đặt hoặc liên hệ với chúng tôi tại <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-id">
+<h2>📩 Hubungi Kami</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Kami akan merespons dalam <strong>30 hari</strong>.</div>
+<h2>❓ Pertanyaan yang Sering Diajukan (FAQ)</h2>
+<h3>T. Apakah data saya akan hilang jika saya menghapus aplikasinya?</h3>
+<p>Ya, semua data yang tersimpan di perangkat Anda akan terhapus saat menghapus aplikasi. Harap ekspor cadangan dari Pengaturan sebelum menghapus.</p>
+<h3>T. Bisakah saya mentransfer data ke perangkat lain?</h3>
+<p>Ya. Gunakan fitur Cadangan/Pulihkan di Pengaturan untuk mengekspor dan mengimpor di perangkat baru.</p>
+<h3>T. Apakah ada iklan?</h3>
+<p>Todak Diary Akuarium tidak mengandung iklan. Kami tidak mengumpulkan data pengguna atau menggunakan jaringan iklan pihak ketiga.</p>
+<h3>T. Saya ingin menghapus data pribadi saya.</h3>
+<p>Gunakan fitur Hapus Akun di Pengaturan atau hubungi kami di <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ms">
+<h2>📩 Hubungi Kami</h2>
+<div class="callout"><strong>E-mel:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Kami akan membalas dalam masa <strong>30 hari</strong>.</div>
+<h2>❓ Soalan Lazim (FAQ)</h2>
+<h3>S. Adakah data saya akan hilang jika saya memadam apl?</h3>
+<p>Ya, semua data yang disimpan pada peranti anda akan dipadam apabila menyahpasang apl. Sila eksport sandaran dari Tetapan sebelum memadamnya.</p>
+<h3>S. Bolehkah saya memindahkan data ke peranti lain?</h3>
+<p>Ya. Gunakan ciri Sandaran/Pulihkan dalam Tetapan untuk mengeksport dan mengimport pada peranti baharu.</p>
+<h3>S. Adakah ada iklan?</h3>
+<p>Todak Diari Akuarium tidak mengandungi sebarang iklan. Kami tidak mengumpul data pengguna atau menggunakan rangkaian iklan pihak ketiga.</p>
+<h3>S. Saya ingin meminta pemadaman data peribadi saya.</h3>
+<p>Gunakan ciri Padam Akaun dalam Tetapan atau hubungi kami di <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-nl">
+<h2>📩 Neem Contact Op</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>We reageren binnen <strong>30 dagen</strong>.</div>
+<h2>❓ Veelgestelde Vragen (FAQ)</h2>
+<h3>V. Gaan mijn gegevens verloren als ik de app verwijder?</h3>
+<p>Ja, alle gegevens die op uw apparaat zijn opgeslagen, worden verwijderd als u de app deïnstalleert. Exporteer eerst een back-up via Instellingen.</p>
+<h3>V. Kan ik gegevens naar een ander apparaat overbrengen?</h3>
+<p>Ja. Gebruik de functie Back-up/Herstel in Instellingen om uw gegevens te exporteren en op het nieuwe apparaat te importeren.</p>
+<h3>V. Zijn er advertenties?</h3>
+<p>Todak Aquariumdagboek bevat geen advertenties. We verzamelen geen gebruikersgegevens of gebruiken advertentienetwerken van derden.</p>
+<h3>V. Ik wil mijn persoonlijke gegevens laten verwijderen.</h3>
+<p>Gebruik Account Verwijderen in Instellingen of neem contact op via <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-sv">
+<h2>📩 Kontakta oss</h2>
+<div class="callout"><strong>E-post:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vi svarar inom <strong>30 dagar</strong>.</div>
+<h2>❓ Vanliga frågor (FAQ)</h2>
+<h3>F. Förlorar jag mina data om jag tar bort appen?</h3>
+<p>Ja, all data som lagras på din enhet raderas när du avinstallerar appen. Exportera en säkerhetskopia från Inställningar innan du tar bort den.</p>
+<h3>F. Kan jag överföra data till en annan enhet?</h3>
+<p>Ja. Använd funktionen Säkerhetskopiering/Återställning i Inställningar för att exportera och importera på den nya enheten.</p>
+<h3>F. Finns det annonser?</h3>
+<p>Todak Akvariedagbok innehåller inga annonser. Vi samlar inte in användardata eller använder tredjepartsannonsnätverk.</p>
+<h3>F. Jag vill radera mina personuppgifter.</h3>
+<p>Använd Ta bort konto i Inställningar eller kontakta oss på <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-da">
+<h2>📩 Kontakt os</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vi svarer inden for <strong>30 dage</strong>.</div>
+<h2>❓ Ofte stillede spørgsmål (FAQ)</h2>
+<h3>Sp. Mister jeg mine data, hvis jeg sletter appen?</h3>
+<p>Ja, alle data gemt på din enhed slettes, når du afinstallerer appen. Eksporter venligst en sikkerhedskopi fra Indstillinger, inden du sletter.</p>
+<h3>Sp. Kan jeg overføre data til en anden enhed?</h3>
+<p>Ja. Brug funktionen Backup/Gendan i Indstillinger til at eksportere og importere på den nye enhed.</p>
+<h3>Sp. Er der reklamer?</h3>
+<p>Todak Akvariedagbog indeholder ingen reklamer. Vi indsamler ikke brugerdata eller bruger tredjepartsreklamenetværk.</p>
+<h3>Sp. Jeg ønsker at få mine persondata slettet.</h3>
+<p>Brug Slet konto i Indstillinger eller kontakt os på <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-no">
+<h2>📩 Kontakt oss</h2>
+<div class="callout"><strong>E-post:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vi svarer innen <strong>30 dager</strong>.</div>
+<h2>❓ Ofte stilte spørsmål (FAQ)</h2>
+<h3>Sp. Vil dataene mine forsvinne hvis jeg sletter appen?</h3>
+<p>Ja, alle data lagret på enheten din slettes når du avinstallerer appen. Eksporter en sikkerhetskopi fra Innstillinger før du sletter.</p>
+<h3>Sp. Kan jeg overføre data til en annen enhet?</h3>
+<p>Ja. Bruk Sikkerhetskopi/Gjenopprett i Innstillinger for å eksportere og importere på den nye enheten.</p>
+<h3>Sp. Er det annonser?</h3>
+<p>Todak Akvariumdagbok inneholder ingen annonser. Vi samler ikke inn brukerdata eller bruker tredjeparts annonsenettverk.</p>
+<h3>Sp. Jeg ønsker å slette mine personopplysninger.</h3>
+<p>Bruk Slett konto i Innstillinger eller kontakt oss på <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-fi">
+<h2>📩 Ota yhteyttä</h2>
+<div class="callout"><strong>Sähköposti:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vastaamme <strong>30 päivän kuluessa</strong>.</div>
+<h2>❓ Usein kysytyt kysymykset (FAQ)</h2>
+<h3>K. Katoaako tietoni, jos poistan sovelluksen?</h3>
+<p>Kyllä, kaikki laitteellesi tallennetut tiedot poistetaan sovelluksen asennuksen poistamisen yhteydessä. Vie varmuuskopio Asetuksista ennen poistamista.</p>
+<h3>K. Voinko siirtää tietoja toiseen laitteeseen?</h3>
+<p>Kyllä. Käytä Varmuuskopio/Palauta-toimintoa Asetuksissa viedäksesi ja tuodaksesi tiedot uuteen laitteeseen.</p>
+<h3>K. Onko mainoksia?</h3>
+<p>Todak Akvaariopäiväkirja ei sisällä mainoksia. Emme kerää käyttäjätietoja tai käytä kolmannen osapuolen mainosverkostoja.</p>
+<h3>K. Haluan poistaa henkilökohtaiset tietoni.</h3>
+<p>Käytä Poista tili -toimintoa Asetuksissa tai ota yhteyttä osoitteessa <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-pl">
+<h2>📩 Skontaktuj się z nami</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Odpowiemy w ciągu <strong>30 dni</strong>.</div>
+<h2>❓ Często zadawane pytania (FAQ)</h2>
+<h3>P. Czy moje dane zostaną utracone, jeśli usunę aplikację?</h3>
+<p>Tak, wszystkie dane przechowywane na urządzeniu zostaną usunięte po odinstalowaniu aplikacji. Proszę wyeksportować kopię zapasową z Ustawień przed usunięciem.</p>
+<h3>P. Czy mogę przenieść dane na inne urządzenie?</h3>
+<p>Tak. Użyj funkcji Kopia zapasowa/Przywróć w Ustawieniach, aby wyeksportować i zaimportować dane na nowym urządzeniu.</p>
+<h3>P. Czy są reklamy?</h3>
+<p>Todak Dziennik Akwarium nie zawiera reklam. Nie zbieramy danych użytkowników ani nie używamy sieci reklamowych stron trzecich.</p>
+<h3>P. Chcę usunąć moje dane osobowe.</h3>
+<p>Użyj funkcji Usuń konto w Ustawieniach lub skontaktuj się z nami pod adresem <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-tr">
+<h2>📩 Bize Ulaşın</h2>
+<div class="callout"><strong>E-posta:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br><strong>30 gün</strong> içinde yanıt vereceğiz.</div>
+<h2>❓ Sıkça Sorulan Sorular (SSS)</h2>
+<h3>S. Uygulamayı silersem verilerim kaybolur mu?</h3>
+<p>Evet, uygulamayı kaldırdığınızda cihazınızda depolanan tüm veriler silinir. Silmeden önce lütfen Ayarlar'dan bir yedek dışa aktarın.</p>
+<h3>S. Verileri başka bir cihaza aktarabilir miyim?</h3>
+<p>Evet. Ayarlar'daki Yedekle/Geri Yükle özelliğini kullanarak verilerinizi dışa aktarın ve yeni cihaza aktarın.</p>
+<h3>S. Reklam var mı?</h3>
+<p>Todak Akvaryum Günlüğü hiçbir reklam içermez. Kullanıcı verilerini toplamaz veya üçüncü taraf reklam ağlarını kullanmayız.</p>
+<h3>S. Kişisel verilerimin silinmesini talep etmek istiyorum.</h3>
+<p>Ayarlar'daki Hesabı Sil özelliğini kullanın veya <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> adresinden bizimle iletişime geçin.</p>
+</div>
+<div class="lang-section" id="lang-el">
+<h2>📩 Επικοινωνήστε μαζί μας</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Θα απαντήσουμε εντός <strong>30 ημερών</strong>.</div>
+<h2>❓ Συχνές Ερωτήσεις (FAQ)</h2>
+<h3>Ε. Θα χαθούν τα δεδομένα μου αν διαγράψω την εφαρμογή;</h3>
+<p>Ναι, όλα τα δεδομένα που είναι αποθηκευμένα στη συσκευή σας θα διαγραφούν. Εξαγάγετε ένα αντίγραφο ασφαλείας από τις Ρυθμίσεις πριν τη διαγραφή.</p>
+<h3>Ε. Μπορώ να μεταφέρω δεδομένα σε άλλη συσκευή;</h3>
+<p>Ναι. Χρησιμοποιήστε τη λειτουργία Αντίγραφο ασφαλείας/Επαναφορά στις Ρυθμίσεις για εξαγωγή και εισαγωγή στη νέα συσκευή.</p>
+<h3>Ε. Υπάρχουν διαφημίσεις;</h3>
+<p>Το Todak Ημερολόγιο Ενυδρείου δεν περιέχει διαφημίσεις. Δεν συλλέγουμε δεδομένα χρηστών ούτε χρησιμοποιούμε δίκτυα διαφημίσεων τρίτων.</p>
+<h3>Ε. Θέλω να ζητήσω τη διαγραφή των προσωπικών μου δεδομένων.</h3>
+<p>Χρησιμοποιήστε τη λειτουργία Διαγραφή Λογαριασμού στις Ρυθμίσεις ή επικοινωνήστε μαζί μας στο <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-cs">
+<h2>📩 Kontaktujte nás</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Odpovíme do <strong>30 dní</strong>.</div>
+<h2>❓ Často kladené dotazy (FAQ)</h2>
+<h3>Ot. Ztratím svá data, pokud odstraním aplikaci?</h3>
+<p>Ano, všechna data uložená na vašem zařízení budou smazána při odinstalaci aplikace. Před smazáním prosím exportujte zálohu z Nastavení.</p>
+<h3>Ot. Mohu přenést data na jiné zařízení?</h3>
+<p>Ano. Použijte funkci Záloha/Obnovit v Nastavení pro export a import dat na novém zařízení.</p>
+<h3>Ot. Jsou tam reklamy?</h3>
+<p>Todak Akvárium Deník neobsahuje žádné reklamy. Neshromažďujeme uživatelská data ani nepoužíváme reklamní sítě třetích stran.</p>
+<h3>Ot. Chci požádat o smazání mých osobních údajů.</h3>
+<p>Použijte funkci Smazat účet v Nastavení nebo nás kontaktujte na <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-hu">
+<h2>📩 Kapcsolat</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>A üzenet kézhezvételétől számított <strong>30 napon belül</strong> válaszolunk.</div>
+<h2>❓ Gyakran Ismételt Kérdések (GYIK)</h2>
+<h3>K. Az alkalmazás törlésével elvesznek az adataim?</h3>
+<p>Igen, az alkalmazás eltávolításakor az eszközön tárolt összes adat törlődik. Kérjük, a törlés előtt exportáljon biztonsági másolatot a Beállításokból.</p>
+<h3>K. Átvihetem az adataimat másik eszközre?</h3>
+<p>Igen. Használja a Biztonsági mentés/Visszaállítás funkciót a Beállításokban az adatok exportálásához és importálásához az új eszközre.</p>
+<h3>K. Vannak hirdetések?</h3>
+<p>A Todak Akvárium Napló nem tartalmaz hirdetéseket. Nem gyűjtünk felhasználói adatokat, és nem használunk harmadik fél hirdetési hálózatokat.</p>
+<h3>K. Szeretném kérni a személyes adataim törlését.</h3>
+<p>Használja a Fiók törlése funkciót a Beállításokban, vagy vegye fel velünk a kapcsolatot a <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> e-mail-címen.</p>
+</div>
+<div class="lang-section" id="lang-ro">
+<h2>📩 Contactați-ne</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vom răspunde în <strong>30 de zile</strong>.</div>
+<h2>❓ Întrebări Frecvente (FAQ)</h2>
+<h3>Î. Voi pierde datele dacă șterg aplicația?</h3>
+<p>Da, toate datele stocate pe dispozitivul dvs. vor fi șterse la dezinstalarea aplicației. Exportați o copie de rezervă din Setări înainte de ștergere.</p>
+<h3>Î. Pot transfera datele pe un alt dispozitiv?</h3>
+<p>Da. Utilizați funcția Backup/Restaurare din Setări pentru a exporta și importa datele pe noul dispozitiv.</p>
+<h3>Î. Există reclame?</h3>
+<p>Todak Jurnal Acvariu nu conține reclame. Nu colectăm date despre utilizatori și nu folosim rețele de publicitate terțe.</p>
+<h3>Î. Doresc să solicit ștergerea datelor mele personale.</h3>
+<p>Utilizați funcția Ștergere cont din Setări sau contactați-ne la <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-uk">
+<h2>📩 Зв'яжіться з нами</h2>
+<div class="callout"><strong>Ел. пошта:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Ми відповімо протягом <strong>30 днів</strong>.</div>
+<h2>❓ Поширені запитання (FAQ)</h2>
+<h3>З. Чи втрачу я дані, якщо видалю додаток?</h3>
+<p>Так, усі дані, збережені на вашому пристрої, будуть видалені при видаленні додатку. Будь ласка, зробіть резервну копію в Налаштуваннях перед видаленням.</p>
+<h3>З. Чи можу я перенести дані на інший пристрій?</h3>
+<p>Так. Використовуйте функцію Резервна копія/Відновлення в Налаштуваннях для експорту та імпорту даних на новий пристрій.</p>
+<h3>З. Чи є реклама?</h3>
+<p>Todak Акваріумний щоденник не містить реклами. Ми не збираємо дані користувачів і не використовуємо рекламні мережі третіх сторін.</p>
+<h3>З. Я хочу вимагати видалення моїх персональних даних.</h3>
+<p>Використовуйте функцію Видалити акаунт у Налаштуваннях або зв'яжіться з нами за адресою <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-he" dir="rtl">
+<h2>📩 צרו קשר</h2>
+<div class="callout"><strong>אימייל:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>נגיב תוך <strong>30 ימים</strong>.</div>
+<h2>❓ שאלות נפוצות (FAQ)</h2>
+<h3>ש. האם אאבד את הנתונים שלי אם אמחק את האפליקציה?</h3>
+<p>כן, כל הנתונים המאוחסנים במכשיר שלך יימחקו בעת הסרת ההתקנה. אנא ייצא גיבוי מהגדרות לפני המחיקה.</p>
+<h3>ש. האם אוכל להעביר נתונים למכשיר אחר?</h3>
+<p>כן. השתמש בתכונת גיבוי/שחזור בהגדרות כדי לייצא ולייבא נתונים במכשיר החדש.</p>
+<h3>ש. האם יש פרסומות?</h3>
+<p>Todak יומן אקווריום אינו מכיל פרסומות. אנחנו לא אוספים נתוני משתמשים ולא משתמשים ברשתות פרסום של צד שלישי.</p>
+<h3>ש. אני רוצה לבקש מחיקת הנתונים האישיים שלי.</h3>
+<p>השתמש בתכונת מחיקת חשבון בהגדרות או צור קשר איתנו ב-<a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-ca">
+<h2>📩 Contacteu-nos</h2>
+<div class="callout"><strong>Correu:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Respondrem en un termini de <strong>30 dies</strong>.</div>
+<h2>❓ Preguntes Freqüents (FAQ)</h2>
+<h3>P. Perdré les meves dades si elimino l'app?</h3>
+<p>Sí, totes les dades emmagatzemades al vostre dispositiu s'eliminaran en desinstal·lar l'app. Exporteu una còpia de seguretat des de Configuració abans d'eliminar-la.</p>
+<h3>P. Puc transferir dades a un altre dispositiu?</h3>
+<p>Sí. Useu la funció Còpia de seguretat/Restaurar a Configuració per exportar i importar dades al nou dispositiu.</p>
+<h3>P. Hi ha publicitat?</h3>
+<p>Todak Diari Aquari no conté publicitat. No recollim dades d'usuaris ni usem xarxes publicitàries de tercers.</p>
+<h3>P. Vull sol·licitar l'eliminació de les meves dades personals.</h3>
+<p>Useu la funció Eliminar compte a Configuració o contacteu-nos a <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-fil">
+<h2>📩 Makipag-ugnayan sa amin</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Tutugon kami sa loob ng <strong>30 araw</strong>.</div>
+<h2>❓ Mga Madalas Itanong (FAQ)</h2>
+<h3>T. Mawawala ba ang aking mga datos kung tatanggalin ko ang app?</h3>
+<p>Oo, lahat ng datos na nakaimbak sa iyong device ay matatanggal kapag na-uninstall ang app. Mag-export ng backup mula sa Mga Setting bago tanggalin.</p>
+<h3>T. Maaari ko bang ilipat ang datos sa isa pang device?</h3>
+<p>Oo. Gamitin ang feature na Backup/I-restore sa Mga Setting para i-export at i-import ang datos sa bagong device.</p>
+<h3>T. Mayroon bang mga advertisement?</h3>
+<p>Ang Todak Talaarawan ng Akwaryum ay walang mga advertisement. Hindi kami nangongolekta ng datos ng gumagamit o gumagamit ng mga third-party na network ng advertisement.</p>
+<h3>T. Gusto kong humiling ng pagtanggal ng aking personal na datos.</h3>
+<p>Gamitin ang Tanggalin ang Account sa Mga Setting o makipag-ugnayan sa amin sa <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-sk">
+<h2>📩 Kontaktujte nás</h2>
+<div class="callout"><strong>E-mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Odpovieme do <strong>30 dní</strong>.</div>
+<h2>❓ Často kladené otázky (FAQ)</h2>
+<h3>Ot. Stratím svoje dáta, ak vymažem aplikáciu?</h3>
+<p>Áno, všetky dáta uložené vo vašom zariadení budú vymazané pri odinštalovaní aplikácie. Prosím exportujte zálohu z Nastavení pred vymazaním.</p>
+<h3>Ot. Môžem preniesť dáta na iné zariadenie?</h3>
+<p>Áno. Použite funkciu Záloha/Obnoviť v Nastaveniach na export a import dát na novom zariadení.</p>
+<h3>Ot. Sú tam reklamy?</h3>
+<p>Todak Akvárium Denník neobsahuje žiadne reklamy. Nezhromažďujeme používateľské dáta ani nepoužívame reklamné siete tretích strán.</p>
+<h3>Ot. Chcem požiadať o vymazanie mojich osobných údajov.</h3>
+<p>Použite funkciu Vymazať účet v Nastaveniach alebo nás kontaktujte na <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-hr">
+<h2>📩 Kontaktirajte nas</h2>
+<div class="callout"><strong>E-pošta:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Odgovorit ćemo u roku od <strong>30 dana</strong>.</div>
+<h2>❓ Često Postavljana Pitanja (FAQ)</h2>
+<h3>P. Hoću li izgubiti podatke ako izbrišem aplikaciju?</h3>
+<p>Da, svi podaci pohranjeni na vašem uređaju bit će izbrisani pri deinstalaciji aplikacije. Molimo izvezite sigurnosnu kopiju iz Postavki prije brisanja.</p>
+<h3>P. Mogu li prenijeti podatke na drugi uređaj?</h3>
+<p>Da. Koristite funkciju Sigurnosna kopija/Obnovi u Postavkama za izvoz i uvoz podataka na novi uređaj.</p>
+<h3>P. Ima li reklama?</h3>
+<p>Todak Dnevnik Akvarija ne sadrži reklame. Ne prikupljamo korisničke podatke niti koristimo reklamne mreže trećih strana.</p>
+<h3>P. Želim zatražiti brisanje mojih osobnih podataka.</h3>
+<p>Koristite Brisanje računa u Postavkama ili nas kontaktirajte na <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-bg">
+<h2>📩 Свържете се с нас</h2>
+<div class="callout"><strong>Имейл:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Ще отговорим в рамките на <strong>30 дни</strong>.</div>
+<h2>❓ Често задавани въпроси (ЧЗВ)</h2>
+<h3>В. Ще загубя ли данните си, ако изтрия приложението?</h3>
+<p>Да, всички данни, съхранени на вашето устройство, ще бъдат изтрити при деинсталиране на приложението. Моля, експортирайте резервно копие от Настройките преди изтриване.</p>
+<h3>В. Мога ли да прехвърля данни на друго устройство?</h3>
+<p>Да. Използвайте функцията Резервно копие/Възстановяване в Настройките за експортиране и импортиране на данни на новото устройство.</p>
+<h3>В. Има ли реклами?</h3>
+<p>Todak Дневник Аквариум не съдържа реклами. Не събираме потребителски данни и не използваме рекламни мрежи на трети страни.</p>
+<h3>В. Искам да поискам изтриване на личните ми данни.</h3>
+<p>Използвайте функцията Изтриване на акаунт в Настройките или се свържете с нас на <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-sl">
+<h2>📩 Stopite v stik z nami</h2>
+<div class="callout"><strong>E-pošta:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Odgovorili bomo v <strong>30 dneh</strong>.</div>
+<h2>❓ Pogosto zastavljena vprašanja (FAQ)</h2>
+<h3>V. Ali bom izgubil/a podatke, če izbrišem aplikacijo?</h3>
+<p>Da, vsi podatki, shranjeni na vaši napravi, bodo izbrisani ob odstranitvi aplikacije. Prosimo, izvozite varnostno kopijo iz Nastavitev pred brisanjem.</p>
+<h3>V. Ali lahko prenesem podatke na drugo napravo?</h3>
+<p>Da. Uporabite funkcijo Varnostna kopija/Obnovi v Nastavitvah za izvoz in uvoz podatkov na novo napravo.</p>
+<h3>V. Ali so oglasi?</h3>
+<p>Todak Dnevnik Akvarija ne vsebuje oglasov. Ne zbiramo podatkov uporabnikov niti ne uporabljamo oglasnih omrežij tretjih strani.</p>
+<h3>V. Želim zahtevati izbris mojih osebnih podatkov.</h3>
+<p>Uporabite funkcijo Izbriši račun v Nastavitvah ali nas kontaktirajte na <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-lt">
+<h2>📩 Susisiekite su mumis</h2>
+<div class="callout"><strong>El. paštas:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Atsakysime per <strong>30 dienų</strong>.</div>
+<h2>❓ Dažniausiai užduodami klausimai (DUK)</h2>
+<h3>K. Ar prarasiu duomenis, jei ištrinsiu programėlę?</h3>
+<p>Taip, visi jūsų įrenginyje saugomi duomenys bus ištrinti pašalinus programėlę. Prieš trindami eksportuokite atsarginę kopiją iš Nustatymų.</p>
+<h3>K. Ar galiu perkelti duomenis į kitą įrenginį?</h3>
+<p>Taip. Naudokite Atsarginė kopija/Atkūrimas funkciją Nustatymuose duomenims eksportuoti ir importuoti naujame įrenginyje.</p>
+<h3>K. Ar yra reklamos?</h3>
+<p>Todak Akvariumas Dienoraštis neturi jokių reklamos. Mes nerenkame naudotojų duomenų ir nenaudojame trečiųjų šalių reklamos tinklų.</p>
+<h3>K. Noriu paprašyti ištrinti savo asmens duomenis.</h3>
+<p>Naudokite funkciją Ištrinti paskyrą Nustatymuose arba susisiekite su mumis <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-lv">
+<h2>📩 Sazinieties ar mums</h2>
+<div class="callout"><strong>E-pasts:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Mēs atbildēsim <strong>30 dienu laikā</strong>.</div>
+<h2>❓ Bieži uzdotie jautājumi (FAQ)</h2>
+<h3>J. Vai es zaudēšu savus datus, ja dzēsīšu lietotni?</h3>
+<p>Jā, visi jūsu ierīcē saglabātie dati tiks dzēsti, atinstalējot lietotni. Lūdzu, eksportējiet dublējumu no Iestatījumiem pirms dzēšanas.</p>
+<h3>J. Vai es varu pārsūtīt datus uz citu ierīci?</h3>
+<p>Jā. Izmantojiet funkciju Dublēšana/Atjaunošana Iestatījumos, lai eksportētu un importētu datus jaunajā ierīcē.</p>
+<h3>J. Vai ir reklāmas?</h3>
+<p>Todak Akvārija Dienasgrāmata nesatur nekādas reklāmas. Mēs nevācam lietotāju datus un neizmantojam trešo pušu reklāmas tīklus.</p>
+<h3>J. Vēlos pieprasīt savu personas datu dzēšanu.</h3>
+<p>Izmantojiet funkciju Dzēst kontu Iestatījumos vai sazinieties ar mums <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-et">
+<h2>📩 Võtke meiega ühendust</h2>
+<div class="callout"><strong>E-post:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Vastame <strong>30 päeva jooksul</strong>.</div>
+<h2>❓ Korduma Kippuvad Küsimused (KKK)</h2>
+<h3>K. Kas minu andmed kaovad, kui kustutan rakenduse?</h3>
+<p>Jah, kõik teie seadmesse salvestatud andmed kustutatakse rakenduse desinstallimisel. Palun eksportige varukoopia Seadetest enne kustutamist.</p>
+<h3>K. Kas saan andmeid teisele seadmele üle kanda?</h3>
+<p>Jah. Kasutage Varukoopia/Taasta funktsiooni Seadetes andmete eksportimiseks ja importimiseks uuele seadmele.</p>
+<h3>K. Kas seal on reklaame?</h3>
+<p>Todak Akvaariumi Päevik ei sisalda reklaame. Me ei kogu kasutajaandmeid ega kasuta kolmandate osapoolte reklaamivõrke.</p>
+<h3>K. Tahan taotleda oma isikuandmete kustutamist.</h3>
+<p>Kasutage Kustuta konto funktsiooni Seadetes või võtke meiega ühendust aadressil <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+<div class="lang-section" id="lang-is">
+<h2>📩 Hafðu samband</h2>
+<div class="callout"><strong>Tölvupóstur:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br>Við munum svara innan <strong>30 daga</strong>.</div>
+<h2>❓ Algengar Spurningar (FAQ)</h2>
+<h3>Sp. Mun ég tapa gögnum ef ég eyði forritinu?</h3>
+<p>Já, öll gögn sem eru geymd í tækinu þínu verða eytt þegar forritið er fjarlægt. Vinsamlegast fluttu út öryggisafrit frá Stillingum áður en þú eyðir.</p>
+<h3>Sp. Get ég flutt gögn yfir á annað tæki?</h3>
+<p>Já. Notaðu Öryggisafrit/Endurheimta aðgerðina í Stillingum til að flytja út og inn gögn á nýja tækið.</p>
+<h3>Sp. Er auglýsingar?</h3>
+<p>Todak Fiskabúrsdagbók inniheldur engar auglýsingar. Við söfnum ekki notendagögnum eða notum auglýsingakerfi þriðja aðila.</p>
+<h3>Sp. Ég vil óska eftir eyðingu persónulegra gagna minna.</h3>
+<p>Notaðu Eyða reikningi aðgerðina í Stillingum eða hafðu samband við okkur á <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+</div>
+
+</div></main>
+<footer class="site"><div class="container">
+<div class="row">
+<span>© 2026 강동엽 · Kang Dong-yeop</span>
+<span class="links">
+<a href="index.html">Home</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
+</span>
+</div>
+</div></footer>
+<script>
+function showLang(code) {
+  document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('visible'));
+  document.querySelectorAll('.lang-pill').forEach(el => el.classList.remove('active'));
+  const section = document.getElementById('lang-' + code);
+  if (section) section.classList.add('visible');
+  const btn = document.querySelector('[onclick="showLang(\''+code+'\')"]');
+  if (btn) btn.classList.add('active');
+}
+// Auto-detect browser language on load
+(function() {
+  const lang = (navigator.language || navigator.userLanguage || 'ko').toLowerCase().split('-')[0];
+  const supported = ['ko','en','ja','es','fr','de','it','pt','ru','ar','hi','th','vi','id','ms','nl','sv','da','no','fi','pl','tr','el','cs','hu','ro','uk','he','ca','fil','sk','hr','bg','sl','lt','lv','et','is'];
+  const target = supported.includes(lang) ? lang : 'ko';
+  showLang(target);
+})();
+</script>
+</body>
+</html>
