@@ -1,192 +1,953 @@
 <!DOCTYPE html>
 <html lang="ko" data-theme="auto">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>개인정보 처리방침 · 토닥 어항 일기</title>
-<meta name="description" content="토닥 어항 일기의 개인정보 처리방침. 데이터는 기기 내에만 저장되며 수집·추적하지 않습니다." />
-<meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='220' fill='%236B8AC7'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB'/%3E%3C/svg%3E" />
+<meta name="description" content="토닥 어항 일기의 개인정보 처리방침. 데이터는 기기 내에만 저장되며 수집·추적하지 않습니다."/>
+<meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='220' fill='%236B8AC7'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB'/%3E%3C/svg%3E"/>
 <style>
-  :root, [data-theme="light"] {
-    color-scheme: light;
-    --accent-primary:#6B8AC7; --accent-light:#99BDDE;
-    --gradient-top:#8FADE0; --gradient-bottom:#6180BF;
-    --bg:#F4F6FB; --surface:#FFFFFF; --surface-2:#F7F9FD;
-    --label:#1B1F2A; --label-2:rgba(27,31,42,0.70); --label-3:rgba(27,31,42,0.46);
-    --separator:rgba(27,31,42,0.10); --fill-1:rgba(107,138,199,0.10);
-    --shadow-card:0 10px 28px rgba(56,87,133,0.10),0 2px 6px rgba(56,87,133,0.06);
-    --shadow-nav:0 1px 0 rgba(27,31,42,0.06);
-    --r-section:20px; --r-control:16px;
-  }
-  [data-theme="dark"]{
-    color-scheme:dark;
-    --accent-primary:#85ADE6; --accent-light:#B3D6F5;
-    --gradient-top:#385785; --gradient-bottom:#24385C;
-    --bg:#0E1320; --surface:#1C2234; --surface-2:#232B40;
-    --label:#F5F7FB; --label-2:rgba(245,247,251,0.72); --label-3:rgba(245,247,251,0.48);
-    --separator:rgba(245,247,251,0.10); --fill-1:rgba(133,173,230,0.14);
-    --shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);
-    --shadow-nav:0 1px 0 rgba(0,0,0,0.4);
-  }
-  @media (prefers-color-scheme: dark){
-    [data-theme="auto"]{
-      color-scheme:dark;
-      --accent-primary:#85ADE6; --accent-light:#B3D6F5;
-      --gradient-top:#385785; --gradient-bottom:#24385C;
-      --bg:#0E1320; --surface:#1C2234; --surface-2:#232B40;
-      --label:#F5F7FB; --label-2:rgba(245,247,251,0.72); --label-3:rgba(245,247,251,0.48);
-      --separator:rgba(245,247,251,0.10); --fill-1:rgba(133,173,230,0.14);
-      --shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);
-      --shadow-nav:0 1px 0 rgba(0,0,0,0.4);
-    }
-  }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-  html,body{margin:0;padding:0;}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;
-    background:var(--bg); color:var(--label);
-    -webkit-font-smoothing:antialiased; letter-spacing:-0.01em; line-height:1.7;
-    transition:background .35s ease,color .25s ease;
-  }
-  a{color:var(--accent-primary); text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  .container{max-width:760px; margin:0 auto; padding:0 20px;}
-  header.site{
-    position:sticky; top:0; z-index:30;
-    backdrop-filter:saturate(180%) blur(22px);
-    -webkit-backdrop-filter:saturate(180%) blur(22px);
-    background:color-mix(in srgb, var(--surface) 78%, transparent);
-    box-shadow:var(--shadow-nav);
-  }
-  .nav{display:flex; align-items:center; justify-content:space-between; height:60px;}
-  .brand{display:flex; align-items:center; gap:10px;}
-  .brand .logo{width:30px; height:30px; border-radius:8px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.12); background:linear-gradient(180deg,#B5BCEB,#BFE6D9); display:grid; place-items:center;}
-  .brand .logo svg{width:24px;height:24px;}
-  .brand .name{font-size:16px; font-weight:600; letter-spacing:-0.02em;}
-  .back-link{font-size:14px; color:var(--label-2);}
-  .doc-hero{
-    padding:60px 0 30px;
-    background:
-      radial-gradient(800px 400px at 80% -10%, color-mix(in srgb, var(--accent-light) 30%, transparent), transparent 60%),
-      radial-gradient(700px 400px at -10% 30%, color-mix(in srgb, var(--accent-primary) 14%, transparent), transparent 60%),
-      transparent;
-  }
-  .doc-hero .eyebrow{font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent-primary); margin-bottom:10px;}
-  .doc-hero h1{font-size:clamp(32px,4.4vw,44px); font-weight:800; letter-spacing:-0.025em; margin:0 0 10px;}
-  .doc-hero p.meta{color:var(--label-3); font-size:13px; margin:0;}
-  main.doc{padding:24px 0 80px;}
-  main.doc h2{font-size:22px; font-weight:700; letter-spacing:-0.02em; margin:40px 0 12px;}
-  main.doc h3{font-size:17px; font-weight:600; margin:24px 0 8px;}
-  main.doc p, main.doc li{font-size:16px; color:var(--label); margin:0 0 10px;}
-  main.doc ul{padding-left:20px; margin:0 0 16px;}
-  main.doc li{margin-bottom:6px;}
-  .callout{
-    background:var(--surface); border-radius:var(--r-section);
-    padding:18px 20px; box-shadow:var(--shadow-card);
-    margin:18px 0;
-    border-left:4px solid var(--accent-primary);
-  }
-  .callout strong{color:var(--accent-primary);}
-  footer.site{
-    border-top:0.5px solid var(--separator);
-    padding:30px 0 60px;
-    color:var(--label-3); font-size:13px;
-  }
-  footer.site .row{display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; align-items:center;}
-  footer.site .links a{color:var(--label-2); margin-left:14px;}
-</style>
-</head>
+:root,[data-theme="light"]{color-scheme:light;--accent-primary:#6B8AC7;--accent-light:#99BDDE;--bg:#F4F6FB;--surface:#FFFFFF;--surface-2:#F7F9FD;--label:#1B1F2A;--label-2:rgba(27,31,42,0.70);--label-3:rgba(27,31,42,0.46);--separator:rgba(27,31,42,0.10);--fill-1:rgba(107,138,199,0.10);--shadow-card:0 10px 28px rgba(56,87,133,0.10),0 2px 6px rgba(56,87,133,0.06);--shadow-nav:0 1px 0 rgba(27,31,42,0.06);--r-section:20px;--r-control:16px;}
+[data-theme="dark"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}
+@media(prefers-color-scheme:dark){[data-theme="auto"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}html,body{margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;background:var(--bg);color:var(--label);-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;line-height:1.7;transition:background .35s ease,color .25s ease;}
+a{color:var(--accent-primary);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:760px;margin:0 auto;padding:0 20px;}
+header.site{position:sticky;top:0;z-index:30;backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);background:color-mix(in srgb,var(--surface) 78%,transparent);box-shadow:var(--shadow-nav);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand .logo{width:30px;height:30px;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.12);background:linear-gradient(180deg,#B5BCEB,#BFE6D9);display:grid;place-items:center;}
+.brand .name{font-size:16px;font-weight:600;letter-spacing:-0.02em;}
+.back-link{font-size:14px;color:var(--label-2);}
+.doc-hero{padding:60px 0 30px;background:radial-gradient(800px 400px at 80% -10%,color-mix(in srgb,var(--accent-light) 30%,transparent),transparent 60%),radial-gradient(700px 400px at -10% 30%,color-mix(in srgb,var(--accent-primary) 14%,transparent),transparent 60%),transparent;}
+.doc-hero .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:10px;}
+.doc-hero h1{font-size:clamp(32px,4.4vw,44px);font-weight:800;letter-spacing:-0.025em;margin:0 0 10px;}
+.doc-hero p.meta{color:var(--label-3);font-size:13px;margin:0;}
+.lang-bar{background:var(--surface-2);border-bottom:0.5px solid var(--separator);padding:12px 0;overflow-x:auto;}
+.lang-pills{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px;max-width:760px;margin:0 auto;}
+.lang-pill{background:var(--fill-1);color:var(--label-2);border:none;border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+.lang-pill:hover,.lang-pill.active{background:var(--accent-primary);color:#fff;}
+main.doc{padding:24px 0 80px;}
+main.doc h2{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:40px 0 12px;}
+main.doc h3{font-size:17px;font-weight:600;margin:24px 0 8px;}
+main.doc p,main.doc li{font-size:16px;color:var(--label);margin:0 0 10px;}
+main.doc ul{padding-left:20px;margin:0 0 16px;}
+main.doc li{margin-bottom:6px;}
+.callout{background:var(--surface);border-radius:var(--r-section);padding:18px 20px;box-shadow:var(--shadow-card);margin:18px 0;border-left:4px solid var(--accent-primary);}
+.callout strong{color:var(--accent-primary);}
+.lang-section{display:none;}.lang-section.visible{display:block;}
+.badge{display:inline-block;background:var(--fill-1);color:var(--accent-primary);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600;margin:2px;}
+footer.site{border-top:0.5px solid var(--separator);padding:30px 0 60px;color:var(--label-3);font-size:13px;}
+footer.site .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;}
+footer.site .links a{color:var(--label-2);margin-left:14px;}
+</style></head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="todak-icon" viewBox="0 0 1024 1024">
-      <rect width="1024" height="1024" rx="230" fill="#B5BCEB"/>
-      <ellipse cx="512" cy="560" rx="320" ry="280" fill="#E8F4FB" stroke="#B7D6E6" stroke-width="10"/>
-      <ellipse cx="512" cy="470" rx="260" ry="38" fill="rgba(255,255,255,0.55)"/>
-      <path d="M 290 760 Q 380 720 470 750 Q 560 780 660 740 Q 720 760 760 770 Q 612 810 412 800 Q 320 790 290 760 Z" fill="#E8DBC9"/>
-      <ellipse cx="560" cy="600" rx="95" ry="62" fill="#8E91D8"/>
-      <path d="M 650 600 L 730 555 L 720 600 L 730 645 Z" fill="#8E91D8"/>
-    </symbol>
-  </defs>
-</svg>
-<header class="site">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <span class="logo"><svg width="24" height="24"><use href="#todak-icon"/></svg></span>
-      <span class="name">토닥 어항 일기</span>
-    </a>
-    <a class="back-link" href="index.html">← 홈으로</a>
-  </div>
-</header>
-<section class="doc-hero">
-  <div class="container">
-    <div class="eyebrow">Privacy Policy</div>
-    <h1>개인정보 처리방침</h1>
-    <p class="meta">최종 업데이트: 2026년 5월 20일</p>
-  </div>
-</section>
-<main class="doc">
-  <div class="container">
-    <p>토닥(이하 "회사" 또는 "운영자")은 "토닥 어항 일기"(이하 "본 앱") 사용자의 개인정보를 매우 중요하게 생각하며, 이용자의 권익을 보호하기 위해 본 개인정보 처리방침을 마련합니다. 본 방침은 본 앱이 어떠한 정보를 수집하지 않는지, 어떤 데이터가 어떻게 저장되는지, 그리고 사용자의 권리를 어떻게 보호하는지를 설명합니다.</p>
-    <div class="callout">
-      <strong>요약:</strong> 본 앱은 별도의 회원가입 없이 동작하며, 사용자의 감정 기록·메모·설정 등 모든 데이터는 사용자의 기기 안에만 저장됩니다. 회사 서버에 전송되거나 제3자와 공유되지 않습니다.
-    </div>
-    <h2>1. 수집하는 개인정보의 항목</h2>
-    <p>본 앱은 다음과 같은 개인식별정보를 수집하지 않습니다.</p>
-    <ul>
-      <li>이름, 생년월일, 성별, 이메일 주소, 전화번호 등 식별 가능한 정보</li>
-      <li>기기 식별자(IDFA, 광고 식별자), IP 주소, 위치 정보</li>
-      <li>사진, 연락처, 캘린더, 마이크 등 시스템 권한이 필요한 정보</li>
-      <li>결제 정보, 금융 정보</li>
-    </ul>
-    <p>다만, 사용자가 본 앱 내에서 직접 작성한 다음의 데이터는 사용자의 기기 내(로컬 저장소)에만 저장됩니다.</p>
-    <ul>
-      <li>선택한 감정 무드(예: 괜찮음·슬픔·분노·지침·불안·기타)</li>
-      <li>본인이 입력한 짧은 메모와 작성 시각</li>
-      <li>언어, 화면 모드(라이트/다크), 연속 기록일 등 앱 사용 환경 설정</li>
-    </ul>
-    <h2>2. 개인정보의 수집 및 이용 목적</h2>
-    <p>회사는 사용자의 개인정보를 수집하지 않으므로, 별도의 이용 목적이 존재하지 않습니다. 사용자가 직접 입력한 기록은 오로지 본 앱이 사용자에게 제공하는 일기 기능을 위해서만 사용자의 기기 내에서 활용됩니다.</p>
-    <h2>3. 보유 및 이용 기간</h2>
-    <p>본 앱은 외부 서버로 어떠한 데이터도 전송하지 않으므로 회사가 보유하는 사용자 데이터는 없습니다. 사용자가 본인의 기기 내에 저장한 기록은 사용자가 직접 삭제하거나 앱을 삭제할 때까지 기기 내에 유지됩니다. 설정 메뉴의 "모든 기록 삭제" 또는 iOS의 앱 삭제 기능으로 언제든지 영구 삭제할 수 있습니다.</p>
-    <h2>4. 제3자 제공 및 위탁</h2>
-    <p>본 앱은 사용자의 정보를 외부에 전송하지 않으므로, 제3자에게 제공하거나 처리를 위탁하는 일은 발생하지 않습니다. 또한 분석·광고 SDK 등 외부 서비스 추적을 위한 코드를 포함하지 않습니다.</p>
-    <h2>5. 사용자 권리</h2>
-    <p>사용자는 본인의 기록에 대해 다음과 같은 권리를 가집니다.</p>
-    <ul>
-      <li><strong>열람권:</strong> 본 앱 내에서 자신의 기록을 언제든지 확인할 수 있습니다.</li>
-      <li><strong>정정·삭제권:</strong> 개별 기록을 수정하거나 삭제할 수 있으며, 전체 데이터를 일괄 삭제할 수 있습니다.</li>
-      <li><strong>이동권(데이터 내보내기):</strong> 설정의 "기록 내보내기(JSON)" 기능을 통해 본인의 데이터를 파일로 백업·이전할 수 있습니다.</li>
-    </ul>
-    <h2>6. 데이터 보안</h2>
-    <p>모든 기록은 iOS가 제공하는 표준 로컬 저장 메커니즘에 따라 사용자의 기기 내에서 관리됩니다. 회사가 별도로 보관하는 사용자 데이터가 없으므로, 회사 측 데이터 유출 위험은 존재하지 않습니다. 다만 사용자의 기기를 분실하거나 타인과 공유할 경우 본인의 책임 하에 데이터가 노출될 수 있으니 기기 잠금 등 보안 설정을 권장드립니다.</p>
-    <h2>7. 만 14세 미만 아동의 개인정보 보호</h2>
-    <p>본 앱은 회원가입 절차가 없고 개인정보를 수집하지 않으므로 아동의 개인정보를 별도로 수집·이용·보관하지 않습니다. 다만, 아동이 본 앱을 사용하는 경우 보호자의 안내 하에 사용할 것을 권장합니다.</p>
-    <h2>8. 개인정보 처리방침의 변경</h2>
-    <p>본 방침은 관련 법령, 정책, 보안 기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 수 있습니다. 변경되는 경우 본 페이지를 통해 고지하며, 중요한 변경 사항은 앱 내 공지로 안내할 수 있습니다.</p>
-    <h2>9. 문의처</h2>
-    <p>본 처리방침과 관련된 의견이나 문의 사항은 아래 이메일로 연락해 주시기 바랍니다.</p>
-    <ul>
-      <li>이메일: <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a></li>
-    </ul>
-    <p style="color:var(--label-3); font-size:13px; margin-top:24px;">© <span id="year">2026</span> 강동엽. All rights reserved.</p>
-  </div>
-</main>
-<footer class="site">
-  <div class="container row">
-    <div>© <span id="year2">2026</span> 강동엽</div>
-    <div class="links">
-      <a href="index.html">홈</a>
-      <a href="terms.html">이용약관</a>
-      <a href="mailto:todaklife@gmail.com">문의</a>
-    </div>
-  </div>
-</footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="todak-icon" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#B5BCEB"/><ellipse cx="512" cy="560" rx="320" ry="280" fill="#E8F4FB" stroke="#B7D6E6" stroke-width="10"/><ellipse cx="512" cy="470" rx="260" ry="38" fill="rgba(255,255,255,0.55)"/><path d="M 290 760 Q 380 720 470 750 Q 560 780 660 740 Q 720 760 760 770 Q 612 810 412 800 Q 320 790 290 760 Z" fill="#E8DBC9"/><ellipse cx="560" cy="600" rx="95" ry="62" fill="#8E91D8"/><path d="M 650 600 L 730 555 L 720 600 L 730 645 Z" fill="#8E91D8"/>
+</symbol></defs></svg>
+<header class="site"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo"><svg width="24" height="24"><use href="#todak-icon"/></svg></span><span class="name">토닥 어항 일기</span></a>
+<a class="back-link" href="index.html">← Home</a></div></header>
+<section class="doc-hero"><div class="container">
+<div class="eyebrow">Privacy Policy</div>
+<h1>개인정보 처리방침</h1>
+<p class="meta">버전 1.1 · 시행일: 2026년 5월 16일 · Todak Aquarium Diary</p>
+</div></section>
+<div class="lang-bar"><div class="lang-pills">
+<button class="lang-pill active" onclick="showLang('ko')">한국어</button>
+<button class="lang-pill" onclick="showLang('en')">English</button>
+<button class="lang-pill" onclick="showLang('ja')">日本語</button>
+<button class="lang-pill" onclick="showLang('es')">Español</button>
+<button class="lang-pill" onclick="showLang('fr')">Français</button>
+<button class="lang-pill" onclick="showLang('de')">Deutsch</button>
+<button class="lang-pill" onclick="showLang('it')">Italiano</button>
+<button class="lang-pill" onclick="showLang('pt')">Português</button>
+<button class="lang-pill" onclick="showLang('ru')">Русский</button>
+<button class="lang-pill" onclick="showLang('ar')">العربية</button>
+<button class="lang-pill" onclick="showLang('hi')">हिन्दी</button>
+<button class="lang-pill" onclick="showLang('th')">ไทย</button>
+<button class="lang-pill" onclick="showLang('vi')">Tiếng Việt</button>
+<button class="lang-pill" onclick="showLang('id')">Indonesia</button>
+<button class="lang-pill" onclick="showLang('ms')">Melayu</button>
+<button class="lang-pill" onclick="showLang('nl')">Nederlands</button>
+<button class="lang-pill" onclick="showLang('sv')">Svenska</button>
+<button class="lang-pill" onclick="showLang('da')">Dansk</button>
+<button class="lang-pill" onclick="showLang('no')">Norsk</button>
+<button class="lang-pill" onclick="showLang('fi')">Suomi</button>
+<button class="lang-pill" onclick="showLang('pl')">Polski</button>
+<button class="lang-pill" onclick="showLang('tr')">Türkçe</button>
+<button class="lang-pill" onclick="showLang('el')">Ελληνικά</button>
+<button class="lang-pill" onclick="showLang('cs')">Čeština</button>
+<button class="lang-pill" onclick="showLang('hu')">Magyar</button>
+<button class="lang-pill" onclick="showLang('ro')">Română</button>
+<button class="lang-pill" onclick="showLang('uk')">Українська</button>
+<button class="lang-pill" onclick="showLang('he')">עברית</button>
+<button class="lang-pill" onclick="showLang('ca')">Català</button>
+<button class="lang-pill" onclick="showLang('fil')">Filipino</button>
+<button class="lang-pill" onclick="showLang('sk')">Slovenčina</button>
+<button class="lang-pill" onclick="showLang('hr')">Hrvatski</button>
+<button class="lang-pill" onclick="showLang('bg')">Български</button>
+<button class="lang-pill" onclick="showLang('sl')">Slovenščina</button>
+<button class="lang-pill" onclick="showLang('lt')">Lietuvių</button>
+<button class="lang-pill" onclick="showLang('lv')">Latviešu</button>
+<button class="lang-pill" onclick="showLang('et')">Eesti</button>
+<button class="lang-pill" onclick="showLang('is')">Íslenska</button>
+</div></div>
+<main class="doc"><div class="container">
+<div class="lang-section visible" id="lang-ko">
+<div class="callout"><strong>적용 인증:</strong> <span class="badge">PIPA</span><span class="badge">GDPR</span><span class="badge">CCPA</span><span class="badge">PIPEDA</span><span class="badge">APP</span><span class="badge">DPDP</span></div>
+<h2>1. 목적 및 적용 범위</h2>
+<p>토닥(이하 "서비스")은 사용자의 개인정보를 소중히 여깁니다. 이 개인정보처리방침은 서비스가 어떤 정보를 수집·이용·저장·삭제하는지, 그리고 여러분이 어떤 권리를 가지는지 명확하게 안내하기 위해 작성되었습니다.</p>
+<p>본 방침은 GDPR(EU 2016/679), CCPA/CPRA(미국 캘리포니아), PIPEDA(캐나다), APP(호주), DPDP Act 2023(인도), PIPA(대한민국)를 준수합니다.</p>
+<h2>2. 개인정보 처리자 (Data Controller)</h2>
+<div class="callout"><strong>이름:</strong> 강동엽 · <strong>서비스명:</strong> 토닥 (Todak) · <strong>이메일:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>응답 기간:</strong> 30일 이내</div>
+<h2>3. 수집하는 정보</h2>
+<p>서비스는 최소한의 정보만 수집하며, 모든 감정 기록과 설정은 원칙적으로 사용자의 기기에 로컬로 저장됩니다.</p>
+<ul>
+<li><strong>사용자가 직접 입력하는 정보:</strong> 감정 선택, 일기/메모, 태그, 체크리스트 등 앱 내에서 직접 작성한 기록.</li>
+<li><strong>계정 및 인증 정보:</strong> Sign in with Apple 이용 시 Apple이 제공하는 사용자 식별자(User Identifier). 생체 인증(Face ID, Touch ID)은 인증 결과(성공/실패)만 사용하며 생체 데이터 자체는 수집하지 않습니다.</li>
+<li><strong>앱 설정 정보:</strong> 언어 설정, 테마, 리마인더 시간 등 기기 내 설정 값.</li>
+<li><strong>수집하지 않는 정보:</strong> 위치 정보, 광고 식별자(IDFA), 사용자 행동 분석 데이터, 제3자 트래킹 쿠키.</li>
+</ul>
+<h2>4. 처리의 법적 근거 (GDPR — EU/EEA/UK 사용자)</h2>
+<ul>
+<li><strong>계약 이행 — Art. 6(1)(b):</strong> 서비스 제공, 계정 인증, 백업·복원 기능 운영.</li>
+<li><strong>정당한 이익 — Art. 6(1)(f):</strong> 보안 활동 로그 관리, 오류 방지, 서비스 품질 유지.</li>
+<li><strong>법적 의무 — Art. 6(1)(c):</strong> 관련 법령 준수를 위해 필요한 경우.</li>
+</ul>
+<h2>5. 정보의 이용 목적</h2>
+<p>수집한 정보는 다음 목적에 한하여 이용됩니다: 감정 기록 작성·조회·수정·삭제 기능 제공, 어항 성장·게임화 요소 운영, 생체 인증 잠금·백업/복원 등 보안 기능 운영, 리마인더 알림 전송, 고객 문의 처리, 관련 법령 준수.</p>
+<h2>6. 저장 위치, 보관 기간 및 국제 데이터 이전</h2>
+<ul>
+<li><strong>저장 위치:</strong> 감정 기록 및 설정은 사용자의 기기에 저장됩니다. 별도 서버로 전송하지 않습니다.</li>
+<li><strong>백업:</strong> 백업 파일은 사용자 선택에 따라 iCloud Drive 등 외부 저장소에 저장될 수 있습니다.</li>
+<li><strong>보관 기간:</strong> 기록은 사용자가 삭제하거나 앱을 삭제할 때까지 보관됩니다.</li>
+<li><strong>국제 데이터 이전:</strong> Sign in with Apple 인증 시 Apple의 서버와 통신이 발생하며, 이는 Apple의 개인정보처리방침(apple.com/privacy)에 따릅니다.</li>
+</ul>
+<h2>7. 개인정보 판매 금지 (CCPA — 캘리포니아)</h2>
+<p>서비스는 사용자의 개인정보를 제3자에게 판매하거나 광고 목적으로 공유하지 않습니다. CCPA에 따른 opt-out 권리가 기본으로 보장됩니다.</p>
+<h2>8. 사용자 권리</h2>
+<p>이메일(<a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>) 또는 앱 내 설정 메뉴에서 아래 권리를 행사할 수 있으며 30일 이내 답변합니다: 열람권, 정정권, 삭제권(잊힐 권리), 데이터 이동권, 처리 제한권, 이의 신청권, 동의 철회권, 감독기관 이의제기권(GDPR), CCPA 추가 권리.</p>
+<h2>9. 아동 개인정보 보호</h2>
+<p>서비스는 아동을 대상으로 하지 않습니다. 일반 기준: 만 13세 미만(COPPA), EEA/영국: 만 16세 미만, 대한민국: 만 14세 미만. 해당 연령 미만 아동의 데이터 수집을 인지하는 경우 즉시 삭제하며, 보호자는 <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>으로 연락 바랍니다.</p>
+<h2>10. 보안 조치</h2>
+<p>기기 내 로컬 저장 중심 설계, Face ID/Touch ID 기반 앱 잠금 지원, 보안 활동 로그 기록, 최소 권한 원칙 적용, 계정 삭제 기능 제공.</p>
+<h2>11. 제3자 서비스 및 쿠키</h2>
+<p>광고 네트워크, 외부 애널리틱스 SDK, 소셜 로그인(Apple 제외), 웹 추적 쿠키를 사용하지 않습니다. Sign in with Apple은 Apple Inc.의 개인정보처리방침이 적용됩니다.</p>
+<h2>12. 제3자 공개</h2>
+<p>원칙적으로 제3자에게 판매·제공·임대하지 않습니다. 예외: 법적 요청(법원 명령 또는 적법한 수사기관 요청), 생존 이익 보호, 사업 이전 시 사전 공지.</p>
+<h2>13. 방침 변경 고지</h2>
+<p>중요한 내용 변경 시 시행일 최소 30일 전에 앱 내 공지 또는 이메일로 알립니다. 공고일: 2026년 5월 16일 | 시행일: 2026년 5월 16일 | 버전: 1.1</p>
+<h2>14. 문의 및 감독기관</h2>
+<div class="callout"><strong>이메일:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br><strong>감독기관:</strong> 개인정보 보호위원회(PIPC) — <a href="https://pipc.go.kr" target="_blank">pipc.go.kr</a></div>
+</div>
+<div class="lang-section" id="lang-en">
+<div class="callout"><strong>Applicable Law:</strong> <span class="badge">GDPR</span><span class="badge">CCPA</span><span class="badge">PIPEDA</span><span class="badge">APP</span><span class="badge">DPDP</span><span class="badge">PIPA</span></div>
+<h2>1. Purpose and Scope</h2>
+<p>Todak ("Service") values your personal information. This Privacy Policy explains what information the Service collects, uses, stores, and deletes, and what rights you have. This Policy complies with GDPR (EU 2016/679), CCPA/CPRA (California, USA), PIPEDA (Canada), APP (Australia), DPDP Act 2023 (India), and PIPA (Korea).</p>
+<h2>2. Data Controller</h2>
+<div class="callout"><strong>Name:</strong> Kang Dong-yeop · <strong>Service:</strong> Todak · <strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Response:</strong> Within 30 days</div>
+<h2>3. Information We Collect</h2>
+<ul>
+<li><strong>User-provided content:</strong> Emotion selections, diary entries, memos, tags, checklists.</li>
+<li><strong>Account &amp; auth info:</strong> Apple User Identifier (Sign in with Apple). Biometric authentication (Face ID, Touch ID) uses only success/failure result — biometric data is never collected.</li>
+<li><strong>App settings:</strong> Language, theme, reminder times, stored locally on device.</li>
+<li><strong>NOT collected:</strong> Location, IDFA, analytics data, third-party tracking cookies.</li>
+</ul>
+<h2>4. Legal Basis (GDPR — EU/EEA/UK Users)</h2>
+<ul>
+<li>Contract performance — Art. 6(1)(b): Service provision, authentication, backup/restore.</li>
+<li>Legitimate interest — Art. 6(1)(f): Security logs, error prevention, service quality.</li>
+<li>Legal obligation — Art. 6(1)(c): Compliance with applicable law.</li>
+</ul>
+<h2>5. Use of Information</h2>
+<p>Collected information is used only for: providing emotion recording features, aquarium growth/gamification elements, security features (biometric lock, backup, security logs), reminder notifications, customer support, and legal compliance.</p>
+<h2>6. Storage, Retention, and Data Transfers</h2>
+<ul>
+<li><strong>Storage:</strong> Records and settings are stored locally on your device. No external server transmission.</li>
+<li><strong>Backup:</strong> Backup files may be stored in external storage (e.g., iCloud Drive) per your choice.</li>
+<li><strong>Retention:</strong> Records are kept until you delete them or uninstall the app.</li>
+<li><strong>International transfers:</strong> Sign in with Apple communicates with Apple's servers under Apple's Privacy Policy (apple.com/privacy).</li>
+</ul>
+<h2>7. No Sale of Personal Data (CCPA — California)</h2>
+<p>We do not sell, share, or rent your personal information to third parties for advertising purposes. This opt-out is guaranteed by default under CCPA.</p>
+<h2>8. Your Rights</h2>
+<p>Contact us at <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> or use in-app Settings. We respond within 30 days. Rights include: Access, Rectification, Erasure ("Right to be Forgotten"), Data Portability, Restriction of Processing, Right to Object, Withdraw Consent, Lodge Complaint with supervisory authority (GDPR), CCPA rights.</p>
+<h2>9. Children's Privacy</h2>
+<p>The Service is not directed at children. Age requirements: 13+ (COPPA, general), 16+ (EEA/UK), 14+ (Korea). If we learn we have collected data from children below these ages, we will delete it promptly. Guardians may contact <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+<h2>10. Security</h2>
+<p>Local-first storage design, Face ID/Touch ID app lock, security activity logs, minimum permission principle, account deletion feature.</p>
+<h2>11. Third-Party Services &amp; Cookies</h2>
+<p>No ad networks, no analytics SDKs, no social login (except Apple), no tracking cookies. Sign in with Apple is subject to Apple's Privacy Policy.</p>
+<h2>12. Third-Party Disclosure</h2>
+<p>We do not sell, provide, or rent to third parties. Exceptions: legal requests (court orders, lawful law enforcement), protection of vital interests, business transfers (with prior notice).</p>
+<h2>13. Policy Changes</h2>
+<p>Significant changes will be notified at least 30 days before taking effect via in-app notice or email. Announced: May 16, 2026 | Effective: May 16, 2026 | Version: 1.1</p>
+<h2>14. Contact &amp; Supervisory Authority</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br><strong>EU/EEA:</strong> Your national DPA — <a href="https://edpb.europa.eu" target="_blank">edpb.europa.eu</a> · <strong>UK:</strong> ICO — <a href="https://ico.org.uk" target="_blank">ico.org.uk</a> · <strong>Australia:</strong> OAIC — <a href="https://oaic.gov.au" target="_blank">oaic.gov.au</a> · <strong>Korea:</strong> PIPC — <a href="https://pipc.go.kr" target="_blank">pipc.go.kr</a></div>
+</div>
+<div class="lang-section" id="lang-ja">
+<div class="callout"><strong>適用法：</strong> <span class="badge">APPI</span><span class="badge">GDPR</span><span class="badge">PIPA</span></div>
+<h2>1. 目的および適用範囲</h2>
+<p>トダック（以下「サービス」）はユーザーの個人情報を大切にします。本プライバシーポリシーは、サービスがどのような情報を収集・利用・保存・削除するか、また皆様がどのような権利を持つかを明確に説明するために作成されました。本ポリシーはGDPR、CCPA、PIPEDA、APP、DPDP、PIPA等の国際基準を遵守します。</p>
+<h2>2. 個人情報取扱責任者</h2>
+<div class="callout"><strong>氏名：</strong> Kang Dong-yeop · <strong>サービス名：</strong> Todak · <strong>メール：</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>回答期間：</strong> 30日以内</div>
+<h2>3. 収集する情報</h2>
+<ul><li><strong>ユーザーが直接入力する情報：</strong> 感情選択、日記/メモ、タグ、チェックリスト。</li><li><strong>アカウント・認証情報：</strong> Sign in with AppleのユーザーID。生体認証（Face ID、Touch ID）は認証結果のみ使用し、生体データは収集しません。</li><li><strong>収集しない情報：</strong> 位置情報、IDFA、行動分析データ、サードパーティトラッキングクッキー。</li></ul>
+<h2>4. ユーザーの権利</h2>
+<p><a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>またはアプリ内設定から権利行使できます（30日以内に回答）。アクセス権、修正権、削除権、データポータビリティ権、処理制限権、異議申立権等。</p>
+<h2>5. 監督機関</h2>
+<div class="callout"><strong>監督機関：</strong> 個人情報保護委員会(PPC) — <a href="https://ppc.go.jp" target="_blank">ppc.go.jp</a></div>
+</div>
+<div class="lang-section" id="lang-es">
+<div class="callout"><strong>Ley aplicable:</strong> <span class="badge">GDPR</span><span class="badge">LOPDGDD</span><span class="badge">PIPA</span></div>
+<h2>1. Propósito y Alcance</h2>
+<p>Todak ("Servicio") valora su información personal. Esta Política de Privacidad explica qué información recopila, usa, almacena y elimina el Servicio, y qué derechos tiene usted. Cumple con GDPR, CCPA, PIPEDA, APP, DPDP y PIPA.</p>
+<h2>2. Responsable del Tratamiento</h2>
+<div class="callout"><strong>Nombre:</strong> Kang Dong-yeop · <strong>Servicio:</strong> Todak · <strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Respuesta:</strong> 30 días</div>
+<h2>3. Información Recopilada</h2>
+<ul><li><strong>Contenido del usuario:</strong> Emociones, entradas de diario, memos, etiquetas, listas.</li><li><strong>NO recopilado:</strong> Ubicación, IDFA, datos analíticos, cookies de seguimiento de terceros.</li></ul>
+<h2>4. Sus Derechos</h2>
+<p>Contacte <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> (respuesta en 30 días): acceso, rectificación, supresión, portabilidad, limitación, oposición, retirada de consentimiento, reclamación ante la AEPD.</p>
+<h2>5. Autoridad Supervisora</h2>
+<div class="callout">AEPD — <a href="https://aepd.es" target="_blank">aepd.es</a></div>
+</div>
+<div class="lang-section" id="lang-fr">
+<div class="callout"><strong>Loi applicable:</strong> <span class="badge">RGPD</span><span class="badge">Loi Informatique et Libertés</span><span class="badge">PIPA</span></div>
+<h2>1. Objet et Champ d'Application</h2>
+<p>Todak (« Service ») valorise vos informations personnelles. Cette Politique de Confidentialité explique les informations collectées, utilisées, stockées et supprimées, ainsi que vos droits. Conforme au RGPD, CCPA, PIPEDA, APP, DPDP et PIPA.</p>
+<h2>2. Responsable du Traitement</h2>
+<div class="callout"><strong>Nom :</strong> Kang Dong-yeop · <strong>Service :</strong> Todak · <strong>E-mail :</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Délai :</strong> 30 jours</div>
+<h2>3. Informations Collectées</h2>
+<ul><li><strong>Contenu utilisateur :</strong> Émotions, entrées de journal, mémos, balises, listes.</li><li><strong>NON collectées :</strong> Localisation, IDFA, données analytiques, cookies tiers.</li></ul>
+<h2>4. Vos Droits</h2>
+<p>Contactez <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> (réponse sous 30 jours) : accès, rectification, effacement, portabilité, limitation, opposition, retrait du consentement, réclamation auprès de la CNIL.</p>
+<h2>5. Autorité de Contrôle</h2>
+<div class="callout">CNIL — <a href="https://cnil.fr" target="_blank">cnil.fr</a></div>
+</div>
+<div class="lang-section" id="lang-de">
+<div class="callout"><strong>Anwendbares Recht:</strong> <span class="badge">DSGVO</span><span class="badge">BDSG</span><span class="badge">PIPA</span></div>
+<h2>1. Zweck und Anwendungsbereich</h2>
+<p>Todak ("Dienst") schützt Ihre persönlichen Daten. Diese Datenschutzerklärung erläutert, welche Informationen der Dienst erhebt, nutzt, speichert und löscht. Konform mit DSGVO, CCPA, PIPEDA, APP, DPDP und PIPA.</p>
+<h2>2. Verantwortlicher</h2>
+<div class="callout"><strong>Name:</strong> Kang Dong-yeop · <strong>Dienst:</strong> Todak · <strong>E-Mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Antwortzeit:</strong> 30 Tage</div>
+<h2>3. Erhobene Daten</h2>
+<ul><li><strong>Nutzerinhalte:</strong> Emotionen, Tagebucheinträge, Memos, Tags, Listen.</li><li><strong>NICHT erhoben:</strong> Standort, IDFA, Analysedaten, Drittanbieter-Cookies.</li></ul>
+<h2>4. Ihre Rechte</h2>
+<p>Kontaktieren Sie <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> (Antwort innerhalb 30 Tagen): Auskunft, Berichtigung, Löschung, Datenübertragbarkeit, Einschränkung, Widerspruch, Widerruf, Beschwerde beim BfDI.</p>
+<h2>5. Aufsichtsbehörde</h2>
+<div class="callout">BfDI — <a href="https://bfdi.bund.de" target="_blank">bfdi.bund.de</a></div>
+</div>
+<div class="lang-section" id="lang-it">
+<div class="callout"><strong>Codice Privacy (GDPR)</strong></div>
+<h2>Informativa sulla Privacy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Garante Privacy — <a href="https://garanteprivacy.it" target="_blank">garanteprivacy.it</a></div>
+</div>
+<div class="lang-section" id="lang-pt">
+<div class="callout"><strong>LGPD (Brasil) · RGPD (Portugal)</strong></div>
+<h2>Política de Privacidade</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ANPD — <a href="https://gov.br/anpd" target="_blank">gov.br/anpd</a></div>
+</div>
+<div class="lang-section" id="lang-ru">
+<div class="callout"><strong>152-ФЗ (Россия)</strong></div>
+<h2>Политика конфиденциальности</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Роскомнадзор — <a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a></div>
+</div>
+<div class="lang-section" id="lang-hi">
+<div class="callout"><strong>DPDP Act 2023 (भारत)</strong></div>
+<h2>गोपनीयता नीति</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> DPBI — <a href="https://dpdpboard.gov.in" target="_blank">dpdpboard.gov.in</a></div>
+</div>
+<div class="lang-section" id="lang-th">
+<div class="callout"><strong>PDPA (ประเทศไทย)</strong></div>
+<h2>นโยบายความเป็นส่วนตัว</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> PDPC Thailand — <a href="https://pdpc.or.th" target="_blank">pdpc.or.th</a></div>
+</div>
+<div class="lang-section" id="lang-vi">
+<div class="callout"><strong>PDPD (Việt Nam)</strong></div>
+<h2>Chính Sách Bảo Mật</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Bộ TT&TT</div>
+</div>
+<div class="lang-section" id="lang-id">
+<div class="callout"><strong>UU PDP (Indonesia)</strong></div>
+<h2>Kebijakan Privasi</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Kominfo — <a href="https://kominfo.go.id" target="_blank">kominfo.go.id</a></div>
+</div>
+<div class="lang-section" id="lang-ms">
+<div class="callout"><strong>PDPA Malaysia (Akta 709)</strong></div>
+<h2>Dasar Privasi</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> PDPA Commissioner Malaysia</div>
+</div>
+<div class="lang-section" id="lang-nl">
+<div class="callout"><strong>UAVG (Nederland)</strong></div>
+<h2>Privacybeleid</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> AP — <a href="https://autoriteitpersoonsgegevens.nl" target="_blank">autoriteitpersoonsgegevens.nl</a></div>
+</div>
+<div class="lang-section" id="lang-sv">
+<div class="callout"><strong>Dataskyddslagen (Sverige)</strong></div>
+<h2>Integritetspolicy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> IMY — <a href="https://imy.se" target="_blank">imy.se</a></div>
+</div>
+<div class="lang-section" id="lang-da">
+<div class="callout"><strong>Databeskyttelsesloven (Danmark)</strong></div>
+<h2>Privatlivspolitik</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Datatilsynet — <a href="https://datatilsynet.dk" target="_blank">datatilsynet.dk</a></div>
+</div>
+<div class="lang-section" id="lang-no">
+<div class="callout"><strong>Personopplysningsloven (Norge)</strong></div>
+<h2>Personvernpolicy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Datatilsynet — <a href="https://datatilsynet.no" target="_blank">datatilsynet.no</a></div>
+</div>
+<div class="lang-section" id="lang-fi">
+<div class="callout"><strong>Tietosuojalaki (Suomi)</strong></div>
+<h2>Tietosuojakäytäntö</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Tietosuojavaltuutettu — <a href="https://tietosuoja.fi" target="_blank">tietosuoja.fi</a></div>
+</div>
+<div class="lang-section" id="lang-pl">
+<div class="callout"><strong>RODO / Ustawa o ochronie danych (Polska)</strong></div>
+<h2>Polityka Prywatności</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> UODO — <a href="https://uodo.gov.pl" target="_blank">uodo.gov.pl</a></div>
+</div>
+<div class="lang-section" id="lang-tr">
+<div class="callout"><strong>KVKK (Türkiye)</strong></div>
+<h2>Gizlilik Politikası</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> KVKK — <a href="https://kvkk.gov.tr" target="_blank">kvkk.gov.tr</a></div>
+</div>
+<div class="lang-section" id="lang-el">
+<div class="callout"><strong>Νόμος 4624/2019 (Ελλάδα)</strong></div>
+<h2>Πολιτική Απορρήτου</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ΑΠΔΠΧ — <a href="https://dpa.gr" target="_blank">dpa.gr</a></div>
+</div>
+<div class="lang-section" id="lang-cs">
+<div class="callout"><strong>Zákon č. 110/2019 Sb. (Česko)</strong></div>
+<h2>Zásady ochrany osobních údajů</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ÚOOÚ — <a href="https://uoou.gov.cz" target="_blank">uoou.gov.cz</a></div>
+</div>
+<div class="lang-section" id="lang-hu">
+<div class="callout"><strong>Infotv. (Magyarország)</strong></div>
+<h2>Adatvédelmi Szabályzat</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> NAIH — <a href="https://naih.hu" target="_blank">naih.hu</a></div>
+</div>
+<div class="lang-section" id="lang-ro">
+<div class="callout"><strong>Legea 190/2018 (România)</strong></div>
+<h2>Politica de Confidențialitate</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ANSPDCP — <a href="https://dataprotection.ro" target="_blank">dataprotection.ro</a></div>
+</div>
+<div class="lang-section" id="lang-uk">
+<div class="callout"><strong>ЗУ "Про захист персональних даних" (Україна)</strong></div>
+<h2>Політика конфіденційності</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Уповноважений ВРУ — <a href="https://ombudsman.gov.ua" target="_blank">ombudsman.gov.ua</a></div>
+</div>
+<div class="lang-section" id="lang-he">
+<div class="callout"><strong>חוק הגנת הפרטיות (ישראל)</strong></div>
+<h2>מדיניות פרטיות</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> PPA — <a href="https://gov.il" target="_blank">gov.il</a></div>
+</div>
+<div class="lang-section" id="lang-ca">
+<div class="callout"><strong>LOPDGDD (Espanya)</strong></div>
+<h2>Política de Privadesa</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> APDCAT — <a href="https://apdcat.gencat.cat" target="_blank">apdcat.gencat.cat</a></div>
+</div>
+<div class="lang-section" id="lang-fil">
+<div class="callout"><strong>DPA 2012 (Pilipinas)</strong></div>
+<h2>Patakaran sa Privacy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> NPC — <a href="https://privacy.gov.ph" target="_blank">privacy.gov.ph</a></div>
+</div>
+<div class="lang-section" id="lang-sk">
+<div class="callout"><strong>Zákon č. 18/2018 Z.z. (Slovensko)</strong></div>
+<h2>Zásady ochrany osobných údajov</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Úrad na ochranu OÚ SR — <a href="https://dataprotection.gov.sk" target="_blank">dataprotection.gov.sk</a></div>
+</div>
+<div class="lang-section" id="lang-hr">
+<div class="callout"><strong>Zakon o provedbi GDPR-a (Hrvatska)</strong></div>
+<h2>Politika privatnosti</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> AZOP — <a href="https://azop.hr" target="_blank">azop.hr</a></div>
+</div>
+<div class="lang-section" id="lang-bg">
+<div class="callout"><strong>ЗЗЛД (България)</strong></div>
+<h2>Политика за поверителност</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> КЗЛД — <a href="https://cpdp.bg" target="_blank">cpdp.bg</a></div>
+</div>
+<div class="lang-section" id="lang-sl">
+<div class="callout"><strong>ZVOP-2 (Slovenija)</strong></div>
+<h2>Politika zasebnosti</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> IP RS — <a href="https://ip-rs.si" target="_blank">ip-rs.si</a></div>
+</div>
+<div class="lang-section" id="lang-lt">
+<div class="callout"><strong>ADTAĮ (Lietuva)</strong></div>
+<h2>Privatumo politika</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> VDAI — <a href="https://vdai.lrv.lt" target="_blank">vdai.lrv.lt</a></div>
+</div>
+<div class="lang-section" id="lang-lv">
+<div class="callout"><strong>Fizisko personu datu apstrādes likums (Latvija)</strong></div>
+<h2>Privātuma politika</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> DVI — <a href="https://dvi.gov.lv" target="_blank">dvi.gov.lv</a></div>
+</div>
+<div class="lang-section" id="lang-et">
+<div class="callout"><strong>Isikuandmete kaitse seadus (Eesti)</strong></div>
+<h2>Privaatsuspoliitika</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> AKI — <a href="https://aki.ee" target="_blank">aki.ee</a></div>
+</div>
+<div class="lang-section" id="lang-ar" dir="rtl">
+<div class="callout"><strong>PDPL (السعودية)</strong></div>
+<h2>سياسة الخصوصية</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> SDAIA — <a href="https://sdaia.gov.sa" target="_blank">sdaia.gov.sa</a></div>
+<html lang="ko" data-theme="auto">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>개인정보 처리방침 · 토닥 어항 일기</title>
+<meta name="description" content="토닥 어항 일기의 개인정보 처리방침. 데이터는 기기 내에만 저장되며 수집·추적하지 않습니다."/>
+<meta name="theme-color" content="#6B8AC7" media="(prefers-color-scheme: light)"/>
+<meta name="theme-color" content="#24385C" media="(prefers-color-scheme: dark)"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Crect width='1024' height='1024' rx='220' fill='%236B8AC7'/%3E%3Cellipse cx='512' cy='560' rx='320' ry='280' fill='%23E8F4FB'/%3E%3C/svg%3E"/>
+<style>
+:root,[data-theme="light"]{color-scheme:light;--accent-primary:#6B8AC7;--accent-light:#99BDDE;--bg:#F4F6FB;--surface:#FFFFFF;--surface-2:#F7F9FD;--label:#1B1F2A;--label-2:rgba(27,31,42,0.70);--label-3:rgba(27,31,42,0.46);--separator:rgba(27,31,42,0.10);--fill-1:rgba(107,138,199,0.10);--shadow-card:0 10px 28px rgba(56,87,133,0.10),0 2px 6px rgba(56,87,133,0.06);--shadow-nav:0 1px 0 rgba(27,31,42,0.06);--r-section:20px;--r-control:16px;}
+[data-theme="dark"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}
+@media(prefers-color-scheme:dark){[data-theme="auto"]{color-scheme:dark;--accent-primary:#85ADE6;--accent-light:#B3D6F5;--bg:#0E1320;--surface:#1C2234;--surface-2:#232B40;--label:#F5F7FB;--label-2:rgba(245,247,251,0.72);--label-3:rgba(245,247,251,0.48);--separator:rgba(245,247,251,0.10);--fill-1:rgba(133,173,230,0.14);--shadow-card:0 14px 32px rgba(0,0,0,0.5),0 2px 6px rgba(0,0,0,0.35);--shadow-nav:0 1px 0 rgba(0,0,0,0.4);}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}html,body{margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Pretendard","Apple SD Gothic Neo",system-ui,sans-serif;background:var(--bg);color:var(--label);-webkit-font-smoothing:antialiased;letter-spacing:-0.01em;line-height:1.7;transition:background .35s ease,color .25s ease;}
+a{color:var(--accent-primary);text-decoration:none;}a:hover{text-decoration:underline;}
+.container{max-width:760px;margin:0 auto;padding:0 20px;}
+header.site{position:sticky;top:0;z-index:30;backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);background:color-mix(in srgb,var(--surface) 78%,transparent);box-shadow:var(--shadow-nav);}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand .logo{width:30px;height:30px;border-radius:8px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,0.12);background:linear-gradient(180deg,#B5BCEB,#BFE6D9);display:grid;place-items:center;}
+.brand .name{font-size:16px;font-weight:600;letter-spacing:-0.02em;}
+.back-link{font-size:14px;color:var(--label-2);}
+.doc-hero{padding:60px 0 30px;background:radial-gradient(800px 400px at 80% -10%,color-mix(in srgb,var(--accent-light) 30%,transparent),transparent 60%),radial-gradient(700px 400px at -10% 30%,color-mix(in srgb,var(--accent-primary) 14%,transparent),transparent 60%),transparent;}
+.doc-hero .eyebrow{font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:10px;}
+.doc-hero h1{font-size:clamp(32px,4.4vw,44px);font-weight:800;letter-spacing:-0.025em;margin:0 0 10px;}
+.doc-hero p.meta{color:var(--label-3);font-size:13px;margin:0;}
+.lang-bar{background:var(--surface-2);border-bottom:0.5px solid var(--separator);padding:12px 0;overflow-x:auto;}
+.lang-pills{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px;max-width:760px;margin:0 auto;}
+.lang-pill{background:var(--fill-1);color:var(--label-2);border:none;border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer;transition:background .2s,color .2s;white-space:nowrap;}
+.lang-pill:hover,.lang-pill.active{background:var(--accent-primary);color:#fff;}
+main.doc{padding:24px 0 80px;}
+main.doc h2{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:40px 0 12px;}
+main.doc h3{font-size:17px;font-weight:600;margin:24px 0 8px;}
+main.doc p,main.doc li{font-size:16px;color:var(--label);margin:0 0 10px;}
+main.doc ul{padding-left:20px;margin:0 0 16px;}
+main.doc li{margin-bottom:6px;}
+.callout{background:var(--surface);border-radius:var(--r-section);padding:18px 20px;box-shadow:var(--shadow-card);margin:18px 0;border-left:4px solid var(--accent-primary);}
+.callout strong{color:var(--accent-primary);}
+.lang-section{display:none;}.lang-section.visible{display:block;}
+.badge{display:inline-block;background:var(--fill-1);color:var(--accent-primary);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:600;margin:2px;}
+footer.site{border-top:0.5px solid var(--separator);padding:30px 0 60px;color:var(--label-3);font-size:13px;}
+footer.site .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center;}
+footer.site .links a{color:var(--label-2);margin-left:14px;}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="todak-icon" viewBox="0 0 1024 1024"><rect width="1024" height="1024" rx="230" fill="#B5BCEB"/><ellipse cx="512" cy="560" rx="320" ry="280" fill="#E8F4FB" stroke="#B7D6E6" stroke-width="10"/><ellipse cx="512" cy="470" rx="260" ry="38" fill="rgba(255,255,255,0.55)"/><path d="M 290 760 Q 380 720 470 750 Q 560 780 660 740 Q 720 760 760 770 Q 612 810 412 800 Q 320 790 290 760 Z" fill="#E8DBC9"/><ellipse cx="560" cy="600" rx="95" ry="62" fill="#8E91D8"/><path d="M 650 600 L 730 555 L 720 600 L 730 645 Z" fill="#8E91D8"/>
+</symbol></defs></svg>
+<header class="site"><div class="container nav">
+<a class="brand" href="index.html"><span class="logo"><svg width="24" height="24"><use href="#todak-icon"/></svg></span><span class="name">토닥 어항 일기</span></a>
+<a class="back-link" href="index.html">← Home</a></div></header>
+<section class="doc-hero"><div class="container">
+<div class="eyebrow">Privacy Policy</div>
+<h1>개인정보 처리방침</h1>
+<p class="meta">버전 1.1 · 시행일: 2026년 5월 16일 · Todak Aquarium Diary</p>
+</div></section>
+<div class="lang-bar"><div class="lang-pills">
+<button class="lang-pill active" onclick="showLang('ko')">한국어</button>
+<button class="lang-pill" onclick="showLang('en')">English</button>
+<button class="lang-pill" onclick="showLang('ja')">日本語</button>
+<button class="lang-pill" onclick="showLang('es')">Español</button>
+<button class="lang-pill" onclick="showLang('fr')">Français</button>
+<button class="lang-pill" onclick="showLang('de')">Deutsch</button>
+<button class="lang-pill" onclick="showLang('it')">Italiano</button>
+<button class="lang-pill" onclick="showLang('pt')">Português</button>
+<button class="lang-pill" onclick="showLang('ru')">Русский</button>
+<button class="lang-pill" onclick="showLang('ar')">العربية</button>
+<button class="lang-pill" onclick="showLang('hi')">हिन्दी</button>
+<button class="lang-pill" onclick="showLang('th')">ไทย</button>
+<button class="lang-pill" onclick="showLang('vi')">Tiếng Việt</button>
+<button class="lang-pill" onclick="showLang('id')">Indonesia</button>
+<button class="lang-pill" onclick="showLang('ms')">Melayu</button>
+<button class="lang-pill" onclick="showLang('nl')">Nederlands</button>
+<button class="lang-pill" onclick="showLang('sv')">Svenska</button>
+<button class="lang-pill" onclick="showLang('da')">Dansk</button>
+<button class="lang-pill" onclick="showLang('no')">Norsk</button>
+<button class="lang-pill" onclick="showLang('fi')">Suomi</button>
+<button class="lang-pill" onclick="showLang('pl')">Polski</button>
+<button class="lang-pill" onclick="showLang('tr')">Türkçe</button>
+<button class="lang-pill" onclick="showLang('el')">Ελληνικά</button>
+<button class="lang-pill" onclick="showLang('cs')">Čeština</button>
+<button class="lang-pill" onclick="showLang('hu')">Magyar</button>
+<button class="lang-pill" onclick="showLang('ro')">Română</button>
+<button class="lang-pill" onclick="showLang('uk')">Українська</button>
+<button class="lang-pill" onclick="showLang('he')">עברית</button>
+<button class="lang-pill" onclick="showLang('ca')">Català</button>
+<button class="lang-pill" onclick="showLang('fil')">Filipino</button>
+<button class="lang-pill" onclick="showLang('sk')">Slovenčina</button>
+<button class="lang-pill" onclick="showLang('hr')">Hrvatski</button>
+<button class="lang-pill" onclick="showLang('bg')">Български</button>
+<button class="lang-pill" onclick="showLang('sl')">Slovenščina</button>
+<button class="lang-pill" onclick="showLang('lt')">Lietuvių</button>
+<button class="lang-pill" onclick="showLang('lv')">Latviešu</button>
+<button class="lang-pill" onclick="showLang('et')">Eesti</button>
+<button class="lang-pill" onclick="showLang('is')">Íslenska</button>
+</div></div>
+<main class="doc"><div class="container">
+<div class="lang-section visible" id="lang-ko">
+<div class="callout"><strong>적용 인증:</strong> <span class="badge">PIPA</span><span class="badge">GDPR</span><span class="badge">CCPA</span><span class="badge">PIPEDA</span><span class="badge">APP</span><span class="badge">DPDP</span></div>
+<h2>1. 목적 및 적용 범위</h2>
+<p>토닥(이하 "서비스")은 사용자의 개인정보를 소중히 여깁니다. 이 개인정보처리방침은 서비스가 어떤 정보를 수집·이용·저장·삭제하는지, 그리고 여러분이 어떤 권리를 가지는지 명확하게 안내하기 위해 작성되었습니다.</p>
+<p>본 방침은 GDPR(EU 2016/679), CCPA/CPRA(미국 캘리포니아), PIPEDA(캐나다), APP(호주), DPDP Act 2023(인도), PIPA(대한민국)를 준수합니다.</p>
+<h2>2. 개인정보 처리자 (Data Controller)</h2>
+<div class="callout"><strong>이름:</strong> 강동엽 · <strong>서비스명:</strong> 토닥 (Todak) · <strong>이메일:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>응답 기간:</strong> 30일 이내</div>
+<h2>3. 수집하는 정보</h2>
+<p>서비스는 최소한의 정보만 수집하며, 모든 감정 기록과 설정은 원칙적으로 사용자의 기기에 로컬로 저장됩니다.</p>
+<ul>
+<li><strong>사용자가 직접 입력하는 정보:</strong> 감정 선택, 일기/메모, 태그, 체크리스트 등 앱 내에서 직접 작성한 기록.</li>
+<li><strong>계정 및 인증 정보:</strong> Sign in with Apple 이용 시 Apple이 제공하는 사용자 식별자(User Identifier). 생체 인증(Face ID, Touch ID)은 인증 결과(성공/실패)만 사용하며 생체 데이터 자체는 수집하지 않습니다.</li>
+<li><strong>앱 설정 정보:</strong> 언어 설정, 테마, 리마인더 시간 등 기기 내 설정 값.</li>
+<li><strong>수집하지 않는 정보:</strong> 위치 정보, 광고 식별자(IDFA), 사용자 행동 분석 데이터, 제3자 트래킹 쿠키.</li>
+</ul>
+<h2>4. 처리의 법적 근거 (GDPR — EU/EEA/UK 사용자)</h2>
+<ul>
+<li><strong>계약 이행 — Art. 6(1)(b):</strong> 서비스 제공, 계정 인증, 백업·복원 기능 운영.</li>
+<li><strong>정당한 이익 — Art. 6(1)(f):</strong> 보안 활동 로그 관리, 오류 방지, 서비스 품질 유지.</li>
+<li><strong>법적 의무 — Art. 6(1)(c):</strong> 관련 법령 준수를 위해 필요한 경우.</li>
+</ul>
+<h2>5. 정보의 이용 목적</h2>
+<p>수집한 정보는 다음 목적에 한하여 이용됩니다: 감정 기록 작성·조회·수정·삭제 기능 제공, 어항 성장·게임화 요소 운영, 생체 인증 잠금·백업/복원 등 보안 기능 운영, 리마인더 알림 전송, 고객 문의 처리, 관련 법령 준수.</p>
+<h2>6. 저장 위치, 보관 기간 및 국제 데이터 이전</h2>
+<ul>
+<li><strong>저장 위치:</strong> 감정 기록 및 설정은 사용자의 기기에 저장됩니다. 별도 서버로 전송하지 않습니다.</li>
+<li><strong>백업:</strong> 백업 파일은 사용자 선택에 따라 iCloud Drive 등 외부 저장소에 저장될 수 있습니다.</li>
+<li><strong>보관 기간:</strong> 기록은 사용자가 삭제하거나 앱을 삭제할 때까지 보관됩니다.</li>
+<li><strong>국제 데이터 이전:</strong> Sign in with Apple 인증 시 Apple의 서버와 통신이 발생하며, 이는 Apple의 개인정보처리방침(apple.com/privacy)에 따릅니다.</li>
+</ul>
+<h2>7. 개인정보 판매 금지 (CCPA — 캘리포니아)</h2>
+<p>서비스는 사용자의 개인정보를 제3자에게 판매하거나 광고 목적으로 공유하지 않습니다. CCPA에 따른 opt-out 권리가 기본으로 보장됩니다.</p>
+<h2>8. 사용자 권리</h2>
+<p>이메일(<a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>) 또는 앱 내 설정 메뉴에서 아래 권리를 행사할 수 있으며 30일 이내 답변합니다: 열람권, 정정권, 삭제권(잊힐 권리), 데이터 이동권, 처리 제한권, 이의 신청권, 동의 철회권, 감독기관 이의제기권(GDPR), CCPA 추가 권리.</p>
+<h2>9. 아동 개인정보 보호</h2>
+<p>서비스는 아동을 대상으로 하지 않습니다. 일반 기준: 만 13세 미만(COPPA), EEA/영국: 만 16세 미만, 대한민국: 만 14세 미만. 해당 연령 미만 아동의 데이터 수집을 인지하는 경우 즉시 삭제하며, 보호자는 <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>으로 연락 바랍니다.</p>
+<h2>10. 보안 조치</h2>
+<p>기기 내 로컬 저장 중심 설계, Face ID/Touch ID 기반 앱 잠금 지원, 보안 활동 로그 기록, 최소 권한 원칙 적용, 계정 삭제 기능 제공.</p>
+<h2>11. 제3자 서비스 및 쿠키</h2>
+<p>광고 네트워크, 외부 애널리틱스 SDK, 소셜 로그인(Apple 제외), 웹 추적 쿠키를 사용하지 않습니다. Sign in with Apple은 Apple Inc.의 개인정보처리방침이 적용됩니다.</p>
+<h2>12. 제3자 공개</h2>
+<p>원칙적으로 제3자에게 판매·제공·임대하지 않습니다. 예외: 법적 요청(법원 명령 또는 적법한 수사기관 요청), 생존 이익 보호, 사업 이전 시 사전 공지.</p>
+<h2>13. 방침 변경 고지</h2>
+<p>중요한 내용 변경 시 시행일 최소 30일 전에 앱 내 공지 또는 이메일로 알립니다. 공고일: 2026년 5월 16일 | 시행일: 2026년 5월 16일 | 버전: 1.1</p>
+<h2>14. 문의 및 감독기관</h2>
+<div class="callout"><strong>이메일:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br><strong>감독기관:</strong> 개인정보 보호위원회(PIPC) — <a href="https://pipc.go.kr" target="_blank">pipc.go.kr</a></div>
+</div>
+<div class="lang-section" id="lang-en">
+<div class="callout"><strong>Applicable Law:</strong> <span class="badge">GDPR</span><span class="badge">CCPA</span><span class="badge">PIPEDA</span><span class="badge">APP</span><span class="badge">DPDP</span><span class="badge">PIPA</span></div>
+<h2>1. Purpose and Scope</h2>
+<p>Todak ("Service") values your personal information. This Privacy Policy explains what information the Service collects, uses, stores, and deletes, and what rights you have. This Policy complies with GDPR (EU 2016/679), CCPA/CPRA (California, USA), PIPEDA (Canada), APP (Australia), DPDP Act 2023 (India), and PIPA (Korea).</p>
+<h2>2. Data Controller</h2>
+<div class="callout"><strong>Name:</strong> Kang Dong-yeop · <strong>Service:</strong> Todak · <strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Response:</strong> Within 30 days</div>
+<h2>3. Information We Collect</h2>
+<ul>
+<li><strong>User-provided content:</strong> Emotion selections, diary entries, memos, tags, checklists.</li>
+<li><strong>Account &amp; auth info:</strong> Apple User Identifier (Sign in with Apple). Biometric authentication (Face ID, Touch ID) uses only success/failure result — biometric data is never collected.</li>
+<li><strong>App settings:</strong> Language, theme, reminder times, stored locally on device.</li>
+<li><strong>NOT collected:</strong> Location, IDFA, analytics data, third-party tracking cookies.</li>
+</ul>
+<h2>4. Legal Basis (GDPR — EU/EEA/UK Users)</h2>
+<ul>
+<li>Contract performance — Art. 6(1)(b): Service provision, authentication, backup/restore.</li>
+<li>Legitimate interest — Art. 6(1)(f): Security logs, error prevention, service quality.</li>
+<li>Legal obligation — Art. 6(1)(c): Compliance with applicable law.</li>
+</ul>
+<h2>5. Use of Information</h2>
+<p>Collected information is used only for: providing emotion recording features, aquarium growth/gamification elements, security features (biometric lock, backup, security logs), reminder notifications, customer support, and legal compliance.</p>
+<h2>6. Storage, Retention, and Data Transfers</h2>
+<ul>
+<li><strong>Storage:</strong> Records and settings are stored locally on your device. No external server transmission.</li>
+<li><strong>Backup:</strong> Backup files may be stored in external storage (e.g., iCloud Drive) per your choice.</li>
+<li><strong>Retention:</strong> Records are kept until you delete them or uninstall the app.</li>
+<li><strong>International transfers:</strong> Sign in with Apple communicates with Apple's servers under Apple's Privacy Policy (apple.com/privacy).</li>
+</ul>
+<h2>7. No Sale of Personal Data (CCPA — California)</h2>
+<p>We do not sell, share, or rent your personal information to third parties for advertising purposes. This opt-out is guaranteed by default under CCPA.</p>
+<h2>8. Your Rights</h2>
+<p>Contact us at <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> or use in-app Settings. We respond within 30 days. Rights include: Access, Rectification, Erasure ("Right to be Forgotten"), Data Portability, Restriction of Processing, Right to Object, Withdraw Consent, Lodge Complaint with supervisory authority (GDPR), CCPA rights.</p>
+<h2>9. Children's Privacy</h2>
+<p>The Service is not directed at children. Age requirements: 13+ (COPPA, general), 16+ (EEA/UK), 14+ (Korea). If we learn we have collected data from children below these ages, we will delete it promptly. Guardians may contact <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>.</p>
+<h2>10. Security</h2>
+<p>Local-first storage design, Face ID/Touch ID app lock, security activity logs, minimum permission principle, account deletion feature.</p>
+<h2>11. Third-Party Services &amp; Cookies</h2>
+<p>No ad networks, no analytics SDKs, no social login (except Apple), no tracking cookies. Sign in with Apple is subject to Apple's Privacy Policy.</p>
+<h2>12. Third-Party Disclosure</h2>
+<p>We do not sell, provide, or rent to third parties. Exceptions: legal requests (court orders, lawful law enforcement), protection of vital interests, business transfers (with prior notice).</p>
+<h2>13. Policy Changes</h2>
+<p>Significant changes will be notified at least 30 days before taking effect via in-app notice or email. Announced: May 16, 2026 | Effective: May 16, 2026 | Version: 1.1</p>
+<h2>14. Contact &amp; Supervisory Authority</h2>
+<div class="callout"><strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a><br><strong>EU/EEA:</strong> Your national DPA — <a href="https://edpb.europa.eu" target="_blank">edpb.europa.eu</a> · <strong>UK:</strong> ICO — <a href="https://ico.org.uk" target="_blank">ico.org.uk</a> · <strong>Australia:</strong> OAIC — <a href="https://oaic.gov.au" target="_blank">oaic.gov.au</a> · <strong>Korea:</strong> PIPC — <a href="https://pipc.go.kr" target="_blank">pipc.go.kr</a></div>
+</div>
+<div class="lang-section" id="lang-ja">
+<div class="callout"><strong>適用法：</strong> <span class="badge">APPI</span><span class="badge">GDPR</span><span class="badge">PIPA</span></div>
+<h2>1. 目的および適用範囲</h2>
+<p>トダック（以下「サービス」）はユーザーの個人情報を大切にします。本プライバシーポリシーは、サービスがどのような情報を収集・利用・保存・削除するか、また皆様がどのような権利を持つかを明確に説明するために作成されました。本ポリシーはGDPR、CCPA、PIPEDA、APP、DPDP、PIPA等の国際基準を遵守します。</p>
+<h2>2. 個人情報取扱責任者</h2>
+<div class="callout"><strong>氏名：</strong> Kang Dong-yeop · <strong>サービス名：</strong> Todak · <strong>メール：</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>回答期間：</strong> 30日以内</div>
+<h2>3. 収集する情報</h2>
+<ul><li><strong>ユーザーが直接入力する情報：</strong> 感情選択、日記/メモ、タグ、チェックリスト。</li><li><strong>アカウント・認証情報：</strong> Sign in with AppleのユーザーID。生体認証（Face ID、Touch ID）は認証結果のみ使用し、生体データは収集しません。</li><li><strong>収集しない情報：</strong> 位置情報、IDFA、行動分析データ、サードパーティトラッキングクッキー。</li></ul>
+<h2>4. ユーザーの権利</h2>
+<p><a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a>またはアプリ内設定から権利行使できます（30日以内に回答）。アクセス権、修正権、削除権、データポータビリティ権、処理制限権、異議申立権等。</p>
+<h2>5. 監督機関</h2>
+<div class="callout"><strong>監督機関：</strong> 個人情報保護委員会(PPC) — <a href="https://ppc.go.jp" target="_blank">ppc.go.jp</a></div>
+</div>
+<div class="lang-section" id="lang-es">
+<div class="callout"><strong>Ley aplicable:</strong> <span class="badge">GDPR</span><span class="badge">LOPDGDD</span><span class="badge">PIPA</span></div>
+<h2>1. Propósito y Alcance</h2>
+<p>Todak ("Servicio") valora su información personal. Esta Política de Privacidad explica qué información recopila, usa, almacena y elimina el Servicio, y qué derechos tiene usted. Cumple con GDPR, CCPA, PIPEDA, APP, DPDP y PIPA.</p>
+<h2>2. Responsable del Tratamiento</h2>
+<div class="callout"><strong>Nombre:</strong> Kang Dong-yeop · <strong>Servicio:</strong> Todak · <strong>Email:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Respuesta:</strong> 30 días</div>
+<h2>3. Información Recopilada</h2>
+<ul><li><strong>Contenido del usuario:</strong> Emociones, entradas de diario, memos, etiquetas, listas.</li><li><strong>NO recopilado:</strong> Ubicación, IDFA, datos analíticos, cookies de seguimiento de terceros.</li></ul>
+<h2>4. Sus Derechos</h2>
+<p>Contacte <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> (respuesta en 30 días): acceso, rectificación, supresión, portabilidad, limitación, oposición, retirada de consentimiento, reclamación ante la AEPD.</p>
+<h2>5. Autoridad Supervisora</h2>
+<div class="callout">AEPD — <a href="https://aepd.es" target="_blank">aepd.es</a></div>
+</div>
+<div class="lang-section" id="lang-fr">
+<div class="callout"><strong>Loi applicable:</strong> <span class="badge">RGPD</span><span class="badge">Loi Informatique et Libertés</span><span class="badge">PIPA</span></div>
+<h2>1. Objet et Champ d'Application</h2>
+<p>Todak (« Service ») valorise vos informations personnelles. Cette Politique de Confidentialité explique les informations collectées, utilisées, stockées et supprimées, ainsi que vos droits. Conforme au RGPD, CCPA, PIPEDA, APP, DPDP et PIPA.</p>
+<h2>2. Responsable du Traitement</h2>
+<div class="callout"><strong>Nom :</strong> Kang Dong-yeop · <strong>Service :</strong> Todak · <strong>E-mail :</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Délai :</strong> 30 jours</div>
+<h2>3. Informations Collectées</h2>
+<ul><li><strong>Contenu utilisateur :</strong> Émotions, entrées de journal, mémos, balises, listes.</li><li><strong>NON collectées :</strong> Localisation, IDFA, données analytiques, cookies tiers.</li></ul>
+<h2>4. Vos Droits</h2>
+<p>Contactez <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> (réponse sous 30 jours) : accès, rectification, effacement, portabilité, limitation, opposition, retrait du consentement, réclamation auprès de la CNIL.</p>
+<h2>5. Autorité de Contrôle</h2>
+<div class="callout">CNIL — <a href="https://cnil.fr" target="_blank">cnil.fr</a></div>
+</div>
+<div class="lang-section" id="lang-de">
+<div class="callout"><strong>Anwendbares Recht:</strong> <span class="badge">DSGVO</span><span class="badge">BDSG</span><span class="badge">PIPA</span></div>
+<h2>1. Zweck und Anwendungsbereich</h2>
+<p>Todak ("Dienst") schützt Ihre persönlichen Daten. Diese Datenschutzerklärung erläutert, welche Informationen der Dienst erhebt, nutzt, speichert und löscht. Konform mit DSGVO, CCPA, PIPEDA, APP, DPDP und PIPA.</p>
+<h2>2. Verantwortlicher</h2>
+<div class="callout"><strong>Name:</strong> Kang Dong-yeop · <strong>Dienst:</strong> Todak · <strong>E-Mail:</strong> <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> · <strong>Antwortzeit:</strong> 30 Tage</div>
+<h2>3. Erhobene Daten</h2>
+<ul><li><strong>Nutzerinhalte:</strong> Emotionen, Tagebucheinträge, Memos, Tags, Listen.</li><li><strong>NICHT erhoben:</strong> Standort, IDFA, Analysedaten, Drittanbieter-Cookies.</li></ul>
+<h2>4. Ihre Rechte</h2>
+<p>Kontaktieren Sie <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> (Antwort innerhalb 30 Tagen): Auskunft, Berichtigung, Löschung, Datenübertragbarkeit, Einschränkung, Widerspruch, Widerruf, Beschwerde beim BfDI.</p>
+<h2>5. Aufsichtsbehörde</h2>
+<div class="callout">BfDI — <a href="https://bfdi.bund.de" target="_blank">bfdi.bund.de</a></div>
+</div>
+<div class="lang-section" id="lang-it">
+<div class="callout"><strong>Codice Privacy (GDPR)</strong></div>
+<h2>Informativa sulla Privacy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Garante Privacy — <a href="https://garanteprivacy.it" target="_blank">garanteprivacy.it</a></div>
+</div>
+<div class="lang-section" id="lang-pt">
+<div class="callout"><strong>LGPD (Brasil) · RGPD (Portugal)</strong></div>
+<h2>Política de Privacidade</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ANPD — <a href="https://gov.br/anpd" target="_blank">gov.br/anpd</a></div>
+</div>
+<div class="lang-section" id="lang-ru">
+<div class="callout"><strong>152-ФЗ (Россия)</strong></div>
+<h2>Политика конфиденциальности</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Роскомнадзор — <a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a></div>
+</div>
+<div class="lang-section" id="lang-hi">
+<div class="callout"><strong>DPDP Act 2023 (भारत)</strong></div>
+<h2>गोपनीयता नीति</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> DPBI — <a href="https://dpdpboard.gov.in" target="_blank">dpdpboard.gov.in</a></div>
+</div>
+<div class="lang-section" id="lang-th">
+<div class="callout"><strong>PDPA (ประเทศไทย)</strong></div>
+<h2>นโยบายความเป็นส่วนตัว</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> PDPC Thailand — <a href="https://pdpc.or.th" target="_blank">pdpc.or.th</a></div>
+</div>
+<div class="lang-section" id="lang-vi">
+<div class="callout"><strong>PDPD (Việt Nam)</strong></div>
+<h2>Chính Sách Bảo Mật</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Bộ TT&TT</div>
+</div>
+<div class="lang-section" id="lang-id">
+<div class="callout"><strong>UU PDP (Indonesia)</strong></div>
+<h2>Kebijakan Privasi</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Kominfo — <a href="https://kominfo.go.id" target="_blank">kominfo.go.id</a></div>
+</div>
+<div class="lang-section" id="lang-ms">
+<div class="callout"><strong>PDPA Malaysia (Akta 709)</strong></div>
+<h2>Dasar Privasi</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> PDPA Commissioner Malaysia</div>
+</div>
+<div class="lang-section" id="lang-nl">
+<div class="callout"><strong>UAVG (Nederland)</strong></div>
+<h2>Privacybeleid</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> AP — <a href="https://autoriteitpersoonsgegevens.nl" target="_blank">autoriteitpersoonsgegevens.nl</a></div>
+</div>
+<div class="lang-section" id="lang-sv">
+<div class="callout"><strong>Dataskyddslagen (Sverige)</strong></div>
+<h2>Integritetspolicy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> IMY — <a href="https://imy.se" target="_blank">imy.se</a></div>
+</div>
+<div class="lang-section" id="lang-da">
+<div class="callout"><strong>Databeskyttelsesloven (Danmark)</strong></div>
+<h2>Privatlivspolitik</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Datatilsynet — <a href="https://datatilsynet.dk" target="_blank">datatilsynet.dk</a></div>
+</div>
+<div class="lang-section" id="lang-no">
+<div class="callout"><strong>Personopplysningsloven (Norge)</strong></div>
+<h2>Personvernpolicy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Datatilsynet — <a href="https://datatilsynet.no" target="_blank">datatilsynet.no</a></div>
+</div>
+<div class="lang-section" id="lang-fi">
+<div class="callout"><strong>Tietosuojalaki (Suomi)</strong></div>
+<h2>Tietosuojakäytäntö</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Tietosuojavaltuutettu — <a href="https://tietosuoja.fi" target="_blank">tietosuoja.fi</a></div>
+</div>
+<div class="lang-section" id="lang-pl">
+<div class="callout"><strong>RODO / Ustawa o ochronie danych (Polska)</strong></div>
+<h2>Polityka Prywatności</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> UODO — <a href="https://uodo.gov.pl" target="_blank">uodo.gov.pl</a></div>
+</div>
+<div class="lang-section" id="lang-tr">
+<div class="callout"><strong>KVKK (Türkiye)</strong></div>
+<h2>Gizlilik Politikası</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> KVKK — <a href="https://kvkk.gov.tr" target="_blank">kvkk.gov.tr</a></div>
+</div>
+<div class="lang-section" id="lang-el">
+<div class="callout"><strong>Νόμος 4624/2019 (Ελλάδα)</strong></div>
+<h2>Πολιτική Απορρήτου</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ΑΠΔΠΧ — <a href="https://dpa.gr" target="_blank">dpa.gr</a></div>
+</div>
+<div class="lang-section" id="lang-cs">
+<div class="callout"><strong>Zákon č. 110/2019 Sb. (Česko)</strong></div>
+<h2>Zásady ochrany osobních údajů</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ÚOOÚ — <a href="https://uoou.gov.cz" target="_blank">uoou.gov.cz</a></div>
+</div>
+<div class="lang-section" id="lang-hu">
+<div class="callout"><strong>Infotv. (Magyarország)</strong></div>
+<h2>Adatvédelmi Szabályzat</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> NAIH — <a href="https://naih.hu" target="_blank">naih.hu</a></div>
+</div>
+<div class="lang-section" id="lang-ro">
+<div class="callout"><strong>Legea 190/2018 (România)</strong></div>
+<h2>Politica de Confidențialitate</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> ANSPDCP — <a href="https://dataprotection.ro" target="_blank">dataprotection.ro</a></div>
+</div>
+<div class="lang-section" id="lang-uk">
+<div class="callout"><strong>ЗУ "Про захист персональних даних" (Україна)</strong></div>
+<h2>Політика конфіденційності</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Уповноважений ВРУ — <a href="https://ombudsman.gov.ua" target="_blank">ombudsman.gov.ua</a></div>
+</div>
+<div class="lang-section" id="lang-he">
+<div class="callout"><strong>חוק הגנת הפרטיות (ישראל)</strong></div>
+<h2>מדיניות פרטיות</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> PPA — <a href="https://gov.il" target="_blank">gov.il</a></div>
+</div>
+<div class="lang-section" id="lang-ca">
+<div class="callout"><strong>LOPDGDD (Espanya)</strong></div>
+<h2>Política de Privadesa</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> APDCAT — <a href="https://apdcat.gencat.cat" target="_blank">apdcat.gencat.cat</a></div>
+</div>
+<div class="lang-section" id="lang-fil">
+<div class="callout"><strong>DPA 2012 (Pilipinas)</strong></div>
+<h2>Patakaran sa Privacy</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> NPC — <a href="https://privacy.gov.ph" target="_blank">privacy.gov.ph</a></div>
+</div>
+<div class="lang-section" id="lang-sk">
+<div class="callout"><strong>Zákon č. 18/2018 Z.z. (Slovensko)</strong></div>
+<h2>Zásady ochrany osobných údajov</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Úrad na ochranu OÚ SR — <a href="https://dataprotection.gov.sk" target="_blank">dataprotection.gov.sk</a></div>
+</div>
+<div class="lang-section" id="lang-hr">
+<div class="callout"><strong>Zakon o provedbi GDPR-a (Hrvatska)</strong></div>
+<h2>Politika privatnosti</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> AZOP — <a href="https://azop.hr" target="_blank">azop.hr</a></div>
+</div>
+<div class="lang-section" id="lang-bg">
+<div class="callout"><strong>ЗЗЛД (България)</strong></div>
+<h2>Политика за поверителност</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> КЗЛД — <a href="https://cpdp.bg" target="_blank">cpdp.bg</a></div>
+</div>
+<div class="lang-section" id="lang-sl">
+<div class="callout"><strong>ZVOP-2 (Slovenija)</strong></div>
+<h2>Politika zasebnosti</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> IP RS — <a href="https://ip-rs.si" target="_blank">ip-rs.si</a></div>
+</div>
+<div class="lang-section" id="lang-lt">
+<div class="callout"><strong>ADTAĮ (Lietuva)</strong></div>
+<h2>Privatumo politika</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> VDAI — <a href="https://vdai.lrv.lt" target="_blank">vdai.lrv.lt</a></div>
+</div>
+<div class="lang-section" id="lang-lv">
+<div class="callout"><strong>Fizisko personu datu apstrādes likums (Latvija)</strong></div>
+<h2>Privātuma politika</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> DVI — <a href="https://dvi.gov.lv" target="_blank">dvi.gov.lv</a></div>
+</div>
+<div class="lang-section" id="lang-et">
+<div class="callout"><strong>Isikuandmete kaitse seadus (Eesti)</strong></div>
+<h2>Privaatsuspoliitika</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> AKI — <a href="https://aki.ee" target="_blank">aki.ee</a></div>
+</div>
+<div class="lang-section" id="lang-ar" dir="rtl">
+<div class="callout"><strong>PDPL (السعودية)</strong></div>
+<h2>سياسة الخصوصية</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> SDAIA — <a href="https://sdaia.gov.sa" target="_blank">sdaia.gov.sa</a></div>
+</div>
+<div class="lang-section" id="lang-is">
+<div class="callout"><strong>Persónuverndarlög nr. 90/2018 (Ísland)</strong></div>
+<h2>Persónuverndarstefna</h2>
+<p>Todak ("Service"). <a href="mailto:todaklife@gmail.com">todaklife@gmail.com</a> — 30 days / 30 jours / 30 dni / 30 días.</p>
+<p>Version 1.1 · 2026-05-16 · GDPR · CCPA · PIPEDA · APP · DPDP · PIPA</p>
+<div class="callout"><strong>Supervisory Authority:</strong> Persónuvernd — <a href="https://personuvernd.is" target="_blank">personuvernd.is</a></div>
+</div>
+</div></main>
+<footer class="site"><div class="container">
+<div class="row">
+<span>© 2026 강동엽 · Kang Dong-yeop</span>
+<span class="links">
+<a href="index.html">Home</a>
+<a href="support.html">Support</a>
+<a href="terms.html">Terms</a>
+</span>
+</div>
+</div></footer>
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("year2").textContent = new Date().getFullYear();
+function showLang(code) {
+  document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('visible'));
+  document.querySelectorAll('.lang-pill').forEach(el => el.classList.remove('active'));
+  const section = document.getElementById('lang-' + code);
+  if (section) section.classList.add('visible');
+  const btn = document.querySelector('[onclick="showLang(\''+code+'\')"]');
+  if (btn) btn.classList.add('active');
+}
+(function() {
+  const lang = (navigator.language || navigator.userLanguage || 'ko').toLowerCase().split('-')[0];
+  const supported = ['ko','en','ja','es','fr','de','it','pt','ru','ar','hi','th','vi','id','ms','nl','sv','da','no','fi','pl','tr','el','cs','hu','ro','uk','he','ca','fil','sk','hr','bg','sl','lt','lv','et','is'];
+  const target = supported.includes(lang) ? lang : 'ko';
+  showLang(target);
+})();
 </script>
-</body>
-</html>
+</body></html>
